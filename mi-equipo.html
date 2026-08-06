@@ -13,17 +13,21 @@
                 <img id="header-logo" src="" alt="Logo de la Liga">
                 <h1 id="header-title">Cargando liga...</h1>
             </div>
-            
             <div class="header-actions">
-                <button class="mi-draft-header-btn" onclick="openDraft()">Mi Draft</button>
-                <button class="edit-btn" onclick="window.location.href='index.html'">Cambiar Liga</button>
+                <button class="header-btn" onclick="openDraft()">Mi Draft</button>
+                <button class="header-btn" onclick="window.location.href='index.html'">Cambiar Liga</button>
             </div>
         </div>
     </header>
 
     <main>
         <div id="equipo-container">
-            <!-- Navegación de Pestañas (Solo Estudio) -->
+            <!-- Barra de Búsqueda -->
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Buscar jugador por nombre o equipo...">
+            </div>
+
+            <!-- Navegación de Pestañas -->
             <div class="tabs">
                 <button class="tab-button active" onclick="openTab(event, 'porterias')">Porteros</button>
                 <button class="tab-button" onclick="openTab(event, 'defensas')">Defensas</button>
@@ -33,32 +37,73 @@
 
             <!-- Contenido de las Pestañas -->
             <div class="tab-content">
-                <!-- TABLAS DE ESTUDIO (Sin Precio) -->
                 <div id="porterias" class="tab-pane active">
                     <h2>Porteros en Radar</h2>
                     <table class="players-table">
-                        <thead><tr><th>#</th><th>Nombre</th><th>Equipo</th><th>Vallas Inv.</th><th>FotMob</th><th>Acciones</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="sortable" data-sort="name">Nombre ↕</th>
+                                <th class="sortable" data-sort="team">Equipo ↕</th>
+                                <th class="sortable" data-sort="vallas">Vallas Inv. ↕</th>
+                                <th class="sortable" data-sort="fotmob">FotMob ↕</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
                         <tbody id="tbody-porterias"></tbody>
                     </table>
                 </div>
+                
                 <div id="defensas" class="tab-pane">
                     <h2>Defensas en Radar</h2>
                     <table class="players-table">
-                        <thead><tr><th>#</th><th>Nombre</th><th>Equipo</th><th>Goles</th><th>Asistencias</th><th>FotMob</th><th>Acciones</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="sortable" data-sort="name">Nombre ↕</th>
+                                <th class="sortable" data-sort="team">Equipo ↕</th>
+                                <th class="sortable" data-sort="goles">Goles ↕</th>
+                                <th class="sortable" data-sort="asistencias">Asistencias ↕</th>
+                                <th class="sortable" data-sort="fotmob">FotMob ↕</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
                         <tbody id="tbody-defensas"></tbody>
                     </table>
                 </div>
+
                 <div id="mediocampistas" class="tab-pane">
                     <h2>Mediocampistas en Radar</h2>
                     <table class="players-table">
-                        <thead><tr><th>#</th><th>Nombre</th><th>Equipo</th><th>Goles</th><th>Asistencias</th><th>FotMob</th><th>Acciones</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="sortable" data-sort="name">Nombre ↕</th>
+                                <th class="sortable" data-sort="team">Equipo ↕</th>
+                                <th class="sortable" data-sort="goles">Goles ↕</th>
+                                <th class="sortable" data-sort="asistencias">Asistencias ↕</th>
+                                <th class="sortable" data-sort="fotmob">FotMob ↕</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
                         <tbody id="tbody-mediocampistas"></tbody>
                     </table>
                 </div>
+
                 <div id="delanteros" class="tab-pane">
                     <h2>Delanteros en Radar</h2>
                     <table class="players-table">
-                        <thead><tr><th>#</th><th>Nombre</th><th>Equipo</th><th>Goles</th><th>Asistencias</th><th>FotMob</th><th>Acciones</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="sortable" data-sort="name">Nombre ↕</th>
+                                <th class="sortable" data-sort="team">Equipo ↕</th>
+                                <th class="sortable" data-sort="goles">Goles ↕</th>
+                                <th class="sortable" data-sort="asistencias">Asistencias ↕</th>
+                                <th class="sortable" data-sort="fotmob">FotMob ↕</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
                         <tbody id="tbody-delanteros"></tbody>
                     </table>
                 </div>
@@ -87,19 +132,22 @@
                 </div>
             </div>
 
-            <button class="add-player-btn" onclick="openModal()">+ Agregar Jugador al Radar</button>
+            <button id="btn-add-radar" class="add-player-btn" onclick="openModal()">Agregar Jugador al Radar</button>
         </div>
     </main>
 
-    <!-- Modal Formulario Mejorado (Textos sin choques) -->
+    <!-- Modal Formulario 100% Saneado -->
     <div id="player-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2 style="margin-bottom: 1.5rem;">Agregar Jugador</h2>
+            <h2 id="modal-title" style="margin-bottom: 1.5rem;">Agregar Jugador</h2>
             <form id="player-form">
+                <!-- ID oculto vital para la edición -->
+                <input type="hidden" id="player-id">
+
                 <div class="form-group">
                     <label for="player-name">Nombre del Jugador:</label>
-                    <input type="text" id="player-name" placeholder="Ej: Erling Haaland" required>
+                    <input type="text" id="player-name" required>
                 </div>
                 <div class="form-group">
                     <label for="player-position">Posición:</label>
@@ -112,20 +160,17 @@
                 </div>
                 <div class="form-group">
                     <label for="player-team">Equipo:</label>
-                    <input type="text" id="player-team" placeholder="Ej: Manchester City" required>
+                    <input type="text" id="player-team" required>
                 </div>
-                
-                <!-- Campos Dinámicos -->
+
                 <div class="form-group" id="group-vallas">
                     <label for="player-vallas">Vallas Invictas:</label>
                     <input type="number" id="player-vallas" value="0" min="0">
                 </div>
-                
                 <div class="form-group" id="group-goles" style="display: none;">
                     <label for="player-goles">Goles:</label>
                     <input type="number" id="player-goles" value="0" min="0">
                 </div>
-                
                 <div class="form-group" id="group-asistencias" style="display: none;">
                     <label for="player-asistencias">Asistencias:</label>
                     <input type="number" id="player-asistencias" value="0" min="0">
@@ -141,7 +186,7 @@
         </div>
     </div>
 
-    <!-- Botón Flotante Único -->
+    <!-- Botón Flotante -->
     <button class="jugadores-total-btn">Draft: <span id="total-jugadores">0</span>/18</button>
 
     <script type="module" src="js/mi-equipo.js"></script>

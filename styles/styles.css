@@ -1,8 +1,7 @@
 /* =========================================
-   VARIABLES CSS (TEMAS DE LAS LIGAS)
+   1. VARIABLES CSS (TEMAS DE LAS LIGAS)
    ========================================= */
 :root {
-    /* Tema por defecto (FantaPremier) */
     --bg-body: #f5f5f5;
     --grad-start: #2e093d;
     --grad-end: #012d61;
@@ -39,7 +38,7 @@ body.theme-liga {
 }
 
 /* =========================================
-   ESTILOS GENERALES
+   2. ESTILOS GENERALES
    ========================================= */
 * {
     margin: 0;
@@ -52,312 +51,24 @@ body {
     background-color: var(--bg-body);
     color: #222;
     line-height: 1.6;
-}
-
-/* Header Dinámico */
-header {
-    background: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%);
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-#header-logo {
-    height: 50px;
-    width: auto;
-    margin-left: 1rem;
-    border-radius: 10px;
-    background: var(--logo-bg);
-    padding: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    min-height: 100vh;
 }
 
 main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
+    padding-bottom: 100px;
 }
-
-/* Tabs Dinámicos */
-.tabs {
-    display: flex;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--btn-start);
-}
-
-.tab-button {
-    background-color: #f1f8ff;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: all 0.3s;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    color: #222;
-}
-
-.tab-button:hover {
-    background-color: #d0eaff;
-}
-
-.tab-button.active {
-    background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%);
-    color: white;
-}
-
-.tab-content {
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    overflow: hidden;
-    border: 1px solid #d0eaff;
-}
-
-.tab-pane {
-    display: none;
-    padding: 1rem;
-}
-
-.tab-pane.active {
-    display: block;
-}
-
-.tab-pane h2 {
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-    border-bottom: 2px solid var(--btn-end);
-    padding-bottom: 0.5rem;
-}
-
-/* Tables Dinámicas */
-.players-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
-}
-
-.players-table th,
-.players-table td {
-    padding: 0.75rem;
-    text-align: center;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-#porterias .players-table th:nth-child(4),
-#porterias .players-table td:nth-child(4) {
-    text-align: center;
-}
-
-.players-table th {
-    background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%);
-    color: white;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-}
-
-.players-table tr:hover {
-    background-color: #eaf4ff;
-}
-
-.players-table tr:nth-child(even) {
-    background-color: #f7fbff;
-}
-
-.players-table tr:nth-child(even):hover {
-    background-color: #d0eaff;
-}
-
-/* Selected player styling */
-.players-table tr.selected td {
-    background: linear-gradient(135deg, var(--row-selected) 0%, var(--btn-end) 50%);
-    color: #fff;
-    font-weight: bold;
-}
-
-.players-table tr.selected:nth-child(even) td {
-    background-color: var(--row-selected-even);
-    color: #fff;
-}
-
-.players-table td:first-child,
-.players-table th:first-child {
-    text-align: center;
-    width: 40px;
-    background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%);
-    color: white;
-    font-weight: bold;
-}
-
-/* Colores para tipos de pick */
-.buen-pick td { background-color: #d4edda !important; }
-.pick-normal td { background-color: #f1f774ee !important; }
-.ultimo-pick td { background-color: #f8d7da !important; }
-
-/* Botones con estilo adaptativo */
-.add-player-btn, .move-btn, .edit-btn, .delete-btn, .select-btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s;
-    margin: 0 0.25rem;
-    font-size: 0.85rem;
-}
-
-.add-player-btn, #player-form button, #mi-jugador-form button[type="submit"] {
-    background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%);
-    color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.add-player-btn {
-    display: block;
-    margin: 1rem auto;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    border-radius: 4px;
-}
-
-.add-player-btn:hover, #player-form button:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.move-btn { background-color: var(--btn-start); color: white; }
-.move-btn:hover { opacity: 0.85; transform: translateY(-1px); }
-.move-btn:disabled { background-color: #cccccc; cursor: not-allowed; transform: none; }
-
-.edit-btn { background-color: var(--btn-end); color: white; }
-.edit-btn:hover { opacity: 0.85; transform: translateY(-1px); }
-
-.delete-btn { background-color: #e74c3c; color: white; }
-.delete-btn:hover { background-color: #c0392b; transform: translateY(-1px); }
-
-.select-btn { background-color: #27ae60; color: white; }
-.select-btn:hover { background-color: #219653; transform: translateY(-1px); }
-
-/* Elementos Flotantes */
-.mi-equipo-btn, .jugadores-total-btn {
-    position: fixed;
-    bottom: 24px;
-    background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%);
-    color: #fff;
-    padding: 16px 28px;
-    border-radius: 50px;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    z-index: 1000;
-    border: none;
-    transition: background 0.2s, transform 0.2s;
-}
-
-.mi-equipo-btn { right: 24px; }
-.jugadores-total-btn { left: 24px; }
-.mi-equipo-btn:hover, .jugadores-total-btn:hover { transform: translateY(-2px); }
-
-/* Modal y Formulario */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    overflow: auto;
-}
-
-.modal-content {
-    background-color: white;
-    margin: 5% auto;
-    padding: 2rem;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    border-top: 5px solid var(--btn-start);
-    max-height: 90vh;
-    overflow-y: auto;
-}
-
-.close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    color: #aaa;
-    transition: color 0.3s;
-}
-
-.close:hover { color: var(--text-primary); }
-
-.form-group { margin-bottom: 1.25rem; }
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.form-group input, .form-group select {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.form-group input:focus, .form-group select:focus {
-    outline: none;
-    border-color: var(--btn-start);
-    box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
-}
-
-#player-form button, #mi-jugador-form button[type="submit"] {
-    padding: 0.9rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    width: 100%;
-    margin-top: 1rem;
-}
-
-#clean-sheets-group { display: none; }
-#player-position[value="porterias"] ~ #clean-sheets-group { display: block; }
 
 /* =========================================
-   ESTILOS DE LA LANDING PAGE
+   3. LANDING PAGE (INICIO)
    ========================================= */
+body.landing-page {
+    background: linear-gradient(135deg, #012d61 0%, #00122e 100%);
+    margin: 0;
+}
+
 .landing-container {
     display: flex;
     flex-direction: column;
@@ -395,16 +106,16 @@ main {
     border-radius: 20px;
     padding: 3rem 2.5rem;
     width: 280px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
-/* Efecto de brillo interior en la tarjeta */
 .league-card::before {
     content: '';
     position: absolute;
@@ -423,85 +134,25 @@ main {
     background: rgba(255, 255, 255, 0.06);
 }
 
-.league-card:hover::before {
-    opacity: 1;
-}
-
-.league-card img {
-    height: 130px;
-    object-fit: contain;
-    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.4));
-    transition: transform 0.4s ease;
-}
-
-.league-card:hover img {
-    transform: scale(1.1);
-}
-
-.league-card h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0;
-    color: #e2e8f0;
-    letter-spacing: 0.5px;
-}
-
-/* Estilos para la vista de "Mi Draft" */
-.draft-pitch {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    background: rgba(0,0,0,0.02);
-    border-radius: 12px;
-    padding: 2rem;
-    border: 2px dashed #ddd;
-}
-
-.draft-row {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.draft-row h3 {
-    color: var(--text-primary);
-    border-bottom: 1px solid var(--btn-end);
-    padding-bottom: 0.3rem;
-}
-
-.draft-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.player-draft-card {
-    background: white;
-    border-left: 5px solid var(--btn-start);
-    padding: 1rem;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-}
-
-.player-draft-card strong {
-    font-size: 1.1rem;
-    color: var(--text-primary);
-}
-
-.player-draft-card span {
-    font-size: 0.85rem;
-    color: #555;
-}
+.league-card:hover::before { opacity: 1; }
+.league-card img { height: 130px; object-fit: contain; filter: drop-shadow(0 8px 12px rgba(0,0,0,0.4)); transition: transform 0.4s ease; }
+.league-card:hover img { transform: scale(1.1); }
+.league-card h2 { font-size: 1.5rem; font-weight: 700; margin: 0; color: #e2e8f0; letter-spacing: 0.5px; }
 
 /* =========================================
-   NUEVA JERARQUÍA DEL HEADER Y BOTONES
+   4. HEADER (MI EQUIPO)
    ========================================= */
+header {
+    background: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%);
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
 .header-content {
     display: flex;
-    flex-direction: column; /* Apila el logo/título arriba y los botones abajo */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
@@ -510,74 +161,163 @@ main {
     width: 100%;
 }
 
-.header-brand {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-}
+.header-brand { display: flex; align-items: center; gap: 1.5rem; }
+#header-logo { height: 120px; width: auto; background: transparent; padding: 0; border-radius: 0; box-shadow: none; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5)); }
+#header-title { margin: 0; font-size: 3rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); }
 
-#header-logo {
-    height: 85px; 
-    width: auto;
-    background: transparent;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
-}
-
-.header-actions {
-    display: flex;
-    gap: 1.5rem; /* Separación armónica entre ambos botones */
-    align-items: center;
-}
-
-/* Estilos compartidos para igualar la jerarquía de los botones */
-.mi-draft-header-btn, .edit-btn {
+.header-actions { display: flex; gap: 1.5rem; align-items: center; }
+.header-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
     padding: 0.8rem 2.5rem;
     border-radius: 30px;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
-    border: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(5px);
 }
-
-.mi-draft-header-btn:hover, .edit-btn:hover {
+.header-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    background: rgba(255, 255, 255, 0.25);
 }
 
+/* =========================================
+   5. BÚSQUEDA Y PESTAÑAS
+   ========================================= */
+.search-container { display: flex; justify-content: center; margin-bottom: 1.5rem; }
+#search-input { width: 100%; max-width: 600px; padding: 1rem 1.5rem; border-radius: 30px; border: 1px solid #ddd; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05); outline: none; transition: all 0.3s ease; }
+#search-input:focus { border-color: var(--btn-start); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
 
-body.landing-page {
-    background: linear-gradient(135deg, #012d61 0%, #00122e 100%);
-    margin: 0;
-    min-height: 100vh;
+.tabs { display: flex; margin-bottom: 1rem; border-bottom: 2px solid var(--btn-start); }
+.tab-button { background-color: #f1f8ff; border: none; outline: none; cursor: pointer; padding: 1rem 2rem; font-size: 1rem; font-weight: 600; transition: all 0.3s; border-top-left-radius: 5px; border-top-right-radius: 5px; color: #222; }
+.tab-button:hover { background-color: #d0eaff; }
+.tab-button.active { background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%); color: white; }
+
+.tab-content { background-color: white; border-radius: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #d0eaff; }
+.tab-pane { display: none; padding: 1rem; }
+.tab-pane.active { display: block; }
+.tab-pane h2 { margin-bottom: 1rem; color: var(--text-primary); border-bottom: 2px solid var(--btn-end); padding-bottom: 0.5rem; }
+
+/* =========================================
+   6. TABLAS DE JUGADORES
+   ========================================= */
+.players-table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.04); }
+.players-table th, .players-table td { padding: 0.75rem; text-align: center; border-bottom: 1px solid #e0e0e0; }
+.players-table th { background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%); color: white; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+.players-table td:first-child, .players-table th:first-child { text-align: center; width: 40px; background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%); color: white; font-weight: bold; }
+.players-table tr:hover { background-color: #eaf4ff; }
+.players-table tr:nth-child(even) { background-color: #f7fbff; }
+.players-table tr:nth-child(even):hover { background-color: #d0eaff; }
+.players-table th.sortable:hover { opacity: 0.9; }
+
+/* =========================================
+   7. VISTA MI DRAFT (TARJETAS)
+   ========================================= */
+.draft-pitch { display: flex; flex-direction: column; gap: 1.5rem; background: rgba(0,0,0,0.02); border-radius: 12px; padding: 2rem; border: 2px dashed #ddd; }
+.draft-row { display: flex; flex-direction: column; gap: 1rem; }
+.draft-row h3 { color: var(--text-primary); border-bottom: 1px solid var(--btn-end); padding-bottom: 0.3rem; }
+.draft-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.player-draft-card { background: white; border-left: 5px solid var(--btn-start); padding: 1rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 0.3rem; }
+.player-draft-card strong { font-size: 1.1rem; color: var(--text-primary); }
+.player-draft-card span { font-size: 0.85rem; color: #555; }
+
+/* =========================================
+   8. BOTONES DE ACCIÓN Y FORMULARIOS
+   ========================================= */
+.add-player-btn, .move-btn, .edit-btn, .delete-btn, .select-btn {
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 0 0.15rem;
+    font-size: 0.85rem;
+    background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
-/* Responsive adjustments */
+.add-player-btn { display: block; margin: 1.5rem auto; padding: 0.8rem 2rem; font-size: 1rem; }
+#player-form button { background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%); color: white; padding: 1rem 1.5rem; border-radius: 6px; cursor: pointer; font-size: 1.1rem; font-weight: 700; width: 100%; margin-top: 1rem; border: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+.add-player-btn:hover, .move-btn:hover, .edit-btn:hover, .delete-btn:hover, .select-btn:hover, #player-form button:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.25); }
+.move-btn:disabled { background: #cccccc; cursor: not-allowed; transform: none; box-shadow: none; opacity: 0.6; }
+
+/* =========================================
+   9. MODAL FLOTANTE
+   ========================================= */
+.modal {
+    display: none;
+    position: fixed; /* GARANTIZA QUE FLOTE */
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border-top: 6px solid var(--btn-start);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close { position: absolute; top: 1rem; right: 1.5rem; font-size: 2rem; font-weight: bold; cursor: pointer; color: #aaa; transition: color 0.3s; }
+.close:hover { color: var(--text-primary); }
+
+.form-group { margin-bottom: 1.25rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary); }
+.form-group input, .form-group select { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; transition: border-color 0.3s, box-shadow 0.3s; outline: none; }
+.form-group input:focus, .form-group select:focus { border-color: var(--btn-start); box-shadow: 0 0 0 3px rgba(0,0,0,0.1); }
+
+/* =========================================
+   10. BOTÓN FLOTANTE
+   ========================================= */
+.jugadores-total-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%);
+    color: #fff;
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    z-index: 1000;
+    border: none;
+    transition: background 0.2s, transform 0.2s;
+}
+.jugadores-total-btn:hover { transform: translate(-50%, -3px); }
+
+/* =========================================
+   11. RESPONSIVE
+   ========================================= */
 @media (max-width: 768px) {
     .tabs { flex-direction: column; }
     .tab-button { border-radius: 0; text-align: left; }
     .players-table { font-size: 0.85rem; min-width: 600px; width: 100%; }
     .tab-content, .form-group { margin-bottom: 1rem; width: 100%; overflow-x: auto; }
     .players-table th, .players-table td { padding: 0.5rem; }
-    .add-player-btn, .move-btn, .edit-btn, .delete-btn { padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0 0.1rem; }
-    .header-content { flex-direction: column; gap: 0.5rem; }
-    #header-logo { height: 40px; }
-    header h1 { font-size: 1.5rem; }
+    .header-brand { flex-direction: column; gap: 0.5rem; }
+    #header-logo { height: 80px; }
+    #header-title { font-size: 2rem; }
     .modal-content { margin: 10% auto; padding: 1.5rem; }
-    .mi-equipo-btn, .jugadores-total-btn {
-        width: 30%;
-        margin: 0 auto;
-        text-align: center;
-        padding: 12px 20px;
-    }
-    .mi-equipo-btn { font-size: 7px; }
-    .jugadores-total-btn { font-size: 40%; }
+    .jugadores-total-btn { width: 60%; font-size: 1rem; padding: 12px 20px; }
 }
