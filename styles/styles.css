@@ -323,7 +323,7 @@ header {
 }
 
 /* =========================================
-   13. BOTONES DE ACCIÓN DEL RADAR
+   12. BOTONES DE ACCIÓN DEL RADAR
    ========================================= */
 .action-buttons-container {
     display: flex;
@@ -350,4 +350,70 @@ header {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.25);
     background: linear-gradient(135deg, #a93226 0%, #c0392b 100%);
+}
+
+/* =========================================
+   13. BUSCADOR API
+   ========================================= */
+.api-results-container {
+    max-height: 350px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    padding-right: 5px;
+}
+.api-result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+    transition: all 0.2s ease;
+}
+.api-result-item:hover {
+    border-color: var(--btn-start);
+    background: #f1f8ff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.api-result-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.api-result-info img {
+    width: 44px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: #eaeaea;
+}
+.api-result-info strong {
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+.api-result-info small {
+    color: #666;
+    display: block;
+    margin-top: 0.2rem;
+}
+
+#api-search-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+#api-search-input:focus {
+    border-color: var(--btn-start);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }

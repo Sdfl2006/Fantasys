@@ -43,6 +43,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Img</th>
                                 <th>Nombre</th>
                                 <th>Equipo</th>
                                 <th class="sortable" data-sort="vallas">Vallas Inv. ↕</th>
@@ -60,6 +61,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Img</th>
                                 <th>Nombre</th>
                                 <th>Equipo</th>
                                 <th class="sortable" data-sort="goles">Goles ↕</th>
@@ -78,6 +80,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Img</th>
                                 <th>Nombre</th>
                                 <th>Equipo</th>
                                 <th class="sortable" data-sort="goles">Goles ↕</th>
@@ -96,6 +99,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Img</th>
                                 <th>Nombre</th>
                                 <th>Equipo</th>
                                 <th class="sortable" data-sort="goles">Goles ↕</th>
@@ -133,7 +137,8 @@
             </div>
 
             <div id="radar-actions-container" class="action-buttons-container">
-                <button id="btn-add-radar" class="add-player-btn" onclick="openModal()">Agregar Jugador al Radar</button>
+                <button id="btn-add-radar" class="add-player-btn" onclick="openModal()">Agregar Jugador Manualmente</button>
+                <button id="btn-load-api" class="add-player-btn" style="background: linear-gradient(135deg, #3d195b 0%, #012d61 100%);" onclick="openApiModal()">Agregar Jugador Automáticamente</button>
                 <button id="btn-delete-all-radar" class="delete-all-btn" onclick="deleteAllInCurrentTab()">Borrar todos los Porteros</button>
             </div>
         </div>
@@ -186,6 +191,20 @@
 
                 <button type="submit" style="margin-top: 1rem;">Guardar en Radar</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Modal Buscador API -->
+    <div id="api-search-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeApiModal()">&times;</span>
+            <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Buscador FantaPremier</h2>
+            <div class="search-container" style="margin-bottom: 0;">
+                <input type="text" id="api-search-input" placeholder="Escribe el nombre del jugador (mín. 3 letras)..." autocomplete="off">
+            </div>
+            <div id="api-search-results" class="api-results-container">
+                <!-- Los resultados aparecerán aquí -->
+            </div>
         </div>
     </div>
 

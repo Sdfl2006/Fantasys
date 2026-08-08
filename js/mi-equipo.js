@@ -11,6 +11,8 @@ let currentLeagueId = '';
 let radarPlayers = [];
 let draftedPlayers = [];
 let currentTabPosition = 'porterias';
+let apiPlayersData = [];
+let apiTeamsDict = {};
 
 let searchTerm = '';
 let sortState = { column: null, asc: true };
@@ -179,7 +181,8 @@ function handleFormSubmit(e) {
         fotmob: parseFloat(document.getElementById('player-fotmob').value) || 0,
         vallas: pos === 'porterias' ? parseInt(document.getElementById('player-vallas').value) || 0 : null,
         goles: pos !== 'porterias' ? parseInt(document.getElementById('player-goles').value) || 0 : null,
-        asistencias: pos !== 'porterias' ? parseInt(document.getElementById('player-asistencias').value) || 0 : null
+        asistencias: pos !== 'porterias' ? parseInt(document.getElementById('player-asistencias').value) || 0 : null,
+        imagen: 'https://premierleague.com/resources/prod/v2/smart/img/player-missing.png' // Imagen por defecto
     };
 
     if (editId) {
@@ -288,6 +291,135 @@ window.releasePlayer = function(id) {
     radarPlayers.push(player);
     saveData();
 }
+window.openApiModal = async function() {
+    if (currentLeagueId !== 'premier') {
+        alert('Esta acción solo está disponible para la FantaPremier.');
+        return;
+    }
+    
+    document.getElementById('api-search-modal').style.display = 'block';
+    document.getElementById('api-search-input').value = '';
+    document.getElementById('api-search-results').innerHTML = '';
+
+    if (apiPlayersData.length === 0) {
+        const btnLoadApi = document.getElementById('btn-load-api');
+        const originalText = btnLoadApi.textContent;
+        btnLoadApi.textContent = 'Conectando BD...';
+        btnLoadApi.disabled = true;
+
+        try {
+            const response = await fetch('https://fantasy.premierleague.com/api/bootstrap-static/');
+            const data = await response.json();
+            
+            data.teams.forEach(t => { apiTeamsDict[t.id] = t.name; });
+            apiPlayersData = data.elements;
+            
+        } catch (error) {
+            console.error(error);
+            alert('Error al cargar la base de datos. Verifica la extensión CORS.');
+            closeApiModal();
+            return;
+        } finally {
+            btnLoadApi.textContent = originalText;
+            btnLoadApi.disabled = false;
+        }
+    }
+
+    // INYECCIÓN DINÁMICA: Mostrar el Top 15 de la liga apenas abre el modal
+    const topPlayers = [...apiPlayersData].sort((a, b) => b.total_points - a.total_points).slice(0, 15);
+    mostrarResultadosApi(topPlayers);
+};
+
+window.closeApiModal = function() {
+    document.getElementById('api-search-modal').style.display = 'none';
+};
+
+// Función refactorizada para pintar resultados
+function mostrarResultadosApi(jugadoresArray) {
+    const resultsContainer = document.getElementById('api-search-results');
+    resultsContainer.innerHTML = '';
+    const diccionarioPosiciones = {1: 'porterias', 2: 'defensas', 3: 'mediocampistas', 4: 'delanteros'};
+
+    jugadoresArray.forEach(jugador => {
+        const nombreCompleto = `${jugador.first_name} ${jugador.second_name}`;
+        const equipo = apiTeamsDict[jugador.team] || 'Desconocido';
+        const posInterna = diccionarioPosiciones[jugador.element_type];
+        const imagen = `https://resources.premierleague.com/premierleague/photos/players/110x140/p${jugador.code}.png`;
+        
+        // Fallback dinámico usando iniciales
+        const iniciales = (jugador.first_name[0] + (jugador.second_name[0] || '')).toUpperCase();
+        const imgFallback = `https://ui-avatars.com/api/?name=${iniciales}&background=eaeaea&color=333&size=110`;
+
+        const existe = radarPlayers.some(p => p.name === nombreCompleto) || 
+                       draftedPlayers.some(p => p.name === nombreCompleto);
+
+        const item = document.createElement('div');
+        item.className = 'api-result-item';
+        item.innerHTML = `
+            <div class="api-result-info">
+                <img src="${imagen}" onerror="this.onerror=null; this.src='${imgFallback}';" alt="${nombreCompleto}">
+                <div>
+                    <strong>${nombreCompleto}</strong>
+                    <small>${equipo} • ${posInterna.charAt(0).toUpperCase() + posInterna.slice(1)}</small>
+                </div>
+            </div>
+            <button class="add-player-btn" style="padding: 0.6rem 1.2rem; ${existe ? 'background: #ccc; box-shadow: none;' : ''}" 
+                    ${existe ? 'disabled' : ''} 
+                    onclick="agregarDesdeApi(${jugador.id})">
+                ${existe ? 'Añadido' : 'Agregar'}
+            </button>
+        `;
+        resultsContainer.appendChild(item);
+    });
+}
+
+// Escuchar escritura en tiempo real
+document.getElementById('api-search-input').addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    
+    // Si borra el texto, vuelve a mostrar el Top 15
+    if (query.length === 0) {
+        const topPlayers = [...apiPlayersData].sort((a, b) => b.total_points - a.total_points).slice(0, 15);
+        mostrarResultadosApi(topPlayers);
+        return;
+    }
+    
+    if (query.length < 2) return;
+
+    const encontrados = apiPlayersData.filter(j => {
+        const nombreCompleto = `${j.first_name} ${j.second_name}`.toLowerCase();
+        const apellido = j.second_name.toLowerCase();
+        return nombreCompleto.includes(query) || apellido.includes(query);
+    }).slice(0, 15);
+
+    mostrarResultadosApi(encontrados);
+});
+
+window.agregarDesdeApi = function(apiId) {
+    const jugador = apiPlayersData.find(j => j.id === apiId);
+    if(!jugador) return;
+
+    const diccionarioPosiciones = {1: 'porterias', 2: 'defensas', 3: 'mediocampistas', 4: 'delanteros'};
+    const posInterna = diccionarioPosiciones[jugador.element_type];
+    const esArquero = posInterna === 'porterias';
+
+    const playerObj = {
+        id: `api_${jugador.id}`,
+        name: `${jugador.first_name} ${jugador.second_name}`,
+        position: posInterna,
+        team: apiTeamsDict[jugador.team] || 'Desconocido',
+        fotmob: 0,
+        vallas: esArquero ? jugador.clean_sheets : null,
+        goles: !esArquero ? jugador.goals_scored : null,
+        asistencias: !esArquero ? jugador.assists : null,
+        imagen: `https://resources.premierleague.com/premierleague/photos/players/250x250/p${jugador.code}.png?v=2026`
+    };
+
+    radarPlayers.push(playerObj);
+    saveData();
+    
+    document.getElementById('api-search-input').dispatchEvent(new Event('input'));
+};
 
 function renderAll() {
     ['porterias', 'defensas', 'mediocampistas', 'delanteros'].forEach(pos => {
@@ -337,8 +469,13 @@ function renderAll() {
             <button class="move-btn" onclick="movePlayer('${player.id}', 'down')" title="Bajar">▼</button>
         `;
 
+        // Generador de avatar profesional con las iniciales del jugador
+    const iniciales = player.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+    const fallbackUrl = `https://ui-avatars.com/api/?name=${iniciales}&background=eaeaea&color=333&size=110`;
+
         tr.innerHTML = `
             <td>${visualIndex + 1}</td>
+            <td><img src="${player.imagen || fallbackUrl}" onerror="this.onerror=null; this.src='${fallbackUrl}';" alt="${player.name}" width="55" height="70" style="border-radius: 4px; object-fit: cover; background: #eaeaea;"></td>
             <td><strong>${player.name}</strong></td>
             <td>${player.team}</td>
             ${statsHTML}
@@ -346,7 +483,7 @@ function renderAll() {
                 ${arrowBtns}
                 <button class="edit-btn" onclick="editPlayer('${player.id}')">Editar</button>
                 <button class="select-btn" onclick="draftPlayer('${player.id}')">Draftear</button>
-                <button class="delete-btn" onclick="deleteFromRadar('${player.id}')">✖</button>
+                <button class="delete-btn" onclick="deleteFromRadar('${player.id}')">X</button>
             </td>
         `;
         tbody.appendChild(tr);
