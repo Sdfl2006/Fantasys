@@ -10,6 +10,7 @@ const DRAFT_LIMITS = {
 let currentLeagueId = '';
 let radarPlayers = [];
 let draftedPlayers = [];
+let currentTabPosition = 'porterias';
 
 let searchTerm = '';
 let sortState = { column: null, asc: true };
@@ -58,6 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.openTab = function(evt, tabName) {
+    currentTabPosition = tabName; 
+
     const tabPanes = document.getElementsByClassName("tab-pane");
     for (let i = 0; i < tabPanes.length; i++) {
         tabPanes[i].style.display = "none";
@@ -73,9 +76,23 @@ window.openTab = function(evt, tabName) {
         evt.currentTarget.classList.add("active");
     }
 
-    const btnAddRadar = document.getElementById('btn-add-radar');
-    if (btnAddRadar) {
-        btnAddRadar.style.display = tabName === 'mi-draft' ? 'none' : 'block';
+    const actionsContainer = document.getElementById('radar-actions-container');
+    if (actionsContainer) {
+        if (tabName === 'mi-draft') {
+            actionsContainer.style.display = 'none';
+        } else {
+            actionsContainer.style.display = 'flex'; 
+            const labels = {
+                'porterias': 'Porteros',
+                'defensas': 'Defensas',
+                'mediocampistas': 'Mediocampistas',
+                'delanteros': 'Delanteros'
+            };
+            const btnDeleteAll = document.getElementById('btn-delete-all-radar');
+            if (btnDeleteAll) {
+                btnDeleteAll.textContent = `Borrar todos los ${labels[tabName]}`;
+            }
+        }
     }
 };
 
@@ -225,6 +242,28 @@ window.deleteFromRadar = function(id) {
         saveData();
     }
 }
+
+window.deleteAllInCurrentTab = function() {
+    const labels = {
+        'porterias': 'Porteros',
+        'defensas': 'Defensas',
+        'mediocampistas': 'Mediocampistas',
+        'delanteros': 'Delanteros'
+    };
+    const positionName = labels[currentTabPosition];
+    
+    const hasPlayers = radarPlayers.some(p => p.position === currentTabPosition);
+    
+    if(!hasPlayers) {
+        alert(`No tienes ${positionName.toLowerCase()} en tu radar para borrar.`);
+        return;
+    }
+
+    if(confirm(`⚠️ ADVERTENCIA ⚠️\n¿Estás seguro de que deseas eliminar a TODOS los ${positionName.toLowerCase()} de tu radar de estudio?\n\nEsta acción no se puede deshacer.`)) {
+        radarPlayers = radarPlayers.filter(p => p.position !== currentTabPosition);
+        saveData();
+    }
+};
 
 window.draftPlayer = function(id) {
     const player = radarPlayers.find(p => p.id === id);

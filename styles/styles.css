@@ -235,14 +235,14 @@ header {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin: 0 0.15rem;
+    margin: 0;
     font-size: 0.85rem;
     background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%);
     color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
-.add-player-btn { display: block; margin: 1.5rem auto; padding: 0.8rem 2rem; font-size: 1rem; }
+.add-player-btn { display: block; margin: 0; padding: 0.8rem 2rem; font-size: 1rem; }
 #player-form button { background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%); color: white; padding: 1rem 1.5rem; border-radius: 6px; cursor: pointer; font-size: 1.1rem; font-weight: 700; width: 100%; margin-top: 1rem; border: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
 .add-player-btn:hover, .move-btn:hover, .edit-btn:hover, .delete-btn:hover, .select-btn:hover, #player-form button:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.25); }
 .move-btn:disabled { background: #cccccc; cursor: not-allowed; transform: none; box-shadow: none; opacity: 0.6; }
@@ -320,4 +320,34 @@ header {
     #header-title { font-size: 2rem; }
     .modal-content { margin: 10% auto; padding: 1.5rem; }
     .jugadores-total-btn { width: 60%; font-size: 1rem; padding: 12px 20px; }
+}
+
+/* =========================================
+   13. BOTONES DE ACCIÓN DEL RADAR
+   ========================================= */
+.action-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0 auto 2rem auto;
+    flex-wrap: wrap;
+}
+
+.delete-all-btn {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.delete-all-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #a93226 0%, #c0392b 100%);
 }
