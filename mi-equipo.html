@@ -144,13 +144,12 @@
         </div>
     </main>
 
-    <!-- Modal Formulario 100% Saneado -->
+    <!-- Modal Formulario Saneado -->
     <div id="player-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2 id="modal-title" style="margin-bottom: 1.5rem;">Agregar Jugador</h2>
             <form id="player-form">
-                <!-- ID oculto vital para la edición -->
                 <input type="hidden" id="player-id">
 
                 <div class="form-group">
@@ -198,12 +197,26 @@
     <div id="api-search-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeApiModal()">&times;</span>
-            <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Buscador FantaPremier</h2>
+            <h2 style="color: var(--text-primary); margin-bottom: 0.2rem;">Buscador FantaPremier</h2>
+            <p style="font-size: 0.85rem; color: #888; margin-top: 0; margin-bottom: 1.5rem; font-style: italic;">
+                Última actualización: 8 de Agosto de 2026
+            </p>
             <div class="search-container" style="margin-bottom: 0;">
-                <input type="text" id="api-search-input" placeholder="Escribe el nombre del jugador (mín. 3 letras)..." autocomplete="off">
+                <input type="text" id="api-search-input" placeholder="Escribe el nombre del jugador (mín. 2 letras)..." autocomplete="off">
             </div>
             <div id="api-search-results" class="api-results-container">
-                <!-- Los resultados aparecerán aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación Personalizado -->
+    <div id="custom-confirm-modal" class="modal" style="display: none; z-index: 2000;">
+        <div class="modal-content" style="max-width: 400px; text-align: center; border-radius: 12px; padding: 2rem;">
+            <h3 id="confirm-title" style="color: var(--text-primary); margin-top: 0; font-size: 1.4rem;">Confirmación</h3>
+            <p id="confirm-message" style="color: #666; margin: 1.5rem 0; font-size: 1rem; line-height: 1.5;"></p>
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
+                <button id="confirm-cancel-btn" onclick="closeCustomConfirm()" style="padding: 0.7rem 1.5rem; border: none; background: #eaeaea; color: #333; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.95rem; width: 120px;">Cancelar</button>
+                <button id="confirm-accept-btn" style="padding: 0.7rem 1.5rem; border: none; background: #e74c3c; color: white; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.95rem; width: 120px;">Eliminar</button>
             </div>
         </div>
     </div>
