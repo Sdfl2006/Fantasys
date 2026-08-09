@@ -68,6 +68,7 @@ async function inyectarJugador() {
             name: playerData.name,
             position: posInterna,
             team: nuevoEquipo,
+            teamId: playerData.primaryTeam?.teamId || 0,
             fotmob: parseFloat(fotmob) || 0,
             vallas: parseInt(vallas) || 0,
             goles: parseInt(goles) || 0,
