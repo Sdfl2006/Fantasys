@@ -157,13 +157,16 @@ function saveData() {
     renderAll();
 }
 
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
     
+    // Forzamos a que el ID sea un String limpio
     const editId = String(document.getElementById('player-id').value).trim();
     const playerName = document.getElementById('player-name').value.trim();
     const pos = document.getElementById('player-position').value;
+    const inputTeam = document.getElementById('player-team').value.trim(); // Lo que escribiste en "Equipo"
     
+    // Validación de duplicados
     const isDuplicate = radarPlayers.some(p => p.name.toLowerCase() === playerName.toLowerCase() && String(p.id) !== editId) || 
                         draftedPlayers.some(p => p.name.toLowerCase() === playerName.toLowerCase() && String(p.id) !== editId);
                         
@@ -172,11 +175,38 @@ function handleFormSubmit(e) {
         return;
     }
 
+    // --- MAGIA: Cargar base de datos silenciosamente si no se ha abierto el buscador ---
+    // Esto previene errores si decides editar apenas abres la página
+    if (apiPlayersData.length === 0) {
+        try {
+            const response = await fetch(`./data/jugadores_${currentLeagueId}.json`);
+            if (response.ok) apiPlayersData = await response.json();
+        } catch (error) {
+            console.warn('No se pudo cargar la base de datos local para los escudos.');
+        }
+    }
+
+    // --- RESCATE BLINDADO DE LA FOTO Y EL ESCUDO ---
     let imagenGuardada = '';
+    let assignedTeamId = 0;
+
+    // 1. Buscamos si el equipo escrito existe en nuestra base de datos para robarle el ID del escudo
+    const apiMatch = apiPlayersData.find(p => p.team.toLowerCase() === inputTeam.toLowerCase());
+    if (apiMatch) {
+        assignedTeamId = apiMatch.teamId;
+    }
+
+    // 2. Rescate de foto e ID previo (si existe)
     if (editId) {
         const jugadorPrevio = radarPlayers.find(p => String(p.id) === editId);
-        if (jugadorPrevio && jugadorPrevio.imagen) {
-            imagenGuardada = jugadorPrevio.imagen;
+        if (jugadorPrevio) {
+            if (jugadorPrevio.imagen) {
+                imagenGuardada = jugadorPrevio.imagen; // Mantenemos su foto de FotMob
+            }
+            // Si el equipo que escribiste NO está en la API, pero NO lo cambiaste, mantén el escudo que ya tenía
+            if (!apiMatch && jugadorPrevio.team.toLowerCase() === inputTeam.toLowerCase()) {
+                assignedTeamId = jugadorPrevio.teamId;
+            }
         }
     }
 
@@ -184,8 +214,8 @@ function handleFormSubmit(e) {
         id: editId ? editId : 'manual_' + Date.now().toString(),
         name: playerName,
         position: pos,
-        team: document.getElementById('player-team').value,
-        teamId: editId ? radarPlayers.find(p => String(p.id) === editId)?.teamId || 0 : 0,
+        team: inputTeam,
+        teamId: assignedTeamId, // ¡Ahora el escudo se actualiza dinámicamente!
         fotmob: parseFloat(document.getElementById('player-fotmob').value) || 0,
         vallas: pos === 'porterias' ? parseInt(document.getElementById('player-vallas').value) || 0 : null,
         goles: pos !== 'porterias' ? parseInt(document.getElementById('player-goles').value) || 0 : null,
