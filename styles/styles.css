@@ -228,7 +228,7 @@ header {
 /* =========================================
    8. BOTONES DE ACCIÓN Y FORMULARIOS
    ========================================= */
-.add-player-btn, .move-btn, .edit-btn, .delete-btn, .select-btn {
+.add-player-btn, .move-btn, .edit-btn, .delete-btn, .select-btn, .taken-btn {
     padding: 0.5rem 0.8rem;
     border: none;
     border-radius: 6px;
@@ -244,7 +244,7 @@ header {
 
 .add-player-btn { display: block; margin: 0; padding: 0.8rem 2rem; font-size: 1rem; }
 #player-form button { background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%); color: white; padding: 1rem 1.5rem; border-radius: 6px; cursor: pointer; font-size: 1.1rem; font-weight: 700; width: 100%; margin-top: 1rem; border: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-.add-player-btn:hover, .move-btn:hover, .edit-btn:hover, .delete-btn:hover, .select-btn:hover, #player-form button:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.25); }
+.add-player-btn:hover, .move-btn:hover, .edit-btn:hover, .delete-btn:hover, .select-btn:hover, .taken-btn:hover, #player-form button:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.25); }
 .move-btn:disabled { background: #cccccc; cursor: not-allowed; transform: none; box-shadow: none; opacity: 0.6; }
 
 /* =========================================
@@ -451,4 +451,18 @@ header {
 #api-search-input:focus {
     border-color: var(--btn-start);
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* =========================================
+   14. ESTADO: JUGADOR TOMADO (OTRO EQUIPO)
+   ========================================= */
+.player-taken {
+    opacity: 0.55;
+    background-color: #e0e0e0 !important;
+    filter: grayscale(100%); /* Quita el color a la foto y al escudo */
+    transition: all 0.3s ease;
+}
+.player-taken strong {
+    text-decoration: line-through;
+    color: #666 !important;
 }

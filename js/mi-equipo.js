@@ -291,6 +291,15 @@ window.movePlayer = function(id, direction) {
     }
 };
 
+window.toggleTaken = function(id) {
+    const index = radarPlayers.findIndex(p => String(p.id) === String(id));
+    if (index > -1) {
+        // Invierte el estado: si estaba libre se marca como tomado, y viceversa
+        radarPlayers[index].taken = !radarPlayers[index].taken;
+        saveData(); // Guarda en localStorage y recarga la tabla
+    }
+};
+
 window.deleteFromRadar = function(id) {
     const player = radarPlayers.find(p => p.id === id);
     if (!player) return;
@@ -574,6 +583,12 @@ function renderAll() {
     filteredPlayers.forEach(player => {
         const tbody = document.getElementById(`tbody-${player.position}`);
         const tr = document.createElement('tr');
+        
+        // --- NUEVO: Si el jugador fue tomado por un rival, le aplicamos la clase ---
+        if (player.taken) {
+            tr.classList.add('player-taken');
+        }
+
         const numeroFila = contadores[player.position]++;
         
         let statsHTML = '';
@@ -608,9 +623,12 @@ function renderAll() {
                 ${arrowBtns}
                 <button class="edit-btn" onclick="editPlayer('${player.id}')">Editar</button>
                 <button class="select-btn" onclick="draftPlayer('${player.id}')">Draftear</button>
+                <button class="taken-btn" onclick="toggleTaken('${player.id}')">${player.taken ? 'Libre' : 'Drafteado'}</button>
+                
                 <button class="delete-btn" onclick="deleteFromRadar('${player.id}')">X</button>
             </td>
         `;
+
         tbody.appendChild(tr);
     });
 
