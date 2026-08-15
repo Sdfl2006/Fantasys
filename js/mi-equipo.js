@@ -265,19 +265,31 @@ window.editPlayer = function(id) {
 }
 
 window.movePlayer = function(id, direction) {
-    const index = radarPlayers.findIndex(p => p.id === id);
-    if (index === -1) return;
+    const playerIndex = radarPlayers.findIndex(p => String(p.id) === String(id));
+    if (playerIndex === -1) return;
 
-    sortState.column = null;
-
-    if (direction === 'up' && index > 0) {
-        [radarPlayers[index], radarPlayers[index - 1]] = [radarPlayers[index - 1], radarPlayers[index]];
-    } else if (direction === 'down' && index < radarPlayers.length - 1) {
-        [radarPlayers[index], radarPlayers[index + 1]] = [radarPlayers[index + 1], radarPlayers[index]];
-    }
+    const player = radarPlayers[playerIndex];
     
-    saveData();
-}
+    const positionPlayers = radarPlayers.filter(p => p.position === player.position);
+    const posIndex = positionPlayers.findIndex(p => String(p.id) === String(id));
+
+    let swapTargetId = null;
+
+    if (direction === 'up' && posIndex > 0) {
+        swapTargetId = positionPlayers[posIndex - 1].id;
+    } else if (direction === 'down' && posIndex < positionPlayers.length - 1) {
+        swapTargetId = positionPlayers[posIndex + 1].id;
+    }
+
+    if (swapTargetId) {
+        const swapTargetIndex = radarPlayers.findIndex(p => String(p.id) === String(swapTargetId));
+        
+        [radarPlayers[playerIndex], radarPlayers[swapTargetIndex]] = [radarPlayers[swapTargetIndex], radarPlayers[playerIndex]];
+        
+        sortState.column = null;
+        saveData();
+    }
+};
 
 window.deleteFromRadar = function(id) {
     const player = radarPlayers.find(p => p.id === id);
