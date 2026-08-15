@@ -57,6 +57,32 @@ document.addEventListener('DOMContentLoaded', () => {
             renderAll();
         });
     });
+
+    // --- MAGIA: Inicializar Drag & Drop para todas las tablas ---
+    ['porterias', 'defensas', 'mediocampistas', 'delanteros'].forEach(pos => {
+        const tbody = document.getElementById(`tbody-${pos}`);
+        if (tbody) {
+            new Sortable(tbody, {
+                handle: '.drag-handle', // Obliga a que solo se pueda arrastrar desde el botón "☰" (vital para móviles)
+                animation: 150, // Animación fluida y profesional
+                onEnd: function (evt) {
+                    // 1. Cuando sueltas al jugador, leemos el nuevo orden directamente del HTML
+                    const newOrderIds = Array.from(tbody.querySelectorAll('tr')).map(tr => tr.getAttribute('data-id'));
+                    
+                    // 2. Separamos los jugadores de esta posición del resto
+                    const otrosJugadores = radarPlayers.filter(p => p.position !== pos);
+                    const jugadoresEstaPosicion = radarPlayers.filter(p => p.position === pos);
+                    
+                    // 3. Reordenamos internamente según como los dejaste en pantalla
+                    jugadoresEstaPosicion.sort((a, b) => newOrderIds.indexOf(String(a.id)) - newOrderIds.indexOf(String(b.id)));
+                    
+                    // 4. Volvemos a unir la base de datos y guardamos
+                    radarPlayers = [...otrosJugadores, ...jugadoresEstaPosicion];
+                    saveData(); // Al guardar, la tabla se recarga y los números (#) de la izquierda se actualizan al instante
+                }
+            });
+        }
+    });
 });
 
 window.openTab = function(evt, tabName) {
@@ -263,33 +289,6 @@ window.editPlayer = function(id) {
     const floatBtn = document.querySelector('.jugadores-total-btn');
     if(floatBtn) floatBtn.style.display = 'none';
 }
-
-window.movePlayer = function(id, direction) {
-    const playerIndex = radarPlayers.findIndex(p => String(p.id) === String(id));
-    if (playerIndex === -1) return;
-
-    const player = radarPlayers[playerIndex];
-    
-    const positionPlayers = radarPlayers.filter(p => p.position === player.position);
-    const posIndex = positionPlayers.findIndex(p => String(p.id) === String(id));
-
-    let swapTargetId = null;
-
-    if (direction === 'up' && posIndex > 0) {
-        swapTargetId = positionPlayers[posIndex - 1].id;
-    } else if (direction === 'down' && posIndex < positionPlayers.length - 1) {
-        swapTargetId = positionPlayers[posIndex + 1].id;
-    }
-
-    if (swapTargetId) {
-        const swapTargetIndex = radarPlayers.findIndex(p => String(p.id) === String(swapTargetId));
-        
-        [radarPlayers[playerIndex], radarPlayers[swapTargetIndex]] = [radarPlayers[swapTargetIndex], radarPlayers[playerIndex]];
-        
-        sortState.column = null;
-        saveData();
-    }
-};
 
 window.toggleTaken = function(id) {
     const index = radarPlayers.findIndex(p => String(p.id) === String(id));
@@ -584,7 +583,9 @@ function renderAll() {
         const tbody = document.getElementById(`tbody-${player.position}`);
         const tr = document.createElement('tr');
         
-        // --- NUEVO: Si el jugador fue tomado por un rival, le aplicamos la clase ---
+        // NUEVO: Le inyectamos el ID al HTML para que el Drag & Drop sepa a quién movemos
+        tr.setAttribute('data-id', player.id); 
+
         if (player.taken) {
             tr.classList.add('player-taken');
         }
@@ -598,9 +599,8 @@ function renderAll() {
             statsHTML = `<td>${player.goles}</td><td>${player.asistencias}</td><td>${player.fotmob.toFixed(2)}</td>`;
         }
 
-        let arrowBtns = isSortedOrFiltered ? '' : `
-            <button class="move-btn" onclick="movePlayer('${player.id}', 'up')" title="Subir">▲</button>
-            <button class="move-btn" onclick="movePlayer('${player.id}', 'down')" title="Bajar">▼</button>
+        let dragBtn = isSortedOrFiltered ? '' : `
+            <button class="move-btn drag-handle" style="cursor: grab; font-size: 1.2rem; padding: 0.2rem 0.5rem;" title="Arrastrar para mover">☰\</button>
         `;
 
         const iniciales = player.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
@@ -620,11 +620,10 @@ function renderAll() {
 
             ${statsHTML}
             <td>
-                ${arrowBtns}
+                ${dragBtn}
                 <button class="edit-btn" onclick="editPlayer('${player.id}')">Editar</button>
                 <button class="select-btn" onclick="draftPlayer('${player.id}')">Draftear</button>
-                <button class="taken-btn" onclick="toggleTaken('${player.id}')">${player.taken ? 'Libre' : 'Drafteado'}</button>
-                
+                <button class="taken-btn" onclick="toggleTaken('${player.id}')">${player.taken ? 'Libre' : 'Tomado'}</button>
                 <button class="delete-btn" onclick="deleteFromRadar('${player.id}')">X</button>
             </td>
         `;
