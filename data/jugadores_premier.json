@@ -12,18 +12,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1067256.png"
   },
   {
-    "id": "fotmob_95336",
-    "name": "Fraser Forster",
-    "position": "porterias",
-    "team": "AFC Bournemouth",
-    "teamId": 8678,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/95336.png"
-  },
-  {
     "id": "fotmob_1096635",
     "name": "Will Dennis",
     "position": "porterias",
@@ -34,6 +22,18 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1096635.png"
+  },
+  {
+    "id": "fotmob_95336",
+    "name": "Fraser Forster",
+    "position": "porterias",
+    "team": "AFC Bournemouth",
+    "teamId": 8678,
+    "fotmob": 0,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/95336.png"
   },
   {
     "id": "fotmob_1027447",
@@ -147,25 +147,13 @@
     "id": "fotmob_1347568",
     "name": "Matai Akinmboni",
     "position": "defensas",
-    "team": "AFC Bournemouth U21",
-    "teamId": 2128213,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1347568.png"
-  },
-  {
-    "id": "fotmob_1697214",
-    "name": "Ben Winterburn",
-    "position": "mediocampistas",
     "team": "AFC Bournemouth",
     "teamId": 8678,
     "fotmob": 0,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1697214.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1347568.png"
   },
   {
     "id": "fotmob_562724",
@@ -216,18 +204,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/729769.png"
   },
   {
-    "id": "fotmob_789630",
-    "name": "Marcus Tavernier",
-    "position": "mediocampistas",
-    "team": "AFC Bournemouth",
-    "teamId": 8678,
-    "fotmob": 7.24,
-    "vallas": 0,
-    "goles": 7,
-    "asistencias": 4,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/789630.png"
-  },
-  {
     "id": "fotmob_794253",
     "name": "Justin Kluivert",
     "position": "mediocampistas",
@@ -252,6 +228,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1460534.png"
   },
   {
+    "id": "fotmob_1158512",
+    "name": "Juanlu Sánchez",
+    "position": "mediocampistas",
+    "team": "AFC Bournemouth",
+    "teamId": 8678,
+    "fotmob": 6.75,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 3,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1158512.png"
+  },
+  {
     "id": "fotmob_1449690",
     "name": "Alex Tóth",
     "position": "mediocampistas",
@@ -264,52 +252,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1449690.png"
   },
   {
-    "id": "fotmob_1896299",
-    "name": "Charlie Stevens",
+    "id": "fotmob_1697214",
+    "name": "Ben Winterburn",
     "position": "mediocampistas",
-    "team": "AFC Bournemouth U21",
-    "teamId": 2128213,
+    "team": "AFC Bournemouth",
+    "teamId": 8678,
     "fotmob": 0,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1896299.png"
-  },
-  {
-    "id": "fotmob_1327406",
-    "name": "Álvaro Rodriguez",
-    "position": "delanteros",
-    "team": "AFC Bournemouth",
-    "teamId": 8678,
-    "fotmob": 6.93,
-    "vallas": 0,
-    "goles": 7,
-    "asistencias": 5,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1327406.png"
-  },
-  {
-    "id": "fotmob_1699539",
-    "name": "Jonny Stuttle",
-    "position": "delanteros",
-    "team": "AFC Bournemouth U21",
-    "teamId": 2128213,
-    "fotmob": 5.94,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1699539.png"
-  },
-  {
-    "id": "fotmob_904021",
-    "name": "Romain Faivre",
-    "position": "delanteros",
-    "team": "AFC Bournemouth",
-    "teamId": 8678,
-    "fotmob": 7.14,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/904021.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1697214.png"
   },
   {
     "id": "fotmob_674014",
@@ -348,6 +300,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1324871.png"
   },
   {
+    "id": "fotmob_789630",
+    "name": "Marcus Tavernier",
+    "position": "delanteros",
+    "team": "AFC Bournemouth",
+    "teamId": 8678,
+    "fotmob": 7.24,
+    "vallas": 0,
+    "goles": 7,
+    "asistencias": 4,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/789630.png"
+  },
+  {
     "id": "fotmob_1079557",
     "name": "Amine Adli",
     "position": "delanteros",
@@ -358,18 +322,6 @@
     "goles": 3,
     "asistencias": 1,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1079557.png"
-  },
-  {
-    "id": "fotmob_464486",
-    "name": "Enes Ünal",
-    "position": "delanteros",
-    "team": "AFC Bournemouth",
-    "teamId": 8678,
-    "fotmob": 6.1,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/464486.png"
   },
   {
     "id": "fotmob_1253827",
@@ -384,6 +336,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1253827.png"
   },
   {
+    "id": "fotmob_1327406",
+    "name": "Álvaro Rodriguez",
+    "position": "delanteros",
+    "team": "AFC Bournemouth",
+    "teamId": 8678,
+    "fotmob": 6.93,
+    "vallas": 0,
+    "goles": 7,
+    "asistencias": 5,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1327406.png"
+  },
+  {
     "id": "fotmob_1478295",
     "name": "Rayan",
     "position": "delanteros",
@@ -396,25 +360,13 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1478295.png"
   },
   {
-    "id": "fotmob_1702426",
-    "name": "Remy Rees-Dottin",
-    "position": "delanteros",
-    "team": "AFC Bournemouth U21",
-    "teamId": 2128213,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1702426.png"
-  },
-  {
     "id": "fotmob_562727",
     "name": "David Raya",
     "position": "porterias",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.21,
-    "vallas": 19,
+    "fotmob": 7.32,
+    "vallas": 1,
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/562727.png"
@@ -437,7 +389,7 @@
     "position": "porterias",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.57,
+    "fotmob": 6.69,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
@@ -447,13 +399,25 @@
     "id": "fotmob_1243239",
     "name": "Tommy Setford",
     "position": "porterias",
-    "team": "Arsenal U21",
-    "teamId": 950214,
-    "fotmob": 7.022222222222222,
+    "team": "Arsenal",
+    "teamId": 9825,
+    "fotmob": 7.1,
     "vallas": 3,
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1243239.png"
+  },
+  {
+    "id": "fotmob_710159",
+    "name": "Ezri Konsa",
+    "position": "defensas",
+    "team": "Aston Villa",
+    "teamId": 10252,
+    "fotmob": 6.75,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/710159.png"
   },
   {
     "id": "fotmob_955406",
@@ -473,7 +437,7 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.85,
+    "fotmob": 7.22,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
@@ -485,7 +449,7 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.92,
+    "fotmob": 8.36,
     "vallas": 0,
     "goles": 0,
     "asistencias": 1,
@@ -497,10 +461,10 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.07,
+    "fotmob": 0,
     "vallas": 0,
-    "goles": 1,
-    "asistencias": 2,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1137667.png"
   },
   {
@@ -509,10 +473,10 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.32,
+    "fotmob": 6.71,
     "vallas": 0,
-    "goles": 3,
-    "asistencias": 4,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/795179.png"
   },
   {
@@ -533,10 +497,10 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.15,
+    "fotmob": 7.81,
     "vallas": 0,
-    "goles": 1,
-    "asistencias": 2,
+    "goles": 0,
+    "asistencias": 1,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1105912.png"
   },
   {
@@ -545,23 +509,11 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.55,
+    "fotmob": 7.66,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1406436.png"
-  },
-  {
-    "id": "fotmob_1787525",
-    "name": "Marli Salmon",
-    "position": "defensas",
-    "team": "Arsenal U21",
-    "teamId": 950214,
-    "fotmob": 6.552142857142857,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1787525.png"
   },
   {
     "id": "fotmob_534670",
@@ -569,10 +521,10 @@
     "position": "mediocampistas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7,
+    "fotmob": 8.58,
     "vallas": 0,
     "goles": 1,
-    "asistencias": 6,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/534670.png"
   },
   {
@@ -581,10 +533,10 @@
     "position": "mediocampistas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.97,
+    "fotmob": 6.34,
     "vallas": 0,
-    "goles": 7,
-    "asistencias": 2,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/818975.png"
   },
   {
@@ -617,10 +569,10 @@
     "position": "mediocampistas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.93,
+    "fotmob": 6.51,
     "vallas": 0,
-    "goles": 4,
-    "asistencias": 3,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/574645.png"
   },
   {
@@ -629,23 +581,23 @@
     "position": "mediocampistas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.2,
+    "fotmob": 6.58,
     "vallas": 0,
-    "goles": 5,
-    "asistencias": 1,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1031325.png"
   },
   {
-    "id": "fotmob_1526415",
-    "name": "Louie Copley",
+    "id": "fotmob_850354",
+    "name": "Bruno Guimarães",
     "position": "mediocampistas",
-    "team": "Arsenal U21",
-    "teamId": 950214,
-    "fotmob": 7.12,
+    "team": "Arsenal",
+    "teamId": 9825,
+    "fotmob": 7.52,
     "vallas": 0,
-    "goles": 1,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1526415.png"
+    "goles": 9,
+    "asistencias": 5,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/850354.png"
   },
   {
     "id": "fotmob_654096",
@@ -653,35 +605,11 @@
     "position": "mediocampistas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.56,
+    "fotmob": 7.19,
     "vallas": 0,
-    "goles": 4,
-    "asistencias": 5,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/654096.png"
-  },
-  {
-    "id": "fotmob_1635773",
-    "name": "Max Dowman",
-    "position": "mediocampistas",
-    "team": "Arsenal",
-    "teamId": 9825,
-    "fotmob": 6.76,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1635773.png"
-  },
-  {
-    "id": "fotmob_1680340",
-    "name": "Demiane Agustien",
-    "position": "mediocampistas",
-    "team": "Arsenal U21",
-    "teamId": 950214,
-    "fotmob": 6.746874999999999,
-    "vallas": 0,
-    "goles": 4,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1680340.png"
   },
   {
     "id": "fotmob_961995",
@@ -689,10 +617,10 @@
     "position": "delanteros",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.52,
+    "fotmob": 8.41,
     "vallas": 0,
-    "goles": 7,
-    "asistencias": 5,
+    "goles": 1,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/961995.png"
   },
   {
@@ -737,10 +665,10 @@
     "position": "delanteros",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 8.070555555555554,
+    "fotmob": 7.75,
     "vallas": 0,
-    "goles": 17,
-    "asistencias": 23,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1157237.png"
   },
   {
@@ -749,10 +677,10 @@
     "position": "delanteros",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.72,
+    "fotmob": 7.28,
     "vallas": 0,
-    "goles": 3,
-    "asistencias": 1,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1084981.png"
   },
   {
@@ -773,11 +701,35 @@
     "position": "delanteros",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.83,
+    "fotmob": 7.94,
     "vallas": 0,
-    "goles": 2,
-    "asistencias": 3,
+    "goles": 1,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/749736.png"
+  },
+  {
+    "id": "fotmob_1635773",
+    "name": "Max Dowman",
+    "position": "delanteros",
+    "team": "Arsenal",
+    "teamId": 9825,
+    "fotmob": 6.76,
+    "vallas": 0,
+    "goles": 1,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1635773.png"
+  },
+  {
+    "id": "fotmob_1053679",
+    "name": "Zion Suzuki",
+    "position": "porterias",
+    "team": "Aston Villa",
+    "teamId": 10252,
+    "fotmob": 6.95,
+    "vallas": 5,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1053679.png"
   },
   {
     "id": "fotmob_268375",
@@ -804,28 +756,28 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/195782.png"
   },
   {
-    "id": "fotmob_1683824",
-    "name": "Ronnie Hollingshead",
-    "position": "porterias",
-    "team": "Aston Villa",
-    "teamId": 10252,
-    "fotmob": 6.23,
+    "id": "fotmob_760320",
+    "name": "Aaron Wan-Bissaka",
+    "position": "defensas",
+    "team": "West Ham United",
+    "teamId": 8654,
+    "fotmob": 6.8,
     "vallas": 0,
     "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1683824.png"
+    "asistencias": 2,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/760320.png"
   },
   {
-    "id": "fotmob_1818295",
-    "name": "Rhys Oakley",
-    "position": "porterias",
+    "id": "fotmob_1051097",
+    "name": "Matteo Ruggeri",
+    "position": "defensas",
     "team": "Aston Villa",
     "teamId": 10252,
-    "fotmob": 0,
+    "fotmob": 6.96,
     "vallas": 0,
     "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1818295.png"
+    "asistencias": 3,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1051097.png"
   },
   {
     "id": "fotmob_729731",
@@ -852,18 +804,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/258269.png"
   },
   {
-    "id": "fotmob_710159",
-    "name": "Ezri Konsa",
-    "position": "defensas",
-    "team": "Aston Villa",
-    "teamId": 10252,
-    "fotmob": 6.75,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/710159.png"
-  },
-  {
     "id": "fotmob_419664",
     "name": "Tyrone Mings",
     "position": "defensas",
@@ -876,18 +816,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/419664.png"
   },
   {
-    "id": "fotmob_210111",
-    "name": "Lucas Digne",
-    "position": "defensas",
-    "team": "Aston Villa",
-    "teamId": 10252,
-    "fotmob": 6.8,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 6,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/210111.png"
-  },
-  {
     "id": "fotmob_792645",
     "name": "Pau Torres",
     "position": "defensas",
@@ -898,18 +826,6 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/792645.png"
-  },
-  {
-    "id": "fotmob_1513910",
-    "name": "Kosta Nedeljkovic",
-    "position": "defensas",
-    "team": "Aston Villa",
-    "teamId": 10252,
-    "fotmob": 6.15,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1513910.png"
   },
   {
     "id": "fotmob_966026",
@@ -925,7 +841,7 @@
   },
   {
     "id": "fotmob_1714552",
-    "name": "Modou Cissé",
+    "name": "Modou Kéba Cissé",
     "position": "defensas",
     "team": "Aston Villa",
     "teamId": 10252,
@@ -934,18 +850,6 @@
     "goles": 2,
     "asistencias": 3,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1714552.png"
-  },
-  {
-    "id": "fotmob_1520063",
-    "name": "Johan Manzambi",
-    "position": "mediocampistas",
-    "team": "Aston Villa",
-    "teamId": 10252,
-    "fotmob": 7.07,
-    "vallas": 0,
-    "goles": 5,
-    "asistencias": 4,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1520063.png"
   },
   {
     "id": "fotmob_215384",
@@ -1008,16 +912,28 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1174672.png"
   },
   {
-    "id": "fotmob_1368061",
-    "name": "Samuel Iling-Junior",
-    "position": "delanteros",
+    "id": "fotmob_1520063",
+    "name": "Johan Manzambi",
+    "position": "mediocampistas",
     "team": "Aston Villa",
     "teamId": 10252,
-    "fotmob": 6.48,
+    "fotmob": 7.07,
     "vallas": 0,
-    "goles": 1,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1368061.png"
+    "goles": 5,
+    "asistencias": 4,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1520063.png"
+  },
+  {
+    "id": "fotmob_1607333",
+    "name": "George Hemmings",
+    "position": "mediocampistas",
+    "team": "Aston Villa U19",
+    "teamId": 394201,
+    "fotmob": 7.228181818181818,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 3,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1607333.png"
   },
   {
     "id": "fotmob_356406",
@@ -1078,18 +994,6 @@
     "goles": 2,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/749661.png"
-  },
-  {
-    "id": "fotmob_1087966",
-    "name": "Evann Guessand",
-    "position": "delanteros",
-    "team": "Aston Villa",
-    "teamId": 10252,
-    "fotmob": 6.45,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1087966.png"
   },
   {
     "id": "fotmob_671331",
@@ -1155,61 +1059,13 @@
     "id": "fotmob_806579",
     "name": "Ellery Balcombe",
     "position": "porterias",
-    "team": "Brentford",
-    "teamId": 9937,
+    "team": "Brentford Academy",
+    "teamId": 2054260,
     "fotmob": 0,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/806579.png"
-  },
-  {
-    "id": "fotmob_1712233",
-    "name": "Julian Eyestone",
-    "position": "porterias",
-    "team": "Brentford U21",
-    "teamId": 2128221,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1712233.png"
-  },
-  {
-    "id": "fotmob_1478706",
-    "name": "Benjamin Fredrick",
-    "position": "defensas",
-    "team": "Brentford",
-    "teamId": 9937,
-    "fotmob": 6.47,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1478706.png"
-  },
-  {
-    "id": "fotmob_1572340",
-    "name": "Jannik Schuster",
-    "position": "defensas",
-    "team": "Brentford",
-    "teamId": 9937,
-    "fotmob": 7.313157894736841,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1572340.png"
-  },
-  {
-    "id": "fotmob_1341538",
-    "name": "Ji-Soo Kim",
-    "position": "defensas",
-    "team": "Brentford",
-    "teamId": 9937,
-    "fotmob": 6.61,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1341538.png"
   },
   {
     "id": "fotmob_1002039",
@@ -1272,6 +1128,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/552718.png"
   },
   {
+    "id": "fotmob_1574106",
+    "name": "Jayden Meghoma",
+    "position": "defensas",
+    "team": "Brentford",
+    "teamId": 9937,
+    "fotmob": 7.024444444444445,
+    "vallas": 0,
+    "goles": 1,
+    "asistencias": 4,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1574106.png"
+  },
+  {
     "id": "fotmob_961306",
     "name": "Nathan Collins",
     "position": "defensas",
@@ -1308,40 +1176,52 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1429912.png"
   },
   {
-    "id": "fotmob_1574106",
-    "name": "Jayden Meghoma",
+    "id": "fotmob_1341538",
+    "name": "Ji-Soo Kim",
     "position": "defensas",
     "team": "Brentford",
     "teamId": 9937,
-    "fotmob": 7.033703703703703,
+    "fotmob": 6.61,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1341538.png"
+  },
+  {
+    "id": "fotmob_1478706",
+    "name": "Benjamin Fredrick",
+    "position": "defensas",
+    "team": "Brentford",
+    "teamId": 9937,
+    "fotmob": 6.47,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1478706.png"
+  },
+  {
+    "id": "fotmob_1572340",
+    "name": "Jannik Schuster",
+    "position": "defensas",
+    "team": "Brentford Academy",
+    "teamId": 2054260,
+    "fotmob": 7.313157894736841,
     "vallas": 0,
     "goles": 1,
-    "asistencias": 4,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1574106.png"
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1572340.png"
   },
   {
-    "id": "fotmob_2130320",
-    "name": "Andre Grey",
-    "position": "defensas",
+    "id": "fotmob_1157236",
+    "name": "Yehor Yarmoliuk",
+    "position": "mediocampistas",
     "team": "Brentford",
     "teamId": 9937,
-    "fotmob": 0,
+    "fotmob": 6.78,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/2130320.png"
-  },
-  {
-    "id": "fotmob_1621143",
-    "name": "Benjamin Arthur",
-    "position": "defensas",
-    "team": "Brentford",
-    "teamId": 9937,
-    "fotmob": 7.21,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1621143.png"
+    "goles": 1,
+    "asistencias": 2,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1157236.png"
   },
   {
     "id": "fotmob_650616",
@@ -1392,18 +1272,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1185211.png"
   },
   {
-    "id": "fotmob_1157236",
-    "name": "Yehor Yarmoliuk",
-    "position": "mediocampistas",
-    "team": "Brentford",
-    "teamId": 9937,
-    "fotmob": 6.78,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1157236.png"
-  },
-  {
     "id": "fotmob_888912",
     "name": "Mikkel Damsgaard",
     "position": "mediocampistas",
@@ -1426,42 +1294,6 @@
     "goles": 1,
     "asistencias": 4,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/688273.png"
-  },
-  {
-    "id": "fotmob_1676964",
-    "name": "Luca Picotto",
-    "position": "mediocampistas",
-    "team": "Brentford U21",
-    "teamId": 2128221,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1676964.png"
-  },
-  {
-    "id": "fotmob_1899946",
-    "name": "Luka Bentt",
-    "position": "mediocampistas",
-    "team": "Brentford U21",
-    "teamId": 2128221,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1899946.png"
-  },
-  {
-    "id": "fotmob_1516030",
-    "name": "Gustavo Nunes",
-    "position": "delanteros",
-    "team": "Brentford",
-    "teamId": 9937,
-    "fotmob": 6.51,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1516030.png"
   },
   {
     "id": "fotmob_1083796",
@@ -1500,6 +1332,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1250253.png"
   },
   {
+    "id": "fotmob_184321",
+    "name": "Callum Wilson",
+    "position": "delanteros",
+    "team": "Brentford",
+    "teamId": 9937,
+    "fotmob": 6.4,
+    "vallas": 0,
+    "goles": 7,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/184321.png"
+  },
+  {
     "id": "fotmob_963965",
     "name": "Fábio Carvalho",
     "position": "delanteros",
@@ -1524,16 +1368,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1171140.png"
   },
   {
-    "id": "fotmob_184321",
-    "name": "Callum Wilson",
+    "id": "fotmob_1516030",
+    "name": "Gustavo Nunes",
     "position": "delanteros",
-    "team": "Brentford",
-    "teamId": 9937,
-    "fotmob": 6.4,
+    "team": "Brentford Academy",
+    "teamId": 2054260,
+    "fotmob": 6.51,
     "vallas": 0,
-    "goles": 7,
+    "goles": 0,
     "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/184321.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1516030.png"
   },
   {
     "id": "fotmob_1413853",
@@ -1572,16 +1416,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/107917.png"
   },
   {
-    "id": "fotmob_951921",
-    "name": "Michael Svoboda",
+    "id": "fotmob_768331",
+    "name": "Igor Julio",
     "position": "defensas",
     "team": "Brighton & Hove Albion",
     "teamId": 10204,
-    "fotmob": 7.69,
+    "fotmob": 6.72,
     "vallas": 0,
-    "goles": 3,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/951921.png"
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/768331.png"
   },
   {
     "id": "fotmob_796974",
@@ -1596,18 +1440,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/796974.png"
   },
   {
-    "id": "fotmob_768331",
-    "name": "Igor Julio",
-    "position": "defensas",
-    "team": "Brighton & Hove Albion",
-    "teamId": 10204,
-    "fotmob": 6.72,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/768331.png"
-  },
-  {
     "id": "fotmob_201690",
     "name": "Lewis Dunk",
     "position": "defensas",
@@ -1618,6 +1450,18 @@
     "goles": 1,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/201690.png"
+  },
+  {
+    "id": "fotmob_1127305",
+    "name": "Eiran Cashin",
+    "position": "defensas",
+    "team": "Brighton & Hove Albion",
+    "teamId": 10204,
+    "fotmob": 7.13,
+    "vallas": 0,
+    "goles": 1,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1127305.png"
   },
   {
     "id": "fotmob_1079456",
@@ -1680,6 +1524,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1134871.png"
   },
   {
+    "id": "fotmob_951921",
+    "name": "Michael Svoboda",
+    "position": "defensas",
+    "team": "Brighton & Hove Albion",
+    "teamId": 10204,
+    "fotmob": 7.69,
+    "vallas": 0,
+    "goles": 3,
+    "asistencias": 2,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/951921.png"
+  },
+  {
     "id": "fotmob_1413996",
     "name": "Luka Vuskovic",
     "position": "defensas",
@@ -1692,30 +1548,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1413996.png"
   },
   {
-    "id": "fotmob_1127305",
-    "name": "Eiran Cashin",
-    "position": "defensas",
-    "team": "Brighton & Hove Albion",
-    "teamId": 10204,
-    "fotmob": 7.13,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1127305.png"
-  },
-  {
-    "id": "fotmob_1336566",
-    "name": "Facundo Buonanotte",
-    "position": "mediocampistas",
-    "team": "Brighton & Hove Albion",
-    "teamId": 10204,
-    "fotmob": 6.16,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1336566.png"
-  },
-  {
     "id": "fotmob_1251334",
     "name": "Jack Hinshelwood",
     "position": "mediocampistas",
@@ -1726,6 +1558,18 @@
     "goles": 4,
     "asistencias": 3,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1251334.png"
+  },
+  {
+    "id": "fotmob_167008",
+    "name": "Pascal Groß",
+    "position": "mediocampistas",
+    "team": "Brighton & Hove Albion",
+    "teamId": 10204,
+    "fotmob": 7.2,
+    "vallas": 0,
+    "goles": 1,
+    "asistencias": 3,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/167008.png"
   },
   {
     "id": "fotmob_1352713",
@@ -1764,18 +1608,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1168311.png"
   },
   {
-    "id": "fotmob_167008",
-    "name": "Pascal Groß",
-    "position": "mediocampistas",
-    "team": "Brighton & Hove Albion",
-    "teamId": 10204,
-    "fotmob": 7.2,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 3,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/167008.png"
-  },
-  {
     "id": "fotmob_866686",
     "name": "Matthew O'Riley",
     "position": "mediocampistas",
@@ -1800,28 +1632,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1602352.png"
   },
   {
-    "id": "fotmob_1446616",
-    "name": "Harry Howell",
-    "position": "mediocampistas",
-    "team": "Brighton & Hove Albion U21",
-    "teamId": 773678,
-    "fotmob": 7.265000000000001,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1446616.png"
-  },
-  {
-    "id": "fotmob_1068482",
-    "name": "Evan Ferguson",
+    "id": "fotmob_1252132",
+    "name": "Promise David",
     "position": "delanteros",
     "team": "Brighton & Hove Albion",
     "teamId": 10204,
-    "fotmob": 6.62,
+    "fotmob": 8.31,
     "vallas": 0,
-    "goles": 3,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1068482.png"
+    "goles": 1,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1252132.png"
   },
   {
     "id": "fotmob_1423616",
@@ -1908,6 +1728,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/862608.png"
   },
   {
+    "id": "fotmob_1068482",
+    "name": "Evan Ferguson",
+    "position": "delanteros",
+    "team": "Brighton & Hove Albion",
+    "teamId": 10204,
+    "fotmob": 6.62,
+    "vallas": 0,
+    "goles": 3,
+    "asistencias": 2,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1068482.png"
+  },
+  {
     "id": "fotmob_1782648",
     "name": "Zadok Yohanna",
     "position": "delanteros",
@@ -1920,18 +1752,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1782648.png"
   },
   {
-    "id": "fotmob_1013046",
-    "name": "James Hillson",
-    "position": "porterias",
-    "team": "Chelsea",
-    "teamId": 8455,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1013046.png"
-  },
-  {
     "id": "fotmob_789571",
     "name": "Robert Sánchez",
     "position": "porterias",
@@ -1942,18 +1762,6 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/789571.png"
-  },
-  {
-    "id": "fotmob_1200984",
-    "name": "Filip Jörgensen",
-    "position": "porterias",
-    "team": "Chelsea",
-    "teamId": 8455,
-    "fotmob": 6.6,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1200984.png"
   },
   {
     "id": "fotmob_1319972",
@@ -1969,12 +1777,12 @@
   },
   {
     "id": "fotmob_1031220",
-    "name": "Gaga Slonina",
+    "name": "Gabriel Slonina",
     "position": "porterias",
-    "team": "Chelsea U21",
-    "teamId": 773652,
-    "fotmob": 6.28,
-    "vallas": 0,
+    "team": "Chelsea",
+    "teamId": 8455,
+    "fotmob": 6.86,
+    "vallas": 1,
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1031220.png"
@@ -2004,28 +1812,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/2062434.png"
   },
   {
-    "id": "fotmob_1419974",
-    "name": "Ishé Samuels-Smith",
+    "id": "fotmob_988805",
+    "name": "Pep Chavarría",
     "position": "defensas",
     "team": "Chelsea",
     "teamId": 8455,
-    "fotmob": 6.58,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1419974.png"
-  },
-  {
-    "id": "fotmob_950485",
-    "name": "Maxence Lacroix",
-    "position": "defensas",
-    "team": "Chelsea",
-    "teamId": 8455,
-    "fotmob": 7.04,
+    "fotmob": 6.86,
     "vallas": 0,
     "goles": 1,
     "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/950485.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/988805.png"
   },
   {
     "id": "fotmob_683402",
@@ -2088,16 +1884,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1413846.png"
   },
   {
-    "id": "fotmob_793907",
-    "name": "Trevoh Chalobah",
+    "id": "fotmob_950485",
+    "name": "Maxence Lacroix",
     "position": "defensas",
     "team": "Chelsea",
     "teamId": 8455,
-    "fotmob": 7.01,
+    "fotmob": 7.04,
     "vallas": 0,
-    "goles": 3,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/793907.png"
+    "goles": 1,
+    "asistencias": 2,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/950485.png"
   },
   {
     "id": "fotmob_807729",
@@ -2172,18 +1968,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1170744.png"
   },
   {
-    "id": "fotmob_1842565",
-    "name": "Harrison Bettoni",
-    "position": "mediocampistas",
-    "team": "Chelsea U21",
-    "teamId": 773652,
-    "fotmob": 6.44,
-    "vallas": 0,
-    "goles": 3,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1842565.png"
-  },
-  {
     "id": "fotmob_156008",
     "name": "Jordan Henderson",
     "position": "mediocampistas",
@@ -2194,18 +1978,6 @@
     "goles": 1,
     "asistencias": 3,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/156008.png"
-  },
-  {
-    "id": "fotmob_1272440",
-    "name": "Valentín Barco",
-    "position": "mediocampistas",
-    "team": "Chelsea",
-    "teamId": 8455,
-    "fotmob": 7.16,
-    "vallas": 0,
-    "goles": 2,
-    "asistencias": 4,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1272440.png"
   },
   {
     "id": "fotmob_1473806",
@@ -2292,6 +2064,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1190867.png"
   },
   {
+    "id": "fotmob_1272440",
+    "name": "Valentín Barco",
+    "position": "mediocampistas",
+    "team": "Chelsea",
+    "teamId": 8455,
+    "fotmob": 7.16,
+    "vallas": 0,
+    "goles": 2,
+    "asistencias": 4,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1272440.png"
+  },
+  {
     "id": "fotmob_1207581",
     "name": "David Datro Fofana",
     "position": "delanteros",
@@ -2302,18 +2086,6 @@
     "goles": 6,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1207581.png"
-  },
-  {
-    "id": "fotmob_1183148",
-    "name": "Emanuel Emegha",
-    "position": "delanteros",
-    "team": "Chelsea",
-    "teamId": 8455,
-    "fotmob": 7.09,
-    "vallas": 0,
-    "goles": 4,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1183148.png"
   },
   {
     "id": "fotmob_843040",
@@ -2388,28 +2160,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1021382.png"
   },
   {
-    "id": "fotmob_1315477",
-    "name": "Omari Kellyman",
+    "id": "fotmob_1183148",
+    "name": "Emanuel Emegha",
     "position": "delanteros",
     "team": "Chelsea",
     "teamId": 8455,
-    "fotmob": 6.98,
+    "fotmob": 7.09,
     "vallas": 0,
-    "goles": 11,
+    "goles": 4,
     "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1315477.png"
-  },
-  {
-    "id": "fotmob_1684584",
-    "name": "Dastan Satpaev",
-    "position": "delanteros",
-    "team": "Chelsea",
-    "teamId": 8455,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1684584.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1183148.png"
   },
   {
     "id": "fotmob_1412137",
@@ -2460,16 +2220,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1530314.png"
   },
   {
-    "id": "fotmob_1346113",
-    "name": "Shumaira Mheuka",
-    "position": "delanteros",
-    "team": "Chelsea U21",
-    "teamId": 773652,
-    "fotmob": 7.646315789473684,
+    "id": "fotmob_189103",
+    "name": "Daniel Bentley",
+    "position": "porterias",
+    "team": "Coventry City",
+    "teamId": 8669,
+    "fotmob": 6.72,
     "vallas": 0,
-    "goles": 18,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1346113.png"
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/189103.png"
   },
   {
     "id": "fotmob_1051407",
@@ -2501,23 +2261,11 @@
     "position": "porterias",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 7.19,
-    "vallas": 17,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1187236.png"
-  },
-  {
-    "id": "fotmob_1821340",
-    "name": "Oscar Varney",
-    "position": "porterias",
-    "team": "Coventry City",
-    "teamId": 8669,
-    "fotmob": 0,
+    "fotmob": 5.88,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1821340.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1187236.png"
   },
   {
     "id": "fotmob_759814",
@@ -2525,10 +2273,10 @@
     "position": "defensas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 7.17,
+    "fotmob": 5.43,
     "vallas": 0,
     "goles": 0,
-    "asistencias": 3,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/759814.png"
   },
   {
@@ -2537,23 +2285,11 @@
     "position": "defensas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 7.33,
-    "vallas": 0,
-    "goles": 3,
-    "asistencias": 4,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1161885.png"
-  },
-  {
-    "id": "fotmob_1257648",
-    "name": "Aurèle Amenda",
-    "position": "defensas",
-    "team": "Coventry City",
-    "teamId": 8669,
-    "fotmob": 6.69,
+    "fotmob": 6.54,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1257648.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1161885.png"
   },
   {
     "id": "fotmob_914399",
@@ -2604,6 +2340,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/863822.png"
   },
   {
+    "id": "fotmob_1257648",
+    "name": "Aurèle Amenda",
+    "position": "defensas",
+    "team": "Coventry City",
+    "teamId": 8669,
+    "fotmob": 5.62,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1257648.png"
+  },
+  {
     "id": "fotmob_866688",
     "name": "Luke Woolfenden",
     "position": "defensas",
@@ -2621,10 +2369,10 @@
     "position": "defensas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 7.21,
+    "fotmob": 4.34,
     "vallas": 0,
     "goles": 0,
-    "asistencias": 8,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1074750.png"
   },
   {
@@ -2640,16 +2388,52 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1358582.png"
   },
   {
-    "id": "fotmob_1970884",
-    "name": "Harri Laidler",
+    "id": "fotmob_1030830",
+    "name": "Jack Rudoni",
     "position": "mediocampistas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 0,
+    "fotmob": 6.55,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1970884.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1030830.png"
+  },
+  {
+    "id": "fotmob_478357",
+    "name": "Matt Grimes",
+    "position": "mediocampistas",
+    "team": "Coventry City",
+    "teamId": 8669,
+    "fotmob": 6.39,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/478357.png"
+  },
+  {
+    "id": "fotmob_1615927",
+    "name": "Caleb Yirenkyi",
+    "position": "mediocampistas",
+    "team": "Coventry City",
+    "teamId": 8669,
+    "fotmob": 5.76,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1615927.png"
+  },
+  {
+    "id": "fotmob_856685",
+    "name": "Frank Onyeka",
+    "position": "mediocampistas",
+    "team": "Coventry City",
+    "teamId": 8669,
+    "fotmob": 6.2,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/856685.png"
   },
   {
     "id": "fotmob_1101043",
@@ -2662,42 +2446,6 @@
     "goles": 1,
     "asistencias": 3,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1101043.png"
-  },
-  {
-    "id": "fotmob_1030830",
-    "name": "Jack Rudoni",
-    "position": "mediocampistas",
-    "team": "Coventry City",
-    "teamId": 8669,
-    "fotmob": 7.18,
-    "vallas": 0,
-    "goles": 7,
-    "asistencias": 6,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1030830.png"
-  },
-  {
-    "id": "fotmob_478357",
-    "name": "Matt Grimes",
-    "position": "mediocampistas",
-    "team": "Coventry City",
-    "teamId": 8669,
-    "fotmob": 7.39,
-    "vallas": 0,
-    "goles": 2,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/478357.png"
-  },
-  {
-    "id": "fotmob_856685",
-    "name": "Frank Onyeka",
-    "position": "mediocampistas",
-    "team": "Coventry City",
-    "teamId": 8669,
-    "fotmob": 6.42,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/856685.png"
   },
   {
     "id": "fotmob_962000",
@@ -2717,10 +2465,10 @@
     "position": "mediocampistas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 7.4,
+    "fotmob": 6.1,
     "vallas": 0,
-    "goles": 10,
-    "asistencias": 7,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/845985.png"
   },
   {
@@ -2734,6 +2482,18 @@
     "goles": 1,
     "asistencias": 1,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1526413.png"
+  },
+  {
+    "id": "fotmob_1524069",
+    "name": "Sidiki Cherif",
+    "position": "delanteros",
+    "team": "Coventry City",
+    "teamId": 8669,
+    "fotmob": 6.48,
+    "vallas": 0,
+    "goles": 4,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1524069.png"
   },
   {
     "id": "fotmob_1025603",
@@ -2753,10 +2513,10 @@
     "position": "delanteros",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 6.75,
+    "fotmob": 6.45,
     "vallas": 0,
-    "goles": 13,
-    "asistencias": 2,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/982284.png"
   },
   {
@@ -2784,15 +2544,27 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/848268.png"
   },
   {
+    "id": "fotmob_643717",
+    "name": "Taiwo Awoniyi",
+    "position": "delanteros",
+    "team": "Coventry City",
+    "teamId": 8669,
+    "fotmob": 6.18,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/643717.png"
+  },
+  {
     "id": "fotmob_1283034",
     "name": "Loum Tchaouna",
     "position": "delanteros",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 6.34,
+    "fotmob": 6.19,
     "vallas": 0,
-    "goles": 2,
-    "asistencias": 1,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1283034.png"
   },
   {
@@ -2801,23 +2573,23 @@
     "position": "delanteros",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 7.09,
+    "fotmob": 6.07,
     "vallas": 0,
-    "goles": 13,
-    "asistencias": 4,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/776184.png"
   },
   {
-    "id": "fotmob_1334842",
-    "name": "Jahnoah Markelo",
+    "id": "fotmob_775355",
+    "name": "Gustavo Hamer",
     "position": "delanteros",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 6.97,
+    "fotmob": 0,
     "vallas": 0,
-    "goles": 2,
-    "asistencias": 3,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1334842.png"
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/775355.png"
   },
   {
     "id": "fotmob_719330",
@@ -2844,18 +2616,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/562726.png"
   },
   {
-    "id": "fotmob_1253868",
-    "name": "Joe Whitworth",
-    "position": "porterias",
-    "team": "Crystal Palace",
-    "teamId": 9826,
-    "fotmob": 7.03,
-    "vallas": 11,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1253868.png"
-  },
-  {
     "id": "fotmob_448897",
     "name": "Walter Benítez",
     "position": "porterias",
@@ -2878,6 +2638,18 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1664722.png"
+  },
+  {
+    "id": "fotmob_664444",
+    "name": "Takehiro Tomiyasu",
+    "position": "defensas",
+    "team": "Crystal Palace",
+    "teamId": 9826,
+    "fotmob": 6.4,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/664444.png"
   },
   {
     "id": "fotmob_950829",
@@ -2904,16 +2676,28 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1187506.png"
   },
   {
-    "id": "fotmob_1559636",
-    "name": "George King",
-    "position": "defensas",
-    "team": "Crystal Palace U21",
-    "teamId": 1267874,
-    "fotmob": 7.2437499999999995,
+    "id": "fotmob_1477878",
+    "name": "Anan Khalaili",
+    "position": "mediocampistas",
+    "team": "Crystal Palace",
+    "teamId": 9826,
+    "fotmob": 7.546842105263157,
     "vallas": 0,
-    "goles": 2,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1559636.png"
+    "goles": 3,
+    "asistencias": 5,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1477878.png"
+  },
+  {
+    "id": "fotmob_1455818",
+    "name": "Zavier Gozo",
+    "position": "mediocampistas",
+    "team": "Crystal Palace",
+    "teamId": 9826,
+    "fotmob": 7.59,
+    "vallas": 0,
+    "goles": 6,
+    "asistencias": 4,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1455818.png"
   },
   {
     "id": "fotmob_859282",
@@ -2974,18 +2758,6 @@
     "goles": 2,
     "asistencias": 2,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1047676.png"
-  },
-  {
-    "id": "fotmob_157838",
-    "name": "Nathaniel Clyne",
-    "position": "mediocampistas",
-    "team": "Crystal Palace",
-    "teamId": 9826,
-    "fotmob": 6.68,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/157838.png"
   },
   {
     "id": "fotmob_621515",
@@ -3060,18 +2832,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/952095.png"
   },
   {
-    "id": "fotmob_1244376",
-    "name": "Kaden Rodney",
-    "position": "mediocampistas",
-    "team": "Crystal Palace",
-    "teamId": 9826,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1244376.png"
-  },
-  {
     "id": "fotmob_1330872",
     "name": "David Ozoh",
     "position": "mediocampistas",
@@ -3082,18 +2842,6 @@
     "goles": 2,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1330872.png"
-  },
-  {
-    "id": "fotmob_1690903",
-    "name": "Dean Benamar",
-    "position": "mediocampistas",
-    "team": "Crystal Palace",
-    "teamId": 9826,
-    "fotmob": 7.3925,
-    "vallas": 0,
-    "goles": 2,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1690903.png"
   },
   {
     "id": "fotmob_1336751",
@@ -3108,42 +2856,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1336751.png"
   },
   {
-    "id": "fotmob_1418099",
-    "name": "Caleb Kporha",
-    "position": "mediocampistas",
-    "team": "Crystal Palace U21",
-    "teamId": 1267874,
-    "fotmob": 6.15,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1418099.png"
-  },
-  {
-    "id": "fotmob_1422586",
-    "name": "Rio Cardines",
-    "position": "mediocampistas",
-    "team": "Crystal Palace U21",
-    "teamId": 1267874,
-    "fotmob": 7.379090909090909,
-    "vallas": 0,
-    "goles": 2,
-    "asistencias": 3,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1422586.png"
-  },
-  {
-    "id": "fotmob_1700817",
-    "name": "Joél Drakes-Thomas",
-    "position": "mediocampistas",
-    "team": "Crystal Palace",
-    "teamId": 9826,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1700817.png"
-  },
-  {
     "id": "fotmob_860920",
     "name": "Edward Nketiah",
     "position": "delanteros",
@@ -3154,6 +2866,18 @@
     "goles": 2,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/860920.png"
+  },
+  {
+    "id": "fotmob_939542",
+    "name": "Dwight McNeil",
+    "position": "delanteros",
+    "team": "Crystal Palace",
+    "teamId": 9826,
+    "fotmob": 6.62,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/939542.png"
   },
   {
     "id": "fotmob_706297",
@@ -3192,18 +2916,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/821100.png"
   },
   {
-    "id": "fotmob_1076756",
-    "name": "Brennan Johnson",
-    "position": "delanteros",
-    "team": "Crystal Palace",
-    "teamId": 9826,
-    "fotmob": 6.57,
-    "vallas": 0,
-    "goles": 2,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1076756.png"
-  },
-  {
     "id": "fotmob_1316124",
     "name": "Matheus França",
     "position": "delanteros",
@@ -3214,6 +2926,18 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1316124.png"
+  },
+  {
+    "id": "fotmob_1087966",
+    "name": "Evann Guessand",
+    "position": "delanteros",
+    "team": "Crystal Palace",
+    "teamId": 9826,
+    "fotmob": 6.45,
+    "vallas": 0,
+    "goles": 1,
+    "asistencias": 2,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1087966.png"
   },
   {
     "id": "fotmob_1226789",
@@ -3276,6 +3000,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1112684.png"
   },
   {
+    "id": "fotmob_1030829",
+    "name": "Jarrad Branthwaite",
+    "position": "defensas",
+    "team": "Everton",
+    "teamId": 8668,
+    "fotmob": 7.02,
+    "vallas": 0,
+    "goles": 1,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1030829.png"
+  },
+  {
     "id": "fotmob_290410",
     "name": "Michael Keane",
     "position": "defensas",
@@ -3324,52 +3060,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/874025.png"
   },
   {
-    "id": "fotmob_1030829",
-    "name": "Jarrad Branthwaite",
-    "position": "defensas",
-    "team": "Everton",
-    "teamId": 8668,
-    "fotmob": 7.02,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1030829.png"
-  },
-  {
     "id": "fotmob_1573563",
     "name": "Adam Aznou",
     "position": "defensas",
-    "team": "Everton U21",
-    "teamId": 773653,
+    "team": "Everton",
+    "teamId": 8668,
     "fotmob": 4.78,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1573563.png"
-  },
-  {
-    "id": "fotmob_1306239",
-    "name": "Elijah Campbell",
-    "position": "defensas",
-    "team": "Everton U21",
-    "teamId": 773653,
-    "fotmob": 6.88,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1306239.png"
-  },
-  {
-    "id": "fotmob_266520",
-    "name": "Christian Nørgaard",
-    "position": "mediocampistas",
-    "team": "Everton",
-    "teamId": 8668,
-    "fotmob": 6.19,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/266520.png"
   },
   {
     "id": "fotmob_886016",
@@ -3382,6 +3082,18 @@
     "goles": 8,
     "asistencias": 4,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/886016.png"
+  },
+  {
+    "id": "fotmob_266520",
+    "name": "Christian Nørgaard",
+    "position": "mediocampistas",
+    "team": "Everton",
+    "teamId": 8668,
+    "fotmob": 6.19,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/266520.png"
   },
   {
     "id": "fotmob_1128965",
@@ -3444,18 +3156,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1559637.png"
   },
   {
-    "id": "fotmob_939542",
-    "name": "Dwight McNeil",
-    "position": "delanteros",
-    "team": "Everton",
-    "teamId": 8668,
-    "fotmob": 6.62,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/939542.png"
-  },
-  {
     "id": "fotmob_1079485",
     "name": "Beto",
     "position": "delanteros",
@@ -3516,6 +3216,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1292833.png"
   },
   {
+    "id": "fotmob_1076756",
+    "name": "Brennan Johnson",
+    "position": "delanteros",
+    "team": "Everton",
+    "teamId": 8668,
+    "fotmob": 6.57,
+    "vallas": 0,
+    "goles": 2,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1076756.png"
+  },
+  {
     "id": "fotmob_1210384",
     "name": "Merlin Röhl",
     "position": "delanteros",
@@ -3533,7 +3245,7 @@
     "position": "porterias",
     "team": "Fulham",
     "teamId": 9879,
-    "fotmob": 6.84,
+    "fotmob": 6.85,
     "vallas": 9,
     "goles": 0,
     "asistencias": 0,
@@ -3557,7 +3269,7 @@
     "position": "defensas",
     "team": "Fulham",
     "teamId": 9879,
-    "fotmob": 7.12,
+    "fotmob": 7.13,
     "vallas": 0,
     "goles": 1,
     "asistencias": 0,
@@ -3576,18 +3288,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/877401.png"
   },
   {
-    "id": "fotmob_503659",
-    "name": "Joachim Andersen",
-    "position": "defensas",
-    "team": "Fulham",
-    "teamId": 9879,
-    "fotmob": 6.94,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/503659.png"
-  },
-  {
     "id": "fotmob_821728",
     "name": "Jorge Cuenca",
     "position": "defensas",
@@ -3600,12 +3300,24 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/821728.png"
   },
   {
+    "id": "fotmob_503659",
+    "name": "Joachim Andersen",
+    "position": "defensas",
+    "team": "Fulham",
+    "teamId": 9879,
+    "fotmob": 6.94,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/503659.png"
+  },
+  {
     "id": "fotmob_465750",
     "name": "Timothy Castagne",
     "position": "defensas",
     "team": "Fulham",
     "teamId": 9879,
-    "fotmob": 6.86,
+    "fotmob": 6.88,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
@@ -3636,18 +3348,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/662428.png"
   },
   {
-    "id": "fotmob_1403691",
-    "name": "César Palacios",
-    "position": "mediocampistas",
-    "team": "Fulham",
-    "teamId": 9879,
-    "fotmob": 6.34,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1403691.png"
-  },
-  {
     "id": "fotmob_502420",
     "name": "Harrison Reed",
     "position": "mediocampistas",
@@ -3658,6 +3358,18 @@
     "goles": 1,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/502420.png"
+  },
+  {
+    "id": "fotmob_1403691",
+    "name": "César Palacios",
+    "position": "mediocampistas",
+    "team": "Fulham",
+    "teamId": 9879,
+    "fotmob": 6.34,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1403691.png"
   },
   {
     "id": "fotmob_182962",
@@ -3677,7 +3389,7 @@
     "position": "mediocampistas",
     "team": "Fulham",
     "teamId": 9879,
-    "fotmob": 6.71,
+    "fotmob": 6.75,
     "vallas": 0,
     "goles": 0,
     "asistencias": 1,
@@ -3689,23 +3401,23 @@
     "position": "mediocampistas",
     "team": "Fulham",
     "teamId": 9879,
-    "fotmob": 7.02,
+    "fotmob": 7.04,
     "vallas": 0,
     "goles": 4,
     "asistencias": 3,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/604785.png"
   },
   {
-    "id": "fotmob_556972",
-    "name": "Sasa Lukic",
+    "id": "fotmob_1281452",
+    "name": "Shea Charles",
     "position": "mediocampistas",
     "team": "Fulham",
     "teamId": 9879,
-    "fotmob": 6.81,
+    "fotmob": 7.16,
     "vallas": 0,
-    "goles": 1,
+    "goles": 3,
     "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/556972.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1281452.png"
   },
   {
     "id": "fotmob_1422593",
@@ -3725,23 +3437,11 @@
     "position": "mediocampistas",
     "team": "Fulham",
     "teamId": 9879,
-    "fotmob": 6.69,
+    "fotmob": 6.7,
     "vallas": 0,
     "goles": 3,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/889534.png"
-  },
-  {
-    "id": "fotmob_1199712",
-    "name": "Luke Harris",
-    "position": "mediocampistas",
-    "team": "Fulham",
-    "teamId": 9879,
-    "fotmob": 6.78,
-    "vallas": 0,
-    "goles": 2,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1199712.png"
   },
   {
     "id": "fotmob_1413847",
@@ -3768,6 +3468,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1128945.png"
   },
   {
+    "id": "fotmob_1318400",
+    "name": "Kevin",
+    "position": "delanteros",
+    "team": "Fulham",
+    "teamId": 9879,
+    "fotmob": 6.62,
+    "vallas": 0,
+    "goles": 1,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1318400.png"
+  },
+  {
     "id": "fotmob_1113790",
     "name": "Oscar Bobb",
     "position": "delanteros",
@@ -3785,23 +3497,11 @@
     "position": "delanteros",
     "team": "Fulham",
     "teamId": 9879,
-    "fotmob": 6,
+    "fotmob": 6.02,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1532672.png"
-  },
-  {
-    "id": "fotmob_1318400",
-    "name": "Kevin",
-    "position": "delanteros",
-    "team": "Fulham",
-    "teamId": 9879,
-    "fotmob": 6.62,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1318400.png"
   },
   {
     "id": "fotmob_288880",
@@ -3912,6 +3612,30 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1187308.png"
   },
   {
+    "id": "fotmob_575780",
+    "name": "Paddy McNair",
+    "position": "defensas",
+    "team": "Hull City",
+    "teamId": 8667,
+    "fotmob": 7.002727272727273,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/575780.png"
+  },
+  {
+    "id": "fotmob_1686118",
+    "name": "Lucas Herrington",
+    "position": "defensas",
+    "team": "Hull City",
+    "teamId": 8667,
+    "fotmob": 6.97,
+    "vallas": 0,
+    "goles": 1,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1686118.png"
+  },
+  {
     "id": "fotmob_962046",
     "name": "Cody Drameh",
     "position": "defensas",
@@ -3936,76 +3660,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/538112.png"
   },
   {
-    "id": "fotmob_1077907",
-    "name": "Brandon Williams",
+    "id": "fotmob_1428427",
+    "name": "Nobel Mendy",
     "position": "defensas",
     "team": "Hull City",
     "teamId": 8667,
-    "fotmob": 0,
+    "fotmob": 6.8,
     "vallas": 0,
-    "goles": 0,
+    "goles": 2,
     "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1077907.png"
-  },
-  {
-    "id": "fotmob_575780",
-    "name": "Paddy McNair",
-    "position": "defensas",
-    "team": "Hull City",
-    "teamId": 8667,
-    "fotmob": 7.002727272727273,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/575780.png"
-  },
-  {
-    "id": "fotmob_1683723",
-    "name": "Cathal McCarthy",
-    "position": "defensas",
-    "team": "Hull City",
-    "teamId": 8667,
-    "fotmob": 6.5,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1683723.png"
-  },
-  {
-    "id": "fotmob_2130255",
-    "name": "Bobby Moore",
-    "position": "defensas",
-    "team": "Hull City",
-    "teamId": 8667,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/2130255.png"
-  },
-  {
-    "id": "fotmob_2130253",
-    "name": "Josh Ocaya",
-    "position": "defensas",
-    "team": "Hull City",
-    "teamId": 8667,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/2130253.png"
-  },
-  {
-    "id": "fotmob_2130252",
-    "name": "Dellal Robinson",
-    "position": "defensas",
-    "team": "Hull City",
-    "teamId": 8667,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/2130252.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1428427.png"
   },
   {
     "id": "fotmob_915102",
@@ -4020,6 +3684,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/915102.png"
   },
   {
+    "id": "fotmob_956161",
+    "name": "Joe Gelhardt",
+    "position": "mediocampistas",
+    "team": "Hull City",
+    "teamId": 8667,
+    "fotmob": 7.15,
+    "vallas": 0,
+    "goles": 14,
+    "asistencias": 4,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/956161.png"
+  },
+  {
     "id": "fotmob_1178514",
     "name": "Eliot Matazo",
     "position": "mediocampistas",
@@ -4030,18 +3706,6 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1178514.png"
-  },
-  {
-    "id": "fotmob_1356264",
-    "name": "Óscar Zambrano",
-    "position": "mediocampistas",
-    "team": "Hull City",
-    "teamId": 8667,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1356264.png"
   },
   {
     "id": "fotmob_1377949",
@@ -4056,16 +3720,28 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1377949.png"
   },
   {
-    "id": "fotmob_704138",
-    "name": "Abdülkadir Ömür",
+    "id": "fotmob_1356264",
+    "name": "Óscar Zambrano",
     "position": "mediocampistas",
     "team": "Hull City",
     "teamId": 8667,
-    "fotmob": 6.49,
+    "fotmob": 0,
     "vallas": 0,
     "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1356264.png"
+  },
+  {
+    "id": "fotmob_1272349",
+    "name": "Elliot Stroud",
+    "position": "mediocampistas",
+    "team": "Hull City",
+    "teamId": 8667,
+    "fotmob": 7.76,
+    "vallas": 0,
+    "goles": 3,
     "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/704138.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1272349.png"
   },
   {
     "id": "fotmob_1125874",
@@ -4116,16 +3792,28 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/807930.png"
   },
   {
-    "id": "fotmob_2100600",
-    "name": "Reuben Silk",
+    "id": "fotmob_1137106",
+    "name": "Lucas Gourna-Douath",
     "position": "mediocampistas",
     "team": "Hull City",
     "teamId": 8667,
-    "fotmob": 0,
+    "fotmob": 6.81,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/2100600.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1137106.png"
+  },
+  {
+    "id": "fotmob_704138",
+    "name": "Abdülkadir Ömür",
+    "position": "mediocampistas",
+    "team": "Hull City",
+    "teamId": 8667,
+    "fotmob": 6.49,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/704138.png"
   },
   {
     "id": "fotmob_932308",
@@ -4165,7 +3853,7 @@
   },
   {
     "id": "fotmob_656495",
-    "name": "Babajide David",
+    "name": "David Akintola",
     "position": "delanteros",
     "team": "Hull City",
     "teamId": 8667,
@@ -4174,30 +3862,6 @@
     "goles": 1,
     "asistencias": 2,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/656495.png"
-  },
-  {
-    "id": "fotmob_1136450",
-    "name": "Abu Kamara",
-    "position": "delanteros",
-    "team": "Hull City",
-    "teamId": 8667,
-    "fotmob": 6.1,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1136450.png"
-  },
-  {
-    "id": "fotmob_1197548",
-    "name": "Enis Destan",
-    "position": "delanteros",
-    "team": "Hull City",
-    "teamId": 8667,
-    "fotmob": 6.46,
-    "vallas": 0,
-    "goles": 2,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1197548.png"
   },
   {
     "id": "fotmob_643228",
@@ -4260,6 +3924,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/796398.png"
   },
   {
+    "id": "fotmob_1343053",
+    "name": "Abdoul Ouattara",
+    "position": "defensas",
+    "team": "Ipswich Town",
+    "teamId": 9902,
+    "fotmob": 6.79,
+    "vallas": 0,
+    "goles": 2,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1343053.png"
+  },
+  {
     "id": "fotmob_980381",
     "name": "Leif Davis",
     "position": "defensas",
@@ -4294,18 +3970,6 @@
     "goles": 1,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/696443.png"
-  },
-  {
-    "id": "fotmob_770267",
-    "name": "Ben Johnson",
-    "position": "defensas",
-    "team": "Ipswich Town",
-    "teamId": 9902,
-    "fotmob": 6.87,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/770267.png"
   },
   {
     "id": "fotmob_609733",
@@ -4344,40 +4008,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/789578.png"
   },
   {
-    "id": "fotmob_491827",
-    "name": "Sammie Szmodics",
+    "id": "fotmob_1073742",
+    "name": "Julio Enciso",
     "position": "mediocampistas",
     "team": "Ipswich Town",
     "teamId": 9902,
-    "fotmob": 6.7,
+    "fotmob": 6.99,
     "vallas": 0,
-    "goles": 4,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/491827.png"
-  },
-  {
-    "id": "fotmob_556972",
-    "name": "Sasa Lukic",
-    "position": "mediocampistas",
-    "team": "Fulham",
-    "teamId": 9879,
-    "fotmob": 6.81,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/556972.png"
-  },
-  {
-    "id": "fotmob_1086712",
-    "name": "Harry Clarke",
-    "position": "mediocampistas",
-    "team": "Ipswich Town",
-    "teamId": 9902,
-    "fotmob": 6.83,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1086712.png"
+    "goles": 3,
+    "asistencias": 6,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1073742.png"
   },
   {
     "id": "fotmob_797594",
@@ -4426,6 +4066,18 @@
     "goles": 1,
     "asistencias": 1,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/674009.png"
+  },
+  {
+    "id": "fotmob_556972",
+    "name": "Sasa Lukic",
+    "position": "mediocampistas",
+    "team": "Ipswich Town",
+    "teamId": 9902,
+    "fotmob": 6.84,
+    "vallas": 0,
+    "goles": 1,
+    "asistencias": 2,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/556972.png"
   },
   {
     "id": "fotmob_413158",
@@ -4479,8 +4131,8 @@
     "id": "fotmob_1113688",
     "name": "Ali Al Hamadi",
     "position": "delanteros",
-    "team": "Ipswich Town",
-    "teamId": 9902,
+    "team": "Ipswich Town U21",
+    "teamId": 1796115,
     "fotmob": 6.24,
     "vallas": 0,
     "goles": 1,
@@ -4500,16 +4152,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1265626.png"
   },
   {
-    "id": "fotmob_750033",
-    "name": "George Hirst",
+    "id": "fotmob_1307961",
+    "name": "Sindre Walle Egeli",
     "position": "delanteros",
     "team": "Ipswich Town",
     "teamId": 9902,
-    "fotmob": 6.64,
+    "fotmob": 6.66,
     "vallas": 0,
-    "goles": 11,
-    "asistencias": 3,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/750033.png"
+    "goles": 4,
+    "asistencias": 2,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1307961.png"
   },
   {
     "id": "fotmob_1089645",
@@ -4522,18 +4174,6 @@
     "goles": 12,
     "asistencias": 2,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1089645.png"
-  },
-  {
-    "id": "fotmob_1307961",
-    "name": "Sindre Walle Egeli",
-    "position": "delanteros",
-    "team": "Ipswich Town",
-    "teamId": 9902,
-    "fotmob": 6.66,
-    "vallas": 0,
-    "goles": 4,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1307961.png"
   },
   {
     "id": "fotmob_1320949",
@@ -4611,8 +4251,8 @@
     "id": "fotmob_279481",
     "name": "Alex Cairns",
     "position": "porterias",
-    "team": "Leeds United U21",
-    "teamId": 1177187,
+    "team": "Leeds United",
+    "teamId": 8463,
     "fotmob": 6.31,
     "vallas": 0,
     "goles": 0,
@@ -4620,16 +4260,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/279481.png"
   },
   {
-    "id": "fotmob_744494",
-    "name": "Gabriel Gudmundsson",
+    "id": "fotmob_517346",
+    "name": "Nico Elvedi",
     "position": "defensas",
     "team": "Leeds United",
     "teamId": 8463,
-    "fotmob": 6.78,
+    "fotmob": 6.96,
     "vallas": 0,
     "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/744494.png"
+    "asistencias": 2,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/517346.png"
   },
   {
     "id": "fotmob_1250485",
@@ -4692,30 +4332,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/363318.png"
   },
   {
-    "id": "fotmob_922892",
-    "name": "Sebastiaan Bornauw",
-    "position": "defensas",
-    "team": "Leeds United",
-    "teamId": 8463,
-    "fotmob": 6.67,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/922892.png"
-  },
-  {
-    "id": "fotmob_956161",
-    "name": "Joe Gelhardt",
-    "position": "mediocampistas",
-    "team": "Leeds United",
-    "teamId": 8463,
-    "fotmob": 7.15,
-    "vallas": 0,
-    "goles": 14,
-    "asistencias": 4,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/956161.png"
-  },
-  {
     "id": "fotmob_1077915",
     "name": "Largie Ramazani",
     "position": "mediocampistas",
@@ -4738,6 +4354,18 @@
     "goles": 1,
     "asistencias": 2,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/789646.png"
+  },
+  {
+    "id": "fotmob_744494",
+    "name": "Gabriel Gudmundsson",
+    "position": "mediocampistas",
+    "team": "Leeds United",
+    "teamId": 8463,
+    "fotmob": 6.78,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/744494.png"
   },
   {
     "id": "fotmob_780432",
@@ -4848,18 +4476,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/612150.png"
   },
   {
-    "id": "fotmob_792540",
-    "name": "Joël Piroe",
-    "position": "delanteros",
-    "team": "Leeds United",
-    "teamId": 8463,
-    "fotmob": 6.06,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/792540.png"
-  },
-  {
     "id": "fotmob_861197",
     "name": "Lukas Nmecha",
     "position": "delanteros",
@@ -4877,7 +4493,7 @@
     "position": "delanteros",
     "team": "Leeds United",
     "teamId": 8463,
-    "fotmob": 7.13,
+    "fotmob": 7.14,
     "vallas": 0,
     "goles": 10,
     "asistencias": 7,
@@ -4920,18 +4536,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/319784.png"
   },
   {
-    "id": "fotmob_1068920",
-    "name": "Vítezslav Jaros",
-    "position": "porterias",
-    "team": "Liverpool",
-    "teamId": 8650,
-    "fotmob": 7.14,
-    "vallas": 5,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1068920.png"
-  },
-  {
     "id": "fotmob_948800",
     "name": "Giorgi Mamardashvili",
     "position": "porterias",
@@ -4956,6 +4560,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/582276.png"
   },
   {
+    "id": "fotmob_1068920",
+    "name": "Vítezslav Jaros",
+    "position": "porterias",
+    "team": "Liverpool",
+    "teamId": 8650,
+    "fotmob": 7.14,
+    "vallas": 5,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1068920.png"
+  },
+  {
     "id": "fotmob_1236818",
     "name": "Harvey Davies",
     "position": "porterias",
@@ -4966,18 +4582,6 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1236818.png"
-  },
-  {
-    "id": "fotmob_1473534",
-    "name": "Jérémy Jacquet",
-    "position": "defensas",
-    "team": "Liverpool",
-    "teamId": 8650,
-    "fotmob": 6.85,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1473534.png"
   },
   {
     "id": "fotmob_568571",
@@ -5002,6 +4606,18 @@
     "goles": 6,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/209405.png"
+  },
+  {
+    "id": "fotmob_1473534",
+    "name": "Jérémy Jacquet",
+    "position": "defensas",
+    "team": "Liverpool",
+    "teamId": 8650,
+    "fotmob": 6.85,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1473534.png"
   },
   {
     "id": "fotmob_1195281",
@@ -5052,12 +4668,24 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/966018.png"
   },
   {
+    "id": "fotmob_921253",
+    "name": "Ronald Araujo",
+    "position": "defensas",
+    "team": "Liverpool",
+    "teamId": 8650,
+    "fotmob": 6.9,
+    "vallas": 0,
+    "goles": 3,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/921253.png"
+  },
+  {
     "id": "fotmob_1076952",
     "name": "Calvin Ramsay",
     "position": "defensas",
-    "team": "Liverpool U21",
-    "teamId": 1070259,
-    "fotmob": 6.7787500000000005,
+    "team": "Liverpool",
+    "teamId": 8650,
+    "fotmob": 6.796250000000001,
     "vallas": 0,
     "goles": 2,
     "asistencias": 2,
@@ -5100,18 +4728,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/831489.png"
   },
   {
-    "id": "fotmob_933768",
-    "name": "Curtis Jones",
-    "position": "mediocampistas",
-    "team": "Liverpool",
-    "teamId": 8650,
-    "fotmob": 6.96,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/933768.png"
-  },
-  {
     "id": "fotmob_963964",
     "name": "Harvey Elliott",
     "position": "mediocampistas",
@@ -5151,12 +4767,12 @@
     "id": "fotmob_1436258",
     "name": "Trey Nyoni",
     "position": "mediocampistas",
-    "team": "Liverpool U21",
-    "teamId": 1070259,
-    "fotmob": 7.407142857142857,
+    "team": "Liverpool",
+    "teamId": 8650,
+    "fotmob": 0,
     "vallas": 0,
-    "goles": 1,
-    "asistencias": 4,
+    "goles": 0,
+    "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1436258.png"
   },
   {
@@ -5256,6 +4872,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1597668.png"
   },
   {
+    "id": "fotmob_618878",
+    "name": "Gianluigi Donnarumma",
+    "position": "porterias",
+    "team": "Manchester City",
+    "teamId": 8456,
+    "fotmob": 7.25,
+    "vallas": 15,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/618878.png"
+  },
+  {
     "id": "fotmob_363357",
     "name": "Marcus Bettinelli",
     "position": "porterias",
@@ -5268,28 +4896,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/363357.png"
   },
   {
-    "id": "fotmob_618878",
-    "name": "Gianluigi Donnarumma",
+    "id": "fotmob_245555",
+    "name": "Gerónimo Rulli",
     "position": "porterias",
     "team": "Manchester City",
     "teamId": 8456,
-    "fotmob": 7.24,
-    "vallas": 15,
+    "fotmob": 7.17,
+    "vallas": 8,
     "goles": 0,
     "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/618878.png"
-  },
-  {
-    "id": "fotmob_1187225",
-    "name": "Josh Wilson-Esbrand",
-    "position": "defensas",
-    "team": "Manchester City",
-    "teamId": 8456,
-    "fotmob": 6.65,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1187225.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/245555.png"
   },
   {
     "id": "fotmob_1539619",
@@ -5400,18 +5016,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1362998.png"
   },
   {
-    "id": "fotmob_1414691",
-    "name": "Max Alleyne",
-    "position": "defensas",
-    "team": "Manchester City",
-    "teamId": 8456,
-    "fotmob": 7.22,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1414691.png"
-  },
-  {
     "id": "fotmob_1288450",
     "name": "Rico Lewis",
     "position": "defensas",
@@ -5424,6 +5028,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1288450.png"
   },
   {
+    "id": "fotmob_1187225",
+    "name": "Josh Wilson-Esbrand",
+    "position": "defensas",
+    "team": "Manchester City U21",
+    "teamId": 860800,
+    "fotmob": 6.65,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1187225.png"
+  },
+  {
     "id": "fotmob_1089691",
     "name": "Elliot Anderson",
     "position": "mediocampistas",
@@ -5434,42 +5050,6 @@
     "goles": 4,
     "asistencias": 4,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1089691.png"
-  },
-  {
-    "id": "fotmob_1099974",
-    "name": "Issa Kaboré",
-    "position": "mediocampistas",
-    "team": "Manchester City",
-    "teamId": 8456,
-    "fotmob": 7.07,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 8,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1099974.png"
-  },
-  {
-    "id": "fotmob_609755",
-    "name": "Kalvin Phillips",
-    "position": "mediocampistas",
-    "team": "Manchester City",
-    "teamId": 8456,
-    "fotmob": 6.61,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/609755.png"
-  },
-  {
-    "id": "fotmob_868344",
-    "name": "Tijjani Reijnders",
-    "position": "mediocampistas",
-    "team": "Manchester City",
-    "teamId": 8456,
-    "fotmob": 6.96,
-    "vallas": 0,
-    "goles": 5,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/868344.png"
   },
   {
     "id": "fotmob_239219",
@@ -5508,18 +5088,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1280132.png"
   },
   {
-    "id": "fotmob_675088",
-    "name": "Rodri",
-    "position": "mediocampistas",
-    "team": "Manchester City",
-    "teamId": 8456,
-    "fotmob": 7.51,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/675088.png"
-  },
-  {
     "id": "fotmob_815006",
     "name": "Phil Foden",
     "position": "mediocampistas",
@@ -5532,16 +5100,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/815006.png"
   },
   {
-    "id": "fotmob_312765",
-    "name": "Jack Grealish",
-    "position": "delanteros",
+    "id": "fotmob_1099974",
+    "name": "Issa Kaboré",
+    "position": "mediocampistas",
     "team": "Manchester City",
     "teamId": 8456,
-    "fotmob": 7.21,
+    "fotmob": 7.07,
     "vallas": 0,
-    "goles": 2,
-    "asistencias": 6,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/312765.png"
+    "goles": 0,
+    "asistencias": 8,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1099974.png"
   },
   {
     "id": "fotmob_839204",
@@ -5578,6 +5146,18 @@
     "goles": 5,
     "asistencias": 5,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/942368.png"
+  },
+  {
+    "id": "fotmob_312765",
+    "name": "Jack Grealish",
+    "position": "delanteros",
+    "team": "Manchester City",
+    "teamId": 8456,
+    "fotmob": 7.21,
+    "vallas": 0,
+    "goles": 2,
+    "asistencias": 6,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/312765.png"
   },
   {
     "id": "fotmob_1174337",
@@ -5628,16 +5208,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/933576.png"
   },
   {
-    "id": "fotmob_1680328",
-    "name": "Ryan McAidoo",
-    "position": "delanteros",
-    "team": "Manchester City",
-    "teamId": 8456,
-    "fotmob": 7.721428571428571,
-    "vallas": 0,
-    "goles": 5,
-    "asistencias": 7,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1680328.png"
+    "id": "fotmob_1178602",
+    "name": "Senne Lammens",
+    "position": "porterias",
+    "team": "Manchester United",
+    "teamId": 10260,
+    "fotmob": 7.11,
+    "vallas": 8,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1178602.png"
   },
   {
     "id": "fotmob_163604",
@@ -5664,24 +5244,12 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/24155.png"
   },
   {
-    "id": "fotmob_1178602",
-    "name": "Senne Lammens",
-    "position": "porterias",
-    "team": "Manchester United",
-    "teamId": 10260,
-    "fotmob": 7.11,
-    "vallas": 8,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1178602.png"
-  },
-  {
     "id": "fotmob_1367699",
     "name": "Dermot Mee",
     "position": "porterias",
     "team": "Manchester United U21",
     "teamId": 1070257,
-    "fotmob": 6.64,
+    "fotmob": 6.66,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
@@ -5808,18 +5376,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/422685.png"
   },
   {
-    "id": "fotmob_1526560",
-    "name": "Patrick Dorgu",
-    "position": "mediocampistas",
-    "team": "Manchester United",
-    "teamId": 10260,
-    "fotmob": 7.15,
-    "vallas": 0,
-    "goles": 4,
-    "asistencias": 4,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1526560.png"
-  },
-  {
     "id": "fotmob_1372921",
     "name": "Andrey Santos",
     "position": "mediocampistas",
@@ -5868,6 +5424,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1292810.png"
   },
   {
+    "id": "fotmob_1575707",
+    "name": "Jack Fletcher",
+    "position": "mediocampistas",
+    "team": "Manchester United U21",
+    "teamId": 1070257,
+    "fotmob": 7.697777777777778,
+    "vallas": 0,
+    "goles": 5,
+    "asistencias": 6,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1575707.png"
+  },
+  {
     "id": "fotmob_1676985",
     "name": "Tyler Fletcher",
     "position": "mediocampistas",
@@ -5904,42 +5472,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1421810.png"
   },
   {
-    "id": "fotmob_1292838",
-    "name": "Daniel Gore",
-    "position": "mediocampistas",
-    "team": "Manchester United U21",
-    "teamId": 1070257,
-    "fotmob": 7.09,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1292838.png"
-  },
-  {
-    "id": "fotmob_1714514",
-    "name": "Enzo Kana Biyik",
-    "position": "delanteros",
-    "team": "Manchester United",
-    "teamId": 10260,
-    "fotmob": 6.373157894736842,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1714514.png"
-  },
-  {
-    "id": "fotmob_696365",
-    "name": "Marcus Rashford",
-    "position": "delanteros",
-    "team": "Manchester United",
-    "teamId": 10260,
-    "fotmob": 7.18,
-    "vallas": 0,
-    "goles": 8,
-    "asistencias": 7,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/696365.png"
-  },
-  {
     "id": "fotmob_863098",
     "name": "Matheus Cunha",
     "position": "delanteros",
@@ -5962,6 +5494,30 @@
     "goles": 2,
     "asistencias": 1,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/950830.png"
+  },
+  {
+    "id": "fotmob_1526560",
+    "name": "Patrick Dorgu",
+    "position": "delanteros",
+    "team": "Manchester United",
+    "teamId": 10260,
+    "fotmob": 7.16,
+    "vallas": 0,
+    "goles": 4,
+    "asistencias": 4,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1526560.png"
+  },
+  {
+    "id": "fotmob_696365",
+    "name": "Marcus Rashford",
+    "position": "delanteros",
+    "team": "Manchester United",
+    "teamId": 10260,
+    "fotmob": 7.18,
+    "vallas": 0,
+    "goles": 8,
+    "asistencias": 7,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/696365.png"
   },
   {
     "id": "fotmob_1070052",
@@ -6000,52 +5556,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1073977.png"
   },
   {
-    "id": "fotmob_1557220",
-    "name": "Chido Obi",
-    "position": "delanteros",
-    "team": "Manchester United U21",
-    "teamId": 1070257,
-    "fotmob": 6.9747619047619045,
-    "vallas": 0,
-    "goles": 13,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1557220.png"
-  },
-  {
-    "id": "fotmob_1398915",
-    "name": "Ethan Wheatley",
-    "position": "delanteros",
-    "team": "Manchester United",
-    "teamId": 10260,
-    "fotmob": 6.24,
-    "vallas": 0,
-    "goles": 3,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1398915.png"
-  },
-  {
     "id": "fotmob_1436260",
     "name": "Shea Lacey",
     "position": "delanteros",
     "team": "Manchester United U21",
     "teamId": 1070257,
-    "fotmob": 7.917857142857143,
+    "fotmob": 7.96,
     "vallas": 0,
     "goles": 10,
     "asistencias": 4,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1436260.png"
-  },
-  {
-    "id": "fotmob_304355",
-    "name": "Odysseas Vlachodimos",
-    "position": "porterias",
-    "team": "Newcastle United",
-    "teamId": 10261,
-    "fotmob": 6.79,
-    "vallas": 5,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/304355.png"
   },
   {
     "id": "fotmob_280484",
@@ -6168,40 +5688,28 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/188058.png"
   },
   {
-    "id": "fotmob_1362341",
-    "name": "Alex Murphy",
+    "id": "fotmob_958010",
+    "name": "Amar Dedic",
     "position": "defensas",
-    "team": "Newcastle United U21",
-    "teamId": 860798,
-    "fotmob": 7.09,
+    "team": "Newcastle United",
+    "teamId": 10261,
+    "fotmob": 0,
     "vallas": 0,
     "goles": 0,
-    "asistencias": 2,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1362341.png"
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/958010.png"
   },
   {
     "id": "fotmob_1414761",
     "name": "Leo Shahar",
     "position": "defensas",
-    "team": "Newcastle United U21",
-    "teamId": 860798,
-    "fotmob": 6.64,
+    "team": "Newcastle United U19",
+    "teamId": 1537858,
+    "fotmob": 6.63,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1414761.png"
-  },
-  {
-    "id": "fotmob_1654534",
-    "name": "Antoñito Cordero",
-    "position": "mediocampistas",
-    "team": "Newcastle United",
-    "teamId": 10261,
-    "fotmob": 6.5,
-    "vallas": 0,
-    "goles": 3,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1654534.png"
   },
   {
     "id": "fotmob_535936",
@@ -6363,25 +5871,25 @@
     "id": "fotmob_1418100",
     "name": "Alfie Harrison",
     "position": "delanteros",
-    "team": "Newcastle United U21",
-    "teamId": 860798,
-    "fotmob": 6.81,
+    "team": "Newcastle United",
+    "teamId": 10261,
+    "fotmob": 6.87,
     "vallas": 0,
     "goles": 0,
     "asistencias": 5,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1418100.png"
   },
   {
-    "id": "fotmob_1443841",
-    "name": "Sean Neave",
-    "position": "delanteros",
-    "team": "Newcastle United U21",
-    "teamId": 860798,
-    "fotmob": 7.17,
-    "vallas": 0,
-    "goles": 10,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1443841.png"
+    "id": "fotmob_887969",
+    "name": "Steven Benda",
+    "position": "porterias",
+    "team": "Nottingham Forest",
+    "teamId": 10203,
+    "fotmob": 6.57,
+    "vallas": 3,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/887969.png"
   },
   {
     "id": "fotmob_749834",
@@ -6406,6 +5914,18 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/181069.png"
+  },
+  {
+    "id": "fotmob_1425182",
+    "name": "Ousmane Diomande",
+    "position": "defensas",
+    "team": "Nottingham Forest",
+    "teamId": 10203,
+    "fotmob": 7.25,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1425182.png"
   },
   {
     "id": "fotmob_1078788",
@@ -6449,7 +5969,7 @@
     "position": "defensas",
     "team": "Nottingham Forest U21",
     "teamId": 1389162,
-    "fotmob": 6.8,
+    "fotmob": 6.81,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
@@ -6466,18 +5986,6 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1391209.png"
-  },
-  {
-    "id": "fotmob_1155130",
-    "name": "Luca Netz",
-    "position": "defensas",
-    "team": "Nottingham Forest",
-    "teamId": 10203,
-    "fotmob": 6.39,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1155130.png"
   },
   {
     "id": "fotmob_766611",
@@ -6531,25 +6039,13 @@
     "id": "fotmob_1296769",
     "name": "Zach Abbott",
     "position": "defensas",
-    "team": "Nottingham Forest U21",
-    "teamId": 1389162,
-    "fotmob": 6.45,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1296769.png"
-  },
-  {
-    "id": "fotmob_1844097",
-    "name": "Grady McDonnell",
-    "position": "defensas",
-    "team": "Club Brugge NXT",
-    "teamId": 1173026,
-    "fotmob": 5.46,
+    "team": "Nottingham Forest",
+    "teamId": 10203,
+    "fotmob": 6.27,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1844097.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1296769.png"
   },
   {
     "id": "fotmob_795371",
@@ -6624,16 +6120,28 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1107648.png"
   },
   {
-    "id": "fotmob_798608",
-    "name": "Omar Richards",
+    "id": "fotmob_1155130",
+    "name": "Luca Netz",
     "position": "mediocampistas",
     "team": "Nottingham Forest",
     "teamId": 10203,
-    "fotmob": 6.55,
+    "fotmob": 6.39,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/798608.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1155130.png"
+  },
+  {
+    "id": "fotmob_1844097",
+    "name": "Grady McDonnell",
+    "position": "mediocampistas",
+    "team": "Nottingham Forest U21",
+    "teamId": 1389162,
+    "fotmob": 6.57,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1844097.png"
   },
   {
     "id": "fotmob_846383",
@@ -6646,18 +6154,6 @@
     "goles": 3,
     "asistencias": 4,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/846383.png"
-  },
-  {
-    "id": "fotmob_643717",
-    "name": "Taiwo Awoniyi",
-    "position": "delanteros",
-    "team": "Nottingham Forest",
-    "teamId": 10203,
-    "fotmob": 6.39,
-    "vallas": 0,
-    "goles": 4,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/643717.png"
   },
   {
     "id": "fotmob_169719",
@@ -6732,30 +6228,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1079539.png"
   },
   {
-    "id": "fotmob_1448031",
-    "name": "Jimmy Sinclair",
-    "position": "delanteros",
-    "team": "Nottingham Forest U21",
-    "teamId": 1389162,
-    "fotmob": 6.95,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 3,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1448031.png"
-  },
-  {
-    "id": "fotmob_968912",
-    "name": "Anthony Patterson",
-    "position": "porterias",
-    "team": "Sunderland",
-    "teamId": 8472,
-    "fotmob": 7.27,
-    "vallas": 6,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/968912.png"
-  },
-  {
     "id": "fotmob_180646",
     "name": "Simon Moore",
     "position": "porterias",
@@ -6790,18 +6262,6 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1186615.png"
-  },
-  {
-    "id": "fotmob_418137",
-    "name": "Arthur Masuaku",
-    "position": "defensas",
-    "team": "Sunderland",
-    "teamId": 8472,
-    "fotmob": 6.41,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/418137.png"
   },
   {
     "id": "fotmob_974268",
@@ -6900,28 +6360,28 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1067763.png"
   },
   {
-    "id": "fotmob_1222770",
-    "name": "Leo Hjelde",
-    "position": "defensas",
-    "team": "Sunderland",
-    "teamId": 8472,
-    "fotmob": 6.28,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1222770.png"
-  },
-  {
     "id": "fotmob_963940",
     "name": "Ajibola Alese",
     "position": "defensas",
-    "team": "Sunderland",
-    "teamId": 8472,
-    "fotmob": 7.01,
+    "team": "Sunderland U21",
+    "teamId": 773657,
+    "fotmob": 7,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/963940.png"
+  },
+  {
+    "id": "fotmob_1664716",
+    "name": "Dayann Méthalie",
+    "position": "mediocampistas",
+    "team": "Sunderland",
+    "teamId": 8472,
+    "fotmob": 6.6,
+    "vallas": 0,
+    "goles": 2,
+    "asistencias": 1,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1664716.png"
   },
   {
     "id": "fotmob_434498",
@@ -7095,25 +6555,13 @@
     "id": "fotmob_1239583",
     "name": "Abdoullah Ba",
     "position": "delanteros",
-    "team": "Sunderland U21",
-    "teamId": 773657,
-    "fotmob": 6.6,
+    "team": "Sunderland",
+    "teamId": 8472,
+    "fotmob": 8.07,
     "vallas": 0,
-    "goles": 0,
+    "goles": 2,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1239583.png"
-  },
-  {
-    "id": "fotmob_538501",
-    "name": "Guglielmo Vicario",
-    "position": "porterias",
-    "team": "Tottenham Hotspur",
-    "teamId": 8586,
-    "fotmob": 6.68,
-    "vallas": 7,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/538501.png"
   },
   {
     "id": "fotmob_1341475",
@@ -7152,30 +6600,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/862993.png"
   },
   {
-    "id": "fotmob_1290962",
-    "name": "Ashley Phillips",
-    "position": "defensas",
-    "team": "Tottenham Hotspur",
-    "teamId": 8586,
-    "fotmob": 6.7,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1290962.png"
-  },
-  {
-    "id": "fotmob_785411",
-    "name": "Marcos Senesi",
-    "position": "defensas",
-    "team": "Tottenham Hotspur",
-    "teamId": 8586,
-    "fotmob": 7.19,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 5,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/785411.png"
-  },
-  {
     "id": "fotmob_357880",
     "name": "Andrew Robertson",
     "position": "defensas",
@@ -7198,6 +6622,18 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/754126.png"
+  },
+  {
+    "id": "fotmob_785411",
+    "name": "Marcos Senesi",
+    "position": "defensas",
+    "team": "Tottenham Hotspur",
+    "teamId": 8586,
+    "fotmob": 7.19,
+    "vallas": 0,
+    "goles": 0,
+    "asistencias": 5,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/785411.png"
   },
   {
     "id": "fotmob_974618",
@@ -7224,18 +6660,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1052898.png"
   },
   {
-    "id": "fotmob_789066",
-    "name": "Cristian Romero",
-    "position": "defensas",
-    "team": "Tottenham Hotspur",
-    "teamId": 8586,
-    "fotmob": 7.06,
-    "vallas": 0,
-    "goles": 4,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/789066.png"
-  },
-  {
     "id": "fotmob_941573",
     "name": "Pedro Porro",
     "position": "defensas",
@@ -7248,16 +6672,16 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/941573.png"
   },
   {
-    "id": "fotmob_894803",
-    "name": "Djed Spence",
+    "id": "fotmob_1308600",
+    "name": "Kota Takai",
     "position": "defensas",
     "team": "Tottenham Hotspur",
     "teamId": 8586,
-    "fotmob": 6.63,
+    "fotmob": 7.12,
     "vallas": 0,
-    "goles": 0,
+    "goles": 2,
     "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/894803.png"
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1308600.png"
   },
   {
     "id": "fotmob_276121",
@@ -7294,30 +6718,6 @@
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1636513.png"
-  },
-  {
-    "id": "fotmob_1693398",
-    "name": "Junai Byfield",
-    "position": "defensas",
-    "team": "Tottenham Hotspur",
-    "teamId": 8586,
-    "fotmob": 0,
-    "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1693398.png"
-  },
-  {
-    "id": "fotmob_1431275",
-    "name": "Callum Olusesi",
-    "position": "mediocampistas",
-    "team": "Tottenham Hotspur U21",
-    "teamId": 860802,
-    "fotmob": 7.03,
-    "vallas": 0,
-    "goles": 1,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1431275.png"
   },
   {
     "id": "fotmob_1173787",
@@ -7488,18 +6888,6 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/891743.png"
   },
   {
-    "id": "fotmob_822237",
-    "name": "Manor Solomon",
-    "position": "delanteros",
-    "team": "Tottenham Hotspur",
-    "teamId": 8586,
-    "fotmob": 7.05,
-    "vallas": 0,
-    "goles": 2,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/822237.png"
-  },
-  {
     "id": "fotmob_1341387",
     "name": "Wilson Odobert",
     "position": "delanteros",
@@ -7534,17 +6922,5 @@
     "goles": 7,
     "asistencias": 3,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1407250.png"
-  },
-  {
-    "id": "fotmob_1609329",
-    "name": "Min-Hyeok Yang",
-    "position": "delanteros",
-    "team": "Tottenham Hotspur",
-    "teamId": 8586,
-    "fotmob": 6.47,
-    "vallas": 0,
-    "goles": 3,
-    "asistencias": 1,
-    "imagen": "https://images.fotmob.com/image_resources/playerimages/1609329.png"
   }
 ]
