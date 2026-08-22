@@ -365,8 +365,8 @@
     "position": "porterias",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.32,
-    "vallas": 1,
+    "fotmob": 7.21,
+    "vallas": 19,
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/562727.png"
@@ -437,7 +437,7 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.22,
+    "fotmob": 6.85,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
@@ -449,7 +449,7 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 8.36,
+    "fotmob": 6.92,
     "vallas": 0,
     "goles": 0,
     "asistencias": 1,
@@ -461,10 +461,10 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 0,
+    "fotmob": 7.07,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 1,
+    "asistencias": 2,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1137667.png"
   },
   {
@@ -473,10 +473,10 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.71,
+    "fotmob": 7.32,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 3,
+    "asistencias": 4,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/795179.png"
   },
   {
@@ -497,10 +497,10 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.81,
+    "fotmob": 7.15,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 1,
+    "goles": 1,
+    "asistencias": 2,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1105912.png"
   },
   {
@@ -509,7 +509,7 @@
     "position": "defensas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.66,
+    "fotmob": 6.55,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
@@ -521,10 +521,10 @@
     "position": "mediocampistas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 8.58,
+    "fotmob": 7.00,
     "vallas": 0,
     "goles": 1,
-    "asistencias": 0,
+    "asistencias": 6,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/534670.png"
   },
   {
@@ -533,10 +533,10 @@
     "position": "mediocampistas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.34,
+    "fotmob": 6.97,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 7,
+    "asistencias": 2,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/818975.png"
   },
   {
@@ -569,10 +569,10 @@
     "position": "mediocampistas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.51,
+    "fotmob": 6.93,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 4,
+    "asistencias": 3,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/574645.png"
   },
   {
@@ -581,10 +581,10 @@
     "position": "mediocampistas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 6.58,
+    "fotmob": 7.20,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 5,
+    "asistencias": 1,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1031325.png"
   },
   {
@@ -605,10 +605,10 @@
     "position": "mediocampistas",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.19,
+    "fotmob": 7.56,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 4,
+    "asistencias": 5,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/654096.png"
   },
   {
@@ -617,10 +617,10 @@
     "position": "delanteros",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 8.41,
+    "fotmob": 7.52,
     "vallas": 0,
-    "goles": 1,
-    "asistencias": 0,
+    "goles": 7,
+    "asistencias": 5,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/961995.png"
   },
   {
@@ -665,10 +665,10 @@
     "position": "delanteros",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.75,
+    "fotmob": 8.03,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 17,
+    "asistencias": 23,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1157237.png"
   },
   {
@@ -677,10 +677,10 @@
     "position": "delanteros",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.28,
+    "fotmob": 6.72,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 3,
+    "asistencias": 1,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1084981.png"
   },
   {
@@ -701,10 +701,10 @@
     "position": "delanteros",
     "team": "Arsenal",
     "teamId": 9825,
-    "fotmob": 7.94,
+    "fotmob": 6.83,
     "vallas": 0,
-    "goles": 1,
-    "asistencias": 0,
+    "goles": 2,
+    "asistencias": 3,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/749736.png"
   },
   {
@@ -2261,8 +2261,8 @@
     "position": "porterias",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 5.88,
-    "vallas": 0,
+    "fotmob": 7.19,
+    "vallas": 17,
     "goles": 0,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1187236.png"
@@ -2273,10 +2273,10 @@
     "position": "defensas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 5.43,
+    "fotmob": 7.17,
     "vallas": 0,
     "goles": 0,
-    "asistencias": 0,
+    "asistencias": 3,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/759814.png"
   },
   {
@@ -2285,10 +2285,10 @@
     "position": "defensas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 6.54,
+    "fotmob": 7.33,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 3,
+    "asistencias": 4,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1161885.png"
   },
   {
@@ -2345,7 +2345,7 @@
     "position": "defensas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 5.62,
+    "fotmob": 6.69,
     "vallas": 0,
     "goles": 0,
     "asistencias": 0,
@@ -2369,10 +2369,10 @@
     "position": "defensas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 4.34,
+    "fotmob": 7.21,
     "vallas": 0,
     "goles": 0,
-    "asistencias": 0,
+    "asistencias": 8,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1074750.png"
   },
   {
@@ -2393,10 +2393,10 @@
     "position": "mediocampistas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 6.55,
+    "fotmob": 7.18,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 7,
+    "asistencias": 6,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1030830.png"
   },
   {
@@ -2405,10 +2405,10 @@
     "position": "mediocampistas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 6.39,
+    "fotmob": 7.39,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 2,
+    "asistencias": 2,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/478357.png"
   },
   {
@@ -2417,10 +2417,10 @@
     "position": "mediocampistas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 5.76,
+    "fotmob": 7.52,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 2,
+    "asistencias": 6,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1615927.png"
   },
   {
@@ -2429,10 +2429,10 @@
     "position": "mediocampistas",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 6.2,
+    "fotmob": 7.16,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 1,
+    "asistencias": 1,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/856685.png"
   },
   {
@@ -2467,8 +2467,8 @@
     "teamId": 8669,
     "fotmob": 6.1,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 10,
+    "asistencias": 7,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/845985.png"
   },
   {
@@ -2513,10 +2513,10 @@
     "position": "delanteros",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 6.45,
+    "fotmob": 6.75,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 13,
+    "asistencias": 2,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/982284.png"
   },
   {
@@ -2549,10 +2549,10 @@
     "position": "delanteros",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 6.18,
+    "fotmob": 6.38,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 4,
+    "asistencias": 1,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/643717.png"
   },
   {
@@ -2561,10 +2561,10 @@
     "position": "delanteros",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 6.19,
+    "fotmob": 6.34,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 2,
+    "asistencias": 1,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1283034.png"
   },
   {
@@ -2573,10 +2573,10 @@
     "position": "delanteros",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 6.07,
+    "fotmob": 7.09,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 13,
+    "asistencias": 4,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/776184.png"
   },
   {
@@ -2585,10 +2585,10 @@
     "position": "delanteros",
     "team": "Coventry City",
     "teamId": 8669,
-    "fotmob": 0,
+    "fotmob": 7.22,
     "vallas": 0,
-    "goles": 0,
-    "asistencias": 0,
+    "goles": 7,
+    "asistencias": 12,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/775355.png"
   },
   {
