@@ -43,6 +43,14 @@ function renderLineups() {
     renderTeam('away', awayLineup, 'away-lineup');
 }
 
+function formatName(fullName) {
+    if (!fullName) return 'Fichaje';
+    const parts = fullName.trim().split(' ');
+    if (parts.length === 1) return parts[0];
+    // Toma la primera letra de la primera palabra + la última palabra
+    return `${parts[0].charAt(0)}. ${parts[parts.length - 1]}`;
+}
+
 function renderTeam(teamType, lineupArray, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -81,7 +89,7 @@ function renderTeam(teamType, lineupArray, containerId) {
                         <img src="https://images.fotmob.com/image_resources/logo/teamlogo/${player.teamId}.png" onerror="this.style.display='none'" style="width: 14px; height: 14px; position: absolute; bottom: -2px; right: -5px; background: white; border-radius: 50%;">
                     </div>
                     <div class="slot-details">
-                        <span class="slot-name">${player.name}</span>
+                        <span class="slot-name">${formatName(player.name)}</span>
                         <span class="slot-points" id="points-${teamType}-${currentIndex}">- pts</span>
                     </div>
                 `;
@@ -89,7 +97,7 @@ function renderTeam(teamType, lineupArray, containerId) {
                 slot.innerHTML = `
                     <div class="slot-icon">+</div>
                     <div class="slot-details">
-                        <span class="slot-name">Fichar</span>
+                        <span class="slot-name">Agregar</span>
                     </div>
                 `;
             }
@@ -217,38 +225,83 @@ async function simulateMatchup() {
 
 async function procesarEquipo(teamType, lineup) {
     let totalPuntos = 0;
-
+    
     for (let i = 0; i < 11; i++) {
         const player = lineup[i];
         const pointUI = document.getElementById(`points-${teamType}-${i}`);
         
         if (!player) continue;
-        if (pointUI) pointUI.innerText = 'Buscando...';
+        
+        // Reiniciamos la UI antes de consultar
+        if (pointUI) {
+            pointUI.innerText = 'Buscando...';
+            pointUI.style.color = '#059669'; // Verde por defecto
+            pointUI.title = ''; // Limpiamos tooltips anteriores
+        }
         
         try {
             const isGk = player.position === 'porterias';
-            const response = await fetch(`/.netlify/functions/getPoints?playerId=${player.fotmobId}&slug=${player.slug}&isGoalkeeper=${isGk}`);
+            
+            // 1. Rescate blindado de ID y Slug (por si el jugador fue añadido manualmente o con script antiguo)
+            let extractedId = player.fotmobId;
+            if (!extractedId) {
+                extractedId = String(player.id).replace('fotmob_', '').replace('manual_', '');
+            }
+            const extractedSlug = player.slug || '-';
+            
+            // 2. Armamos la URL incluyendo el teamId para que el backend verifique el último partido real
+            const params = new URLSearchParams({
+                playerId: extractedId,
+                slug: extractedSlug,
+                isGoalkeeper: String(isGk),
+                teamId: String(player.teamId || ''),
+                teamName: player.team || '',
+                leagueId: currentLeagueId
+            });
+            const url = `/.netlify/functions/getpoints?${params}`;
+            
+            const response = await fetch(url);
             
             if (response.ok) {
                 const data = await response.json();
                 const pts = data.totalFantasys || 0;
                 totalPuntos += pts;
-                // Ajustado a 1 decimal
-                if (pointUI) pointUI.innerText = `${pts.toFixed(1)} pts`;
+                
+                if (pointUI) {
+                    if (pts === 0) {
+                        // ADIÓS AL TOOLTIP: Imprimimos el error directamente en la tarjeta
+                        pointUI.innerHTML = `<span class="points-zero">0.0 pts</span><span class="points-status">${data.error || 'No jugó'}</span>`;
+                        pointUI.style.color = '#e74c3c'; 
+                    } else {
+                        const bonoGoles = data.bonoGoles || 0;
+                        const bonoValla = data.bonoValla || 0;
+                        const totalBonos = bonoGoles + bonoValla;
+                        
+                        if (totalBonos > 0) {
+                            pointUI.innerHTML = `
+                                <span style="color: #059669;">${data.notaFotmob.toFixed(1)}</span> 
+                                <span style="color: #d97706; font-size: 0.65rem; font-weight: 900;" title="Bono Goles: +${bonoGoles} | Bono Valla: +${bonoValla}">+${totalBonos}</span>
+                            `;
+                        } else {
+                            pointUI.innerText = `${pts.toFixed(1)} pts`;
+                            pointUI.style.color = '#059669';
+                        }
+                    }
+                }
             } else {
-                const fallbackPts = player.fotmob || 0;
-                totalPuntos += fallbackPts;
-                // Ajustado a 1 decimal
-                if (pointUI) pointUI.innerText = `${fallbackPts.toFixed(1)} pts`;
+                if (pointUI) {
+                    pointUI.innerText = `API Caída`;
+                    pointUI.style.color = '#e74c3c';
+                }
             }
         } catch (error) {
-            const fallbackPts = player.fotmob || 0;
-            totalPuntos += fallbackPts;
-            // Ajustado a 1 decimal
-            if (pointUI) pointUI.innerText = `${fallbackPts.toFixed(1)} pts`;
+            if (pointUI) {
+                pointUI.innerText = `Error de Red`;
+                pointUI.style.color = '#e74c3c';
+            }
         }
     }
-
+    
     return totalPuntos;
 }
 

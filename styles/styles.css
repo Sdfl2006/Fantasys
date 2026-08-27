@@ -355,6 +355,40 @@ header {
     /* 6. Modales y Botón Flotante */
     .modal-content { margin: 10% auto; padding: 1.5rem; width: 95%; }
     .jugadores-total-btn { width: auto; min-width: 150px; font-size: 1rem; padding: 10px 20px; bottom: 15px; }
+
+    /* --- ARREGLO DEL MATCHUP EN MÓVIL --- */
+    .matchup-wrapper {
+        height: auto !important; /* Libera la altura fija que causa el solapamiento */
+        min-height: 100vh;
+        padding: 1rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .matchup-header-compact {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+        height: auto;
+        text-align: center;
+    }
+
+    .pitch-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    .team-pitch {
+        width: 100%;
+        min-height: 650px; /* Da espacio vertical suficiente para que las filas no se aplasten */
+        padding: 1rem 0;
+    }
+    
+    .matchup-slot {
+        transform: scale(0.9); /* Escala un poco las tarjetas para asegurar que quepan a lo ancho */
+    }
 }
 
 /* =========================================
@@ -580,15 +614,43 @@ body {
 }
 
 .matchup-header-compact {
-    background: white;
+    /* Fondo con el color dinámico de la liga */
+    background: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%);
+    color: white;
     border-radius: 12px;
-    padding: 0.8rem 2rem 0.8rem 3.5rem;
+    padding: 1.2rem 2rem; /* Padding corregido */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     margin-bottom: 0.8rem;
     flex-shrink: 0;
+}
+
+/* Forzar títulos de equipo a centrarse y ser legibles sobre el gradiente */
+.team-score {
+    text-align: center;
+}
+.team-score h3 {
+    color: white;
+    margin: 0 0 0.4rem 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Hacer que los números centrales resalten mejor sobre el fondo oscuro */
+.score-numbers { 
+    font-size: 3.5rem; 
+    font-weight: 900; 
+    color: white; /* Cambiado de oscuro a blanco */
+    line-height: 1; 
+    letter-spacing: -2px; 
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+.score-points { 
+    font-size: 0.95rem; 
+    color: rgba(255,255,255,0.85); /* Cambiado para ser visible sobre oscuro */
+    font-weight: 700; 
+    margin-bottom: 0.5rem; 
 }
 
 .center-score {
@@ -597,9 +659,6 @@ body {
     align-items: center;
     gap: 0.2rem;
 }
-
-.score-numbers { font-size: 3.5rem; font-weight: 900; color: #1e293b; line-height: 1; letter-spacing: -2px; }
-.score-points { font-size: 0.85rem; color: #64748b; font-weight: 700; margin-bottom: 0.5rem; }
 
 .simulate-btn-compact {
     background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%);
@@ -670,13 +729,14 @@ body {
 
 /* 3. Fichas de Jugadores (Más pequeñas para caber perfecto) */
 .matchup-slot {
-    width: 65px;
-    height: 85px;
+    width: 82px;
+    height: 104px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.2rem;
+    padding: 0.35rem 0.25rem;
     border: 2px dashed rgba(255,255,255,0.7);
     border-radius: 6px;
     cursor: pointer;
@@ -704,7 +764,7 @@ body {
 
 .matchup-slot .slot-name { 
     font-weight: 800; 
-    font-size: 0.65rem; 
+    font-size: 0.72rem; 
     white-space: nowrap; 
     overflow: hidden; 
     text-overflow: ellipsis; 
@@ -715,4 +775,17 @@ body {
 .matchup-slot:not(.filled) .slot-name { color: #ffffff !important; }
 .matchup-slot.filled .slot-name { color: #1e293b; }
 
-.matchup-slot .slot-points { font-size: 0.6rem; color: #059669; font-weight: 800; }
+.matchup-slot .slot-points { font-size: 0.66rem; color: #059669; font-weight: 800; }
+.matchup-slot .slot-points .points-zero { display: block; }
+.matchup-slot .slot-points .points-status {
+    display: block;
+    max-width: 100%;
+    margin-top: 0.12rem;
+    color: #dc2626;
+    font-size: 0.49rem;
+    font-weight: 900;
+    line-height: 1.05;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-transform: uppercase;
+}
