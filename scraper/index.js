@@ -179,6 +179,8 @@ async function ejecutarScraperMaestro() {
 
                 jugadoresRecopilados.push({
                     id: `fotmob_${jInfo.id}`,
+                    fotmobId: jInfo.id,
+                    slug: jInfo.slug,
                     name: jInfo.name,
                     position: jInfo.position,
                     team: nombreEquipo,

@@ -189,8 +189,25 @@ header {
    5. BÚSQUEDA Y PESTAÑAS
    ========================================= */
 .search-container { display: flex; justify-content: center; margin-bottom: 1.5rem; }
-#search-input { width: 100%; max-width: 600px; padding: 1rem 1.5rem; border-radius: 30px; border: 1px solid #ddd; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05); outline: none; transition: all 0.3s ease; }
-#search-input:focus { border-color: var(--btn-start); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+/* Agrupamos los tres buscadores de la plataforma para que sean idénticos */
+#search-input, #api-search-input, #matchup-search-input { 
+    width: 100%; 
+    max-width: 600px; 
+    padding: 1rem 1.5rem; 
+    border-radius: 30px; 
+    border: 1px solid #ddd; 
+    font-size: 1.1rem; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+    outline: none; 
+    transition: all 0.3s ease; 
+    box-sizing: border-box; 
+    margin: 0 auto; 
+    display: block;
+}
+#search-input:focus, #api-search-input:focus, #matchup-search-input:focus { 
+    border-color: var(--btn-start); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+}#search-input:focus { border-color: var(--btn-start); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
 
 .tabs { display: flex; margin-bottom: 1rem; border-bottom: 2px solid var(--btn-start); }
 .tab-button { background-color: #f1f8ff; border: none; outline: none; cursor: pointer; padding: 1rem 2rem; font-size: 1rem; font-weight: 600; transition: all 0.3s; border-top-left-radius: 5px; border-top-right-radius: 5px; color: #222; }
@@ -325,22 +342,6 @@ header {
     .tabs { flex-direction: row; flex-wrap: wrap; }
     .tab-button { flex: 1 1 40%; text-align: center; border-radius: 0; padding: 0.8rem 0.5rem; font-size: 0.9rem; }
 
-    @media (max-width: 768px) {
-    /* 1. Correcciones del Landing Page */
-    .landing-container h1 { font-size: 2.2rem; margin-bottom: 2rem; line-height: 1.2; }
-    .league-card { width: 100%; max-width: 320px; padding: 2rem 1.5rem; }
-
-    /* 2. Correcciones del Header */
-    .header-brand { flex-direction: column; gap: 0.5rem; }
-    #header-logo { height: 70px; }
-    #header-title { font-size: 1.8rem; text-align: center; }
-    .header-actions { gap: 0.5rem; justify-content: center; }
-    .header-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
-
-    /* 3. Pestañas en Cuadrícula 2x2 (¡Adiós a la columna gigante!) */
-    .tabs { flex-direction: row; flex-wrap: wrap; }
-    .tab-button { flex: 1 1 40%; text-align: center; border-radius: 0; padding: 0.8rem 0.5rem; font-size: 0.9rem; }
-
     /* 4. Tablas con Scroll Horizontal funcional */
     .tab-pane { overflow-x: auto; padding: 0.5rem; }
     .players-table { font-size: 0.85rem; min-width: 600px; width: 100%; }
@@ -354,7 +355,6 @@ header {
     /* 6. Modales y Botón Flotante */
     .modal-content { margin: 10% auto; padding: 1.5rem; width: 95%; }
     .jugadores-total-btn { width: auto; min-width: 150px; font-size: 1rem; padding: 10px 20px; bottom: 15px; }
-}
 }
 
 /* =========================================
@@ -436,18 +436,6 @@ header {
     margin-top: 0.2rem;
 }
 
-#api-search-input {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    border-radius: 30px;
-    border: 1px solid #ddd;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    outline: none;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-}
-
 #api-search-input:focus {
     border-color: var(--btn-start);
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
@@ -466,3 +454,265 @@ header {
     text-decoration: line-through;
     color: #666 !important;
 }
+
+/* =========================================
+   15. SIDEBAR Y LAYOUT PRINCIPAL (DESPLEGABLE)
+   ========================================= */
+body {
+    background-color: var(--bg-body);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Botón flotante superior izquierdo */
+.sidebar-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001; 
+    background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar-toggle:hover { transform: scale(1.05); }
+
+/* Sidebar Oculto por defecto */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%); /* Color dinámico de la liga */
+    color: white;
+    height: 100vh;
+    position: fixed;
+    left: -280px; /* Escondido a la izquierda */
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1002; 
+    box-shadow: 4px 0 15px rgba(0,0,0,0.4);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Clase que se activa con JS para mostrarlo */
+.sidebar.open { left: 0; }
+
+.sidebar-brand {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.sidebar-brand h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    border: none;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background: rgba(255,255,255,0.2);
+    color: #ffffff;
+    box-shadow: inset 4px 0 0 white;
+}
+
+/* Capa oscura de fondo */
+.sidebar-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1001;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.sidebar-overlay.show { display: block; opacity: 1; }
+
+/* El contenido principal vuelve a usar el 100% del ancho y se centra */
+.main-content {
+    margin: 0 auto !important; 
+    width: 100%;
+    max-width: 100%; 
+    padding: 0; 
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: block; 
+}
+
+/* =========================================
+   16. MATCHUP ARENA (SIMULADOR COMPACTO)
+   ========================================= */
+.matchup-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 2.5rem);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem 1rem 1rem;
+    box-sizing: border-box;
+}
+
+.matchup-header-compact {
+    background: white;
+    border-radius: 12px;
+    padding: 0.8rem 2rem 0.8rem 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 0.8rem;
+    flex-shrink: 0;
+}
+
+.center-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.score-numbers { font-size: 3.5rem; font-weight: 900; color: #1e293b; line-height: 1; letter-spacing: -2px; }
+.score-points { font-size: 0.85rem; color: #64748b; font-weight: 700; margin-bottom: 0.5rem; }
+
+.simulate-btn-compact {
+    background: linear-gradient(135deg, var(--btn-start) 0%, var(--btn-end) 100%);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s, opacity 0.2s;
+}
+.simulate-btn-compact:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* Selectores de Formación */
+.formation-select {
+    margin-top: 0.3rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid #cbd5e1;
+    font-weight: 700;
+    color: var(--text-primary);
+    outline: none;
+    cursor: pointer;
+    background: #f8fafc;
+}
+
+/* 2. El Terreno de Juego */
+.pitch-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex: 1; /* Toma el espacio sobrante */
+    min-height: 0; 
+}
+
+.team-pitch {
+    flex: 1;
+    max-width: 600px;
+    /* Fondo Verde Blindado */
+    background-color: #2e7d32; 
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 10%,
+        rgba(255, 255, 255, 0.08) 10%,
+        rgba(255, 255, 255, 0.08) 20%
+    );
+    border: 4px solid #ffffff;
+    border-radius: 12px;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column-reverse; /* El portero siempre abajo */
+    justify-content: space-evenly;
+    height: 100%; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-sizing: border-box;
+}
+
+.pitch-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+/* 3. Fichas de Jugadores (Más pequeñas para caber perfecto) */
+.matchup-slot {
+    width: 65px;
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    border: 2px dashed rgba(255,255,255,0.7);
+    border-radius: 6px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.25); /* Contraste oscuro para que se vea sobre el verde */
+    transition: all 0.2s;
+}
+.matchup-slot:hover { border-color: #fff; background: rgba(0,0,0,0.4); transform: scale(1.05); }
+
+.matchup-slot.filled {
+    border-style: solid;
+    border-color: #ffffff;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.slot-icon { font-size: 1.2rem; color: #ffffff; margin-bottom: 0.1rem; }
+
+.matchup-slot .slot-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.matchup-slot .slot-name { 
+    font-weight: 800; 
+    font-size: 0.65rem; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    width: 100%;
+    margin-top: 0.2rem;
+}
+/* Letra blanca si el slot está vacío, negra si está lleno */
+.matchup-slot:not(.filled) .slot-name { color: #ffffff !important; }
+.matchup-slot.filled .slot-name { color: #1e293b; }
+
+.matchup-slot .slot-points { font-size: 0.6rem; color: #059669; font-weight: 800; }

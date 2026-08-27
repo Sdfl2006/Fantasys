@@ -7,225 +7,301 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="header-brand">
-                <img id="header-logo" src="" alt="Logo de la Liga">
-                <h1 id="header-title">Cargando liga...</h1>
-            </div>
-            <div class="header-actions">
-                <button class="header-btn" onclick="openDraft()">Mi Draft</button>
-                <button class="header-btn" onclick="window.location.href='index.html'">Cambiar Liga</button>
-            </div>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+    <aside class="sidebar" id="app-sidebar">
+        <div class="sidebar-brand">
+            <h2>Fantasys</h2>
         </div>
-    </header>
+        <nav class="sidebar-nav">
+            <button class="nav-btn active" onclick="switchView('draft-view', event)">Estudio de Draft</button>
+            <button class="nav-btn" onclick="switchView('matchup-view', event)">Enfrentamientos</button>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <section id="draft-view">
+            <header>
+                <div class="header-content">
+                    <div class="header-brand">
+                        <img id="header-logo" src="" alt="Logo de la Liga">
+                        <h1 id="header-title">Cargando liga...</h1>
+                    </div>
+                    <div class="header-actions">
+                        <button class="header-btn" onclick="openDraft()">Mi Draft</button>
+                        <button class="header-btn" onclick="window.location.href='index.html'">Cambiar Liga</button>
+                    </div>
+                </div>
+            </header>
 
-    <main>
-        <div id="equipo-container">
-            <!-- Barra de Búsqueda -->
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Buscar jugador por nombre o equipo...">
+            <main>
+                <div id="equipo-container">
+                    <!-- Barra de Búsqueda -->
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Buscar jugador por nombre o equipo...">
+                    </div>
+
+                    <!-- Navegación de Pestañas -->
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="openTab(event, 'porterias')">Porteros</button>
+                        <button class="tab-button" onclick="openTab(event, 'defensas')">Defensas</button>
+                        <button class="tab-button" onclick="openTab(event, 'mediocampistas')">Mediocampistas</button>
+                        <button class="tab-button" onclick="openTab(event, 'delanteros')">Delanteros</button>
+                    </div>
+
+                    <!-- Contenido de las Pestañas -->
+                    <div class="tab-content">
+                        <div id="porterias" class="tab-pane active">
+                            <h2>Porteros en Radar</h2>
+                            <table class="players-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Img</th>
+                                        <th>Nombre</th>
+                                        <th>Equipo</th>
+                                        <th class="sortable" data-sort="vallas">Vallas Inv. ↕</th>
+                                        <th class="sortable" data-sort="fotmob">FotMob ↕</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-porterias"></tbody>
+                            </table>
+                        </div>
+                        
+                        <div id="defensas" class="tab-pane">
+                            <h2>Defensas en Radar</h2>
+                            <table class="players-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Img</th>
+                                        <th>Nombre</th>
+                                        <th>Equipo</th>
+                                        <th class="sortable" data-sort="goles">Goles ↕</th>
+                                        <th class="sortable" data-sort="asistencias">Asistencias ↕</th>
+                                        <th class="sortable" data-sort="fotmob">FotMob ↕</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-defensas"></tbody>
+                            </table>
+                        </div>
+
+                        <div id="mediocampistas" class="tab-pane">
+                            <h2>Mediocampistas en Radar</h2>
+                            <table class="players-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Img</th>
+                                        <th>Nombre</th>
+                                        <th>Equipo</th>
+                                        <th class="sortable" data-sort="goles">Goles ↕</th>
+                                        <th class="sortable" data-sort="asistencias">Asistencias ↕</th>
+                                        <th class="sortable" data-sort="fotmob">FotMob ↕</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-mediocampistas"></tbody>
+                            </table>
+                        </div>
+
+                        <div id="delanteros" class="tab-pane">
+                            <h2>Delanteros en Radar</h2>
+                            <table class="players-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Img</th>
+                                        <th>Nombre</th>
+                                        <th>Equipo</th>
+                                        <th class="sortable" data-sort="goles">Goles ↕</th>
+                                        <th class="sortable" data-sort="asistencias">Asistencias ↕</th>
+                                        <th class="sortable" data-sort="fotmob">FotMob ↕</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-delanteros"></tbody>
+                            </table>
+                        </div>
+
+                        <!-- PESTAÑA: MI DRAFT -->
+                        <div id="mi-draft" class="tab-pane">
+                            <h2>Mi Equipo Drafteado</h2>
+                            <div class="draft-pitch">
+                                <div class="draft-row">
+                                    <h3>Porteros (<span id="count-porterias">0</span>/2)</h3>
+                                    <div id="draft-porterias" class="draft-cards"></div>
+                                </div>
+                                <div class="draft-row">
+                                    <h3>Defensas (<span id="count-defensas">0</span>/6)</h3>
+                                    <div id="draft-defensas" class="draft-cards"></div>
+                                </div>
+                                <div class="draft-row">
+                                    <h3>Mediocampistas (<span id="count-mediocampistas">0</span>/6)</h3>
+                                    <div id="draft-mediocampistas" class="draft-cards"></div>
+                                </div>
+                                <div class="draft-row">
+                                    <h3>Delanteros (<span id="count-delanteros">0</span>/4)</h3>
+                                    <div id="draft-delanteros" class="draft-cards"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="radar-actions-container" class="action-buttons-container">
+                        <button id="btn-add-radar" class="add-player-btn" onclick="openModal()">Agregar Jugador Manualmente</button>
+                        <button id="btn-load-api" class="add-player-btn" onclick="openApiModal()">Agregar Jugador Automáticamente</button>                <button id="btn-delete-all-radar" class="delete-all-btn" onclick="deleteAllInCurrentTab()">Borrar todos los Porteros</button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Modal Formulario Saneado -->
+            <div id="player-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2 id="modal-title" style="margin-bottom: 1.5rem;">Agregar Jugador</h2>
+                    <form id="player-form">
+                        <input type="hidden" id="player-id">
+
+                        <div class="form-group">
+                            <label for="player-name">Nombre del Jugador:</label>
+                            <input type="text" id="player-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="player-position">Posición:</label>
+                            <select id="player-position" required onchange="toggleStatsFields()">
+                                <option value="porterias">Portero</option>
+                                <option value="defensas">Defensa</option>
+                                <option value="mediocampistas">Mediocampista</option>
+                                <option value="delanteros">Delantero</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="player-team">Equipo:</label>
+                            <input type="text" id="player-team" required>
+                        </div>
+
+                        <div class="form-group" id="group-vallas">
+                            <label for="player-vallas">Vallas Invictas:</label>
+                            <input type="number" id="player-vallas" min="0">
+                        </div>
+                        <div class="form-group" id="group-goles" style="display: none;">
+                            <label for="player-goles">Goles:</label>
+                            <input type="number" id="player-goles" min="0">
+                        </div>
+                        <div class="form-group" id="group-asistencias" style="display: none;">
+                            <label for="player-asistencias">Asistencias:</label>
+                            <input type="number" id="player-asistencias" min="0">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="player-fotmob">Nota Promedio FotMob:</label>
+                            <input type="number" step="0.01" id="player-fotmob">
+                        </div>
+
+                        <button type="submit" style="margin-top: 1rem;">Guardar en Radar</button>
+                    </form>
+                </div>
             </div>
 
-            <!-- Navegación de Pestañas -->
-            <div class="tabs">
-                <button class="tab-button active" onclick="openTab(event, 'porterias')">Porteros</button>
-                <button class="tab-button" onclick="openTab(event, 'defensas')">Defensas</button>
-                <button class="tab-button" onclick="openTab(event, 'mediocampistas')">Mediocampistas</button>
-                <button class="tab-button" onclick="openTab(event, 'delanteros')">Delanteros</button>
-            </div>
-
-            <!-- Contenido de las Pestañas -->
-            <div class="tab-content">
-                <div id="porterias" class="tab-pane active">
-                    <h2>Porteros en Radar</h2>
-                    <table class="players-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Img</th>
-                                <th>Nombre</th>
-                                <th>Equipo</th>
-                                <th class="sortable" data-sort="vallas">Vallas Inv. ↕</th>
-                                <th class="sortable" data-sort="fotmob">FotMob ↕</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody-porterias"></tbody>
-                    </table>
-                </div>
-                
-                <div id="defensas" class="tab-pane">
-                    <h2>Defensas en Radar</h2>
-                    <table class="players-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Img</th>
-                                <th>Nombre</th>
-                                <th>Equipo</th>
-                                <th class="sortable" data-sort="goles">Goles ↕</th>
-                                <th class="sortable" data-sort="asistencias">Asistencias ↕</th>
-                                <th class="sortable" data-sort="fotmob">FotMob ↕</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody-defensas"></tbody>
-                    </table>
-                </div>
-
-                <div id="mediocampistas" class="tab-pane">
-                    <h2>Mediocampistas en Radar</h2>
-                    <table class="players-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Img</th>
-                                <th>Nombre</th>
-                                <th>Equipo</th>
-                                <th class="sortable" data-sort="goles">Goles ↕</th>
-                                <th class="sortable" data-sort="asistencias">Asistencias ↕</th>
-                                <th class="sortable" data-sort="fotmob">FotMob ↕</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody-mediocampistas"></tbody>
-                    </table>
-                </div>
-
-                <div id="delanteros" class="tab-pane">
-                    <h2>Delanteros en Radar</h2>
-                    <table class="players-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Img</th>
-                                <th>Nombre</th>
-                                <th>Equipo</th>
-                                <th class="sortable" data-sort="goles">Goles ↕</th>
-                                <th class="sortable" data-sort="asistencias">Asistencias ↕</th>
-                                <th class="sortable" data-sort="fotmob">FotMob ↕</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody-delanteros"></tbody>
-                    </table>
-                </div>
-
-                <!-- PESTAÑA: MI DRAFT -->
-                <div id="mi-draft" class="tab-pane">
-                    <h2>Mi Equipo Drafteado</h2>
-                    <div class="draft-pitch">
-                        <div class="draft-row">
-                            <h3>Porteros (<span id="count-porterias">0</span>/2)</h3>
-                            <div id="draft-porterias" class="draft-cards"></div>
-                        </div>
-                        <div class="draft-row">
-                            <h3>Defensas (<span id="count-defensas">0</span>/6)</h3>
-                            <div id="draft-defensas" class="draft-cards"></div>
-                        </div>
-                        <div class="draft-row">
-                            <h3>Mediocampistas (<span id="count-mediocampistas">0</span>/6)</h3>
-                            <div id="draft-mediocampistas" class="draft-cards"></div>
-                        </div>
-                        <div class="draft-row">
-                            <h3>Delanteros (<span id="count-delanteros">0</span>/4)</h3>
-                            <div id="draft-delanteros" class="draft-cards"></div>
-                        </div>
+            <!-- Modal Buscador API -->
+            <div id="api-search-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeApiModal()">&times;</span>
+                    <h2 style="color: var(--text-primary); margin-bottom: 0.2rem;">Buscador FantaPremier</h2>
+                    <p style="font-size: 0.85rem; color: #888; margin-top: 0; margin-bottom: 1.5rem; font-style: italic;">
+                        Última actualización: 22 de Agosto de 2026
+                    </p>
+                    <div class="search-container" style="margin-bottom: 0;">
+                        <input type="text" id="api-search-input" placeholder="Escribe el nombre del jugador (mín. 2 letras)..." autocomplete="off">
+                    </div>
+                    <div id="api-search-results" class="api-results-container">
                     </div>
                 </div>
             </div>
 
-            <div id="radar-actions-container" class="action-buttons-container">
-                <button id="btn-add-radar" class="add-player-btn" onclick="openModal()">Agregar Jugador Manualmente</button>
-                <button id="btn-load-api" class="add-player-btn" onclick="openApiModal()">Agregar Jugador Automáticamente</button>                <button id="btn-delete-all-radar" class="delete-all-btn" onclick="deleteAllInCurrentTab()">Borrar todos los Porteros</button>
+            <!-- Modal de Confirmación Personalizado -->
+            <div id="custom-confirm-modal" class="modal" style="display: none; z-index: 2000;">
+                <div class="modal-content" style="max-width: 400px; text-align: center; border-radius: 12px; padding: 2rem;">
+                    <h3 id="confirm-title" style="color: var(--text-primary); margin-top: 0; font-size: 1.4rem;">Confirmación</h3>
+                    <p id="confirm-message" style="color: #666; margin: 1.5rem 0; font-size: 1rem; line-height: 1.5;"></p>
+                    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
+                        <button id="confirm-cancel-btn" onclick="closeCustomConfirm()" style="padding: 0.7rem 1.5rem; border: none; background: #eaeaea; color: #333; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.95rem; width: 120px;">Cancelar</button>
+                        <button id="confirm-accept-btn" style="padding: 0.7rem 1.5rem; border: none; background: #e74c3c; color: white; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.95rem; width: 120px;">Eliminar</button>
+                    </div>
+                </div>
             </div>
-        </div>
+            <button class="jugadores-total-btn">Draft: <span id="total-jugadores">0</span>/18</button>
+        </section>
+        <section id="matchup-view" style="display: none;">
+            <!-- Contenedor Flex para obligar a que todo quepa en 1 pantalla -->
+            <div class="matchup-wrapper">
+                
+                <!-- Encabezado supercompacto -->
+                <div class="matchup-header-compact">
+                    <div class="team-score local">
+                        <h3 contenteditable="true" title="Clic para editar nombre">Equipo A ✏️</h3>
+                        <select id="formation-local" class="formation-select" onchange="changeFormation('local')">
+                            <option value="442">4-4-2</option>
+                            <option value="343">3-4-3</option>
+                            <option value="352">3-5-2</option>
+                            <option value="433">4-3-3</option>
+                            <option value="451">4-5-1</option>
+                            <option value="541">5-4-1</option>
+                            <option value="532">5-3-2</option>
+                        </select>
+                    </div>
+
+                    <div class="center-score">
+                        <div class="score-numbers"><span id="local-goals">0</span> - <span id="away-goals">0</span></div>
+                        <div class="score-points"><span id="local-points">0.00 pts</span> &nbsp;|&nbsp; <span id="away-points">0.00 pts</span></div>
+                        <button id="btn-simulate" class="simulate-btn-compact">SIMULAR ENFRENTAMIENTO</button>
+                    </div>
+
+                    <div class="team-score away">
+                        <h3 contenteditable="true" title="Clic para editar nombre">Equipo B ✏️</h3>
+                        <select id="formation-away" class="formation-select" onchange="changeFormation('away')">
+                            <option value="442">4-4-2</option>
+                            <option value="343">3-4-3</option>
+                            <option value="352">3-5-2</option>
+                            <option value="433">4-3-3</option>
+                            <option value="451">4-5-1</option>
+                            <option value="541">5-4-1</option>
+                            <option value="532">5-3-2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Terreno de juego que ocupa el resto de la pantalla -->
+                <div class="pitch-container">
+                    <div class="team-pitch" id="local-lineup"></div>
+                    <div class="team-pitch" id="away-lineup"></div>
+                </div>
+
+            </div> <!-- Fin del wrapper -->
+
+            <!-- RESTAURADO: Modal Buscador Matchup -->
+            <div id="matchup-search-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeMatchupSearch()">&times;</span>
+                    <h2 style="color: var(--text-primary); margin-bottom: 1.5rem;">Fichar Jugador para la Cancha</h2>
+                    <div class="search-container" style="margin-bottom: 0;">
+                        <input type="text" id="matchup-search-input" placeholder="Buscar por nombre (ej. Haaland)..." autocomplete="off">
+                    </div>
+                    <div id="matchup-search-results" class="api-results-container"></div>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <!-- Modal Formulario Saneado -->
-    <div id="player-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modal-title" style="margin-bottom: 1.5rem;">Agregar Jugador</h2>
-            <form id="player-form">
-                <input type="hidden" id="player-id">
-
-                <div class="form-group">
-                    <label for="player-name">Nombre del Jugador:</label>
-                    <input type="text" id="player-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="player-position">Posición:</label>
-                    <select id="player-position" required onchange="toggleStatsFields()">
-                        <option value="porterias">Portero</option>
-                        <option value="defensas">Defensa</option>
-                        <option value="mediocampistas">Mediocampista</option>
-                        <option value="delanteros">Delantero</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="player-team">Equipo:</label>
-                    <input type="text" id="player-team" required>
-                </div>
-
-                <div class="form-group" id="group-vallas">
-                    <label for="player-vallas">Vallas Invictas:</label>
-                    <input type="number" id="player-vallas" min="0">
-                </div>
-                <div class="form-group" id="group-goles" style="display: none;">
-                    <label for="player-goles">Goles:</label>
-                    <input type="number" id="player-goles" min="0">
-                </div>
-                <div class="form-group" id="group-asistencias" style="display: none;">
-                    <label for="player-asistencias">Asistencias:</label>
-                    <input type="number" id="player-asistencias" min="0">
-                </div>
-
-                <div class="form-group">
-                    <label for="player-fotmob">Nota Promedio FotMob:</label>
-                    <input type="number" step="0.01" id="player-fotmob">
-                </div>
-
-                <button type="submit" style="margin-top: 1rem;">Guardar en Radar</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal Buscador API -->
-    <div id="api-search-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeApiModal()">&times;</span>
-            <h2 style="color: var(--text-primary); margin-bottom: 0.2rem;">Buscador FantaPremier</h2>
-            <p style="font-size: 0.85rem; color: #888; margin-top: 0; margin-bottom: 1.5rem; font-style: italic;">
-                Última actualización: 22 de Agosto de 2026
-            </p>
-            <div class="search-container" style="margin-bottom: 0;">
-                <input type="text" id="api-search-input" placeholder="Escribe el nombre del jugador (mín. 2 letras)..." autocomplete="off">
-            </div>
-            <div id="api-search-results" class="api-results-container">
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de Confirmación Personalizado -->
-    <div id="custom-confirm-modal" class="modal" style="display: none; z-index: 2000;">
-        <div class="modal-content" style="max-width: 400px; text-align: center; border-radius: 12px; padding: 2rem;">
-            <h3 id="confirm-title" style="color: var(--text-primary); margin-top: 0; font-size: 1.4rem;">Confirmación</h3>
-            <p id="confirm-message" style="color: #666; margin: 1.5rem 0; font-size: 1rem; line-height: 1.5;"></p>
-            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
-                <button id="confirm-cancel-btn" onclick="closeCustomConfirm()" style="padding: 0.7rem 1.5rem; border: none; background: #eaeaea; color: #333; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.95rem; width: 120px;">Cancelar</button>
-                <button id="confirm-accept-btn" style="padding: 0.7rem 1.5rem; border: none; background: #e74c3c; color: white; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.95rem; width: 120px;">Eliminar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Botón Flotante -->
-    <button class="jugadores-total-btn">Draft: <span id="total-jugadores">0</span>/18</button>
 
     <!-- Librería para Drag & Drop -->
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     
     <script type="module" src="js/mi-equipo.js"></script>
+    <script type="module" src="js/matchup.js"></script>
+</body>
 </body>
 </html>

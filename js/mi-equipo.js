@@ -692,6 +692,43 @@ draftedPlayers.forEach(player => {
         container.appendChild(card);
     });
 
+// Abrir y cerrar el menú desplegable
+window.toggleSidebar = function() {
+    const sidebar = document.getElementById('app-sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    
+    if (sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        setTimeout(() => {
+            if(!overlay.classList.contains('show')) overlay.style.display = 'none';
+        }, 300);
+    } else {
+        sidebar.classList.add('open');
+        overlay.style.display = 'block';
+        // Forzar reflow para la animación
+        void overlay.offsetWidth;
+        overlay.classList.add('show');
+    }
+};
+
+// Cambiar de vista
+window.switchView = function(viewId, event) {
+    document.getElementById('draft-view').style.display = 'none';
+    document.getElementById('matchup-view').style.display = 'none';
+    
+    document.getElementById(viewId).style.display = 'block';
+    
+    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    // Cerrar el sidebar automáticamente al seleccionar una opción
+    const sidebar = document.getElementById('app-sidebar');
+    if (sidebar.classList.contains('open')) {
+        toggleSidebar();
+    }
+};
+
     ['porterias', 'defensas', 'mediocampistas', 'delanteros'].forEach(pos => {
         const count = draftedPlayers.filter(p => p.position === pos).length;
         document.getElementById(`count-${pos}`).textContent = count;
