@@ -243,7 +243,7 @@
                 <!-- Encabezado supercompacto -->
                 <div class="matchup-header-compact">
                     <div class="team-score local">
-                        <h3 contenteditable="true" title="Clic para editar nombre">Equipo A ✏️</h3>
+                        <h3 contenteditable="true" title="Clic para editar nombre">Equipo A</h3>
                         <select id="formation-local" class="formation-select" onchange="changeFormation('local')">
                             <option value="442">4-4-2</option>
                             <option value="343">3-4-3</option>
@@ -262,7 +262,7 @@
                     </div>
 
                     <div class="team-score away">
-                        <h3 contenteditable="true" title="Clic para editar nombre">Equipo B ✏️</h3>
+                        <h3 contenteditable="true" title="Clic para editar nombre">Equipo B</h3>
                         <select id="formation-away" class="formation-select" onchange="changeFormation('away')">
                             <option value="442">4-4-2</option>
                             <option value="343">3-4-3</option>
@@ -277,8 +277,26 @@
 
                 <!-- Terreno de juego que ocupa el resto de la pantalla -->
                 <div class="pitch-container">
-                    <div class="team-pitch" id="local-lineup"></div>
-                    <div class="team-pitch" id="away-lineup"></div>
+                    <div class="team-column">
+                        <div class="team-pitch" id="local-lineup"></div>
+                        <section class="bench-panel">
+                        <div class="bench-heading">
+                            <h3>Suplentes Equipo A</h3>
+                            <button class="bench-add-btn" onclick="openBenchSearch('local')">+ Añadir suplente</button>
+                        </div>
+                        <div class="bench-list" id="local-bench"></div>
+                        </section>
+                    </div>
+                    <div class="team-column">
+                        <div class="team-pitch" id="away-lineup"></div>
+                        <section class="bench-panel">
+                        <div class="bench-heading">
+                            <h3>Suplentes Equipo B</h3>
+                            <button class="bench-add-btn" onclick="openBenchSearch('away')">+ Añadir suplente</button>
+                        </div>
+                        <div class="bench-list" id="away-bench"></div>
+                        </section>
+                    </div>
                 </div>
 
             </div> <!-- Fin del wrapper -->
@@ -289,7 +307,7 @@
                     <span class="close" onclick="closeMatchupSearch()">&times;</span>
                     <h2 style="color: var(--text-primary); margin-bottom: 1.5rem;">Fichar Jugador para la Cancha</h2>
                     <div class="search-container" style="margin-bottom: 0;">
-                        <input type="text" id="matchup-search-input" placeholder="Buscar por nombre (ej. Haaland)..." autocomplete="off">
+                        <input type="text" id="matchup-search-input" placeholder="Buscar por nombre" autocomplete="off">
                     </div>
                     <div id="matchup-search-results" class="api-results-container"></div>
                 </div>

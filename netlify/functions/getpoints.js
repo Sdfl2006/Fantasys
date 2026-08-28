@@ -56,6 +56,21 @@ exports.handler = async function(event, context) {
         return [String(homeId), String(awayId)].sort().join('_');
     }
 
+    function getMatchDetails(match, currentTeamId) {
+        const isHome = String(match?.home?.id || match?.homeTeamId || match?.teamId) === String(currentTeamId);
+        const opponent = match?.opponentTeamName || (isHome ? match?.away?.name : match?.home?.name) || '';
+        const competitionName = match?.leagueName || match?.tournament?.name || match?.competitionName || '';
+        const date = match?.matchDate?.utcTime || match?.status?.utcTime || match?.utcTime || '';
+        return {
+            rival: opponent,
+            competicion: competitionName,
+            fecha: date,
+            partido: isHome
+                ? `${match?.teamName || match?.home?.name || ''} vs ${opponent}`
+                : `${opponent} vs ${match?.teamName || match?.away?.name || ''}`
+        };
+    }
+
     function createTeamSlug(name) {
         return String(name || '')
             .toLowerCase()
@@ -98,6 +113,7 @@ exports.handler = async function(event, context) {
         // --- FIRMA DEL ÚLTIMO PARTIDO DEL EQUIPO ---
         let currentTeamId = (teamId && teamId !== '0' && teamId !== 'undefined') ? teamId : (playerData.primaryTeam?.teamId);
         let validTeamMatchFound = false;
+        let latestTeamFixture = null;
 
         if (currentTeamId && currentTeamId !== '0') {
             try {
@@ -122,6 +138,7 @@ exports.handler = async function(event, context) {
                         if (finished.length > 0) {
                             finished.sort((a, b) => getMatchDate(a) - getMatchDate(b));
                             const lastFixture = finished[finished.length - 1];
+                            latestTeamFixture = lastFixture;
                             tTeam1 = String(lastFixture.home?.id || lastFixture.homeTeamId || 0);
                             tTeam2 = String(lastFixture.away?.id || lastFixture.awayTeamId || 0);
                         }
@@ -137,11 +154,19 @@ exports.handler = async function(event, context) {
                             .sort((a, b) => getMatchDate(b) - getMatchDate(a))[0];
 
                         if (!lastMatch) {
-                            return { statusCode: 200, body: JSON.stringify({ error: "No convocado", totalFantasys: 0 }) };
+                            return { statusCode: 200, body: JSON.stringify({
+                                error: "No convocado",
+                                totalFantasys: 0,
+                                ...getMatchDetails(latestTeamFixture, currentTeamId)
+                            }) };
                         }
 
                         if ((lastMatch.minutesPlayed || 0) === 0) {
-                            return { statusCode: 200, body: JSON.stringify({ error: "No ingresó", totalFantasys: 0 }) };
+                            return { statusCode: 200, body: JSON.stringify({
+                                error: "No ingresó",
+                                totalFantasys: 0,
+                                ...getMatchDetails(lastMatch, currentTeamId)
+                            }) };
                         }
                     }
                 }
@@ -171,6 +196,7 @@ exports.handler = async function(event, context) {
         }
 
         const totalFantasys = fotmobRating + bonoGoles + bonoValla;
+        const matchDetails = getMatchDetails(lastMatch, currentTeamId);
 
         return {
             statusCode: 200,
@@ -183,6 +209,7 @@ exports.handler = async function(event, context) {
                 notaFotmob: fotmobRating,
                 bonoGoles: bonoGoles,
                 bonoValla: bonoValla,
+                ...matchDetails,
                 totalFantasys: parseFloat(totalFantasys.toFixed(2))
             })
         };
