@@ -335,7 +335,7 @@ function calcularGoles(puntos) {
 
 async function simulateMatchup() {
     const btn = document.getElementById('btn-simulate');
-    btn.innerHTML = '⏳ CALCULANDO...';
+    btn.innerHTML = 'CALCULANDO...';
     btn.disabled = true;
     btn.style.opacity = '0.7';
 
