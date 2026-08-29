@@ -85,11 +85,10 @@ function renderLineups() {
     renderTeam('away', awayLineup, 'away-lineup');
     renderBench('local', localBench, 'local-bench');
     renderBench('away', awayBench, 'away-bench');
-}
 
-function formatName(fullName) {
-    if (!fullName) return 'Fichaje';
-    return fullName.trim();
+    // Inicializamos Drag & Drop inmediatamente después de dibujar la cancha
+    initSortables('local');
+    initSortables('away');
 }
 
 function renderTeam(teamType, lineupArray, containerId) {
@@ -104,7 +103,6 @@ function renderTeam(teamType, lineupArray, containerId) {
     const meds = parseInt(formString[1]) || 4;
     const dels = parseInt(formString[2]) || 2;
     
-    // [Portero, Defensas, Mediocampistas, Delanteros]
     const layout = [1, defs, meds, dels]; 
     let globalSlotIndex = 0;
 
@@ -118,6 +116,12 @@ function renderTeam(teamType, lineupArray, containerId) {
             const slot = document.createElement('div');
             
             slot.className = `matchup-slot ${player ? 'filled' : ''}`;
+            
+            // DATA-ATTRIBUTES CRUCIALES PARA EL DRAG & DROP
+            slot.dataset.index = currentIndex;
+            slot.dataset.playerId = player ? player.id : ''; 
+            slot.style.cursor = 'grab'; // Cambia el cursor para indicar que es arrastrable
+            
             slot.onclick = () => {
                 if (selectedBenchTeam === teamType && selectedBenchIndex !== null) {
                     replaceWithBench(teamType, currentIndex);
@@ -162,7 +166,8 @@ function renderBench(teamType, bench, containerId) {
     container.innerHTML = Array.from({ length: 7 }, (_, index) => {
         const player = bench[index];
         if (!player) {
-            return `<button class="matchup-slot bench-slot" onclick="openBenchSearch('${teamType}')">
+            // Etiquetado con data-player-id vacío para permitir soltar jugadores aquí
+            return `<button class="matchup-slot bench-slot" data-index="bench-${index}" data-player-id="" onclick="openBenchSearch('${teamType}')" style="cursor: grab;">
                 <span class="slot-icon">+</span>
                 <span class="slot-name">Agregar</span>
             </button>`;
@@ -170,7 +175,7 @@ function renderBench(teamType, bench, containerId) {
 
         const iniciales = player.name ? player.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() : 'JG';
         const fallbackUrl = `https://ui-avatars.com/api/?name=${iniciales}&background=eaeaea&color=333`;
-        return `<div class="matchup-slot filled bench-slot ${selectedBenchTeam === teamType && selectedBenchIndex === index ? 'selected' : ''}" onclick="selectBenchPlayer('${teamType}', ${index})">
+        return `<div class="matchup-slot filled bench-slot ${selectedBenchTeam === teamType && selectedBenchIndex === index ? 'selected' : ''}" data-index="bench-${index}" data-player-id="${player.id}" style="cursor: grab;" onclick="selectBenchPlayer('${teamType}', ${index})">
             <div class="player-visual">
                 <img src="${player.imagen || fallbackUrl}" onerror="this.src='${fallbackUrl}'" alt="Foto" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid #e2e8f0;">
                 <img src="https://images.fotmob.com/image_resources/logo/teamlogo/${player.teamId}.png" onerror="this.style.display='none'" style="width: 14px; height: 14px; position: absolute; bottom: -2px; right: -5px; background: white; border-radius: 50%;">
@@ -182,6 +187,68 @@ function renderBench(teamType, bench, containerId) {
             <button class="bench-remove-btn" title="Quitar suplente" onclick="event.stopPropagation(); removeBenchPlayer('${teamType}', ${index})">×</button>
         </div>`;
     }).join('');
+}
+
+// ----------------------------------------------------
+// NUEVAS FUNCIONES: MAGIA DEL DRAG & DROP (SWAP)
+// ----------------------------------------------------
+function initSortables(teamType) {
+    const options = {
+        group: `team-${teamType}`, // Conecta la cancha y la banca del mismo equipo
+        swap: true,                // CRUCIAL: Intercambia los elementos 1 a 1 en lugar de empujarlos (Mantiene la formación)
+        swapClass: "highlight",
+        animation: 150,
+        delay: 150,                // Retraso de milisegundos. Permite hacer scroll en móvil sin arrastrar sin querer
+        delayOnTouchOnly: true,
+        onEnd: function () {
+            // Al soltar el jugador, el navegador lee el nuevo orden de las cartas y reconstruye el equipo en milisegundos
+            rebuildTeamArrays(teamType);
+            renderLineups();
+            saveMatchupState();
+        }
+    };
+
+    // Activamos arrastre en las líneas titulares
+    document.querySelectorAll(`#${teamType}-lineup .pitch-line`).forEach(line => {
+        new Sortable(line, options);
+    });
+
+    // Activamos arrastre en la banca
+    const benchList = document.getElementById(`${teamType}-bench`);
+    if (benchList) new Sortable(benchList, options);
+}
+
+function rebuildTeamArrays(teamType) {
+    const pitchSlots = document.querySelectorAll(`#${teamType}-lineup .matchup-slot`);
+    const benchSlots = document.querySelectorAll(`#${teamType}-bench .matchup-slot`);
+
+    // Reconstruye el once titular basado en el nuevo orden visual
+    const newLineup = Array.from(pitchSlots).map(slot => {
+        const pid = slot.dataset.playerId;
+        return pid ? dbJugadores.find(p => String(p.id) === pid) || null : null;
+    });
+
+    // Reconstruye la banca basándose en el nuevo orden visual
+    const newBenchRaw = Array.from(benchSlots).map(slot => {
+        const pid = slot.dataset.playerId;
+        return pid ? dbJugadores.find(p => String(p.id) === pid) || null : null;
+    });
+    
+    // Eliminamos los slots vacíos de la banca para mantener los jugadores alineados a la izquierda
+    const newBench = newBenchRaw.filter(p => p !== null);
+
+    if (teamType === 'local') {
+        localLineup = newLineup;
+        localBench = newBench;
+    } else {
+        awayLineup = newLineup;
+        awayBench = newBench;
+    }
+}
+
+function formatName(fullName) {
+    if (!fullName) return 'Fichaje';
+    return fullName.trim();
 }
 
 // 3. Modal de Búsqueda
@@ -406,10 +473,11 @@ function mostrarPuntos(pointUI, data) {
 
 function renderMatchDetails(data) {
     if (!data.rival && !data.competicion) return '';
-    const rival = data.rival || 'Rival no disponible';
-    const competition = data.competicion || 'Competición no disponible';
+    const rival = data.rival || 'Rival ND';
+    const competition = data.competicion || 'Comp. ND';
     const date = data.fecha ? new Date(data.fecha).toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit' }) : '';
-    return `<span class="match-context">${competition}${date ? ` · ${date}` : ''}<br>vs ${rival}</span>`;
+    
+    return `<span class="match-context">${competition} • vs ${rival} • ${date}</span>`;
 }
 
 function getStatusLabel(error) {

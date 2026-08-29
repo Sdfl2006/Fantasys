@@ -435,6 +435,7 @@ header {
         white-space: normal !important; /* Permite saltos de línea */
         display: -webkit-box !important;
         -webkit-line-clamp: 3 !important; /* Máximo 3 líneas */
+        line-clamp: unset !important; /* Compatibilidad estándar */
         -webkit-box-orient: vertical !important;
         overflow: hidden !important;
         width: 100% !important;
@@ -477,6 +478,7 @@ header {
         /* CRUCIAL: Eliminamos el line-clamp que rompía el centrado y cortaba el texto */
         display: block !important; 
         -webkit-line-clamp: unset !important;
+        line-clamp: unset !important; /* Compatibilidad estándar */
         -webkit-box-orient: unset !important;
         
         width: 100% !important;
