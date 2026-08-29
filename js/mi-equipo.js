@@ -714,13 +714,14 @@ window.toggleSidebar = function() {
 
 // Cambiar de vista
 window.switchView = function(viewId, event) {
-    document.getElementById('draft-view').style.display = 'none';
-    document.getElementById('matchup-view').style.display = 'none';
+    document.querySelectorAll('.main-content > section').forEach(section => {
+        section.style.display = 'none';
+    });
     
     document.getElementById(viewId).style.display = 'block';
     
     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+    if (event && event.currentTarget) event.currentTarget.classList.add('active');
 
     // Cerrar el sidebar automáticamente al seleccionar una opción
     const sidebar = document.getElementById('app-sidebar');
