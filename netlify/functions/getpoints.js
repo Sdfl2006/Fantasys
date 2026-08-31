@@ -49,9 +49,56 @@ exports.handler = async function(event, context) {
         ).getTime();
     }
 
+    function getMatchDateKey(match) {
+        const timestamp = getMatchDate(match);
+        return Number.isFinite(timestamp) && timestamp > 0
+            ? new Date(timestamp).toISOString().slice(0, 10)
+            : null;
+    }
+
     function getMatchRound(match) {
         const value = match?.round ?? match?.roundName ?? match?.matchweek ?? match?.roundNumber;
         return Number.parseInt(String(value || '').match(/\d+/)?.[0], 10);
+    }
+
+    function walk(value, visitor, seen = new Set()) {
+        if (!value || typeof value !== 'object' || seen.has(value)) return;
+        seen.add(value);
+        visitor(value);
+        Object.values(value).forEach(child => walk(child, visitor, seen));
+    }
+
+    function extractLeagueMatches(data) {
+        let matches = [];
+        walk(data, value => {
+            if (Array.isArray(value.allMatches) && value.allMatches.length > matches.length) {
+                matches = value.allMatches;
+            }
+        });
+        return matches;
+    }
+
+    const leagueFixtures = {
+        premier: { id: '47', slug: 'premier-league' },
+        liga: { id: '87', slug: 'laliga' }
+    };
+
+    async function findLeagueFixture(leagueId, teamId, requestedRound) {
+        if (!Number.isInteger(requestedRound)) return null;
+        const league = leagueFixtures[leagueId];
+        if (!league) return null;
+        const response = await fetch(`https://www.fotmob.com/es/leagues/${league.id}/fixtures/${league.slug}?group=by-date`, { headers });
+        if (!response.ok) return null;
+        const html = await response.text();
+        const dataMatch = html.match(/<script id="__NEXT_DATA__" type="application\/json">([\s\S]*?)<\/script>/);
+        if (!dataMatch) return null;
+        const data = JSON.parse(dataMatch[1]);
+        return extractLeagueMatches(data).find(match => {
+            const round = getMatchRound(match);
+            const homeId = match?.home?.id || match?.homeTeamId;
+            const awayId = match?.away?.id || match?.awayTeamId;
+            return round === requestedRound && (String(homeId) === String(teamId) || String(awayId) === String(teamId));
+        }) || null;
     }
 
     function getMatchSignature(match) {
@@ -111,6 +158,9 @@ exports.handler = async function(event, context) {
                 homeScore: teamBlock.match(/class="score-home">([^<]*)/)?.[1],
                 awayScore: teamBlock.match(/class="score-away">([^<]*)/)?.[1]
             } : null;
+            if (Number.isInteger(selectedRound) && selectedRound > 0 && !teamBlock) {
+                return { statusCode: 200, body: JSON.stringify({ error: 'Aún no ha jugado', totalFantasys: 0 }) };
+            }
             if (teamBlock && (teamBlock.includes('disabled') || teamBlock.includes('match-status-0') || ['vs', ''].includes(String(teamMatch.homeScore).trim().toLowerCase()))) {
                 return { statusCode: 200, body: JSON.stringify({ error: 'Aún no ha jugado', totalFantasys: 0 }) };
             }
@@ -203,8 +253,14 @@ exports.handler = async function(event, context) {
                         const competitionFixtures = fixtures.filter(isAllowedCompetition);
                         const requestedRound = Number.parseInt(jornada, 10);
                         competitionFixtures.sort((a, b) => getMatchDate(a) - getMatchDate(b));
+                        const leagueFixture = await findLeagueFixture(leagueId, currentTeamId, requestedRound);
+                        const leagueHomeId = leagueFixture?.home?.id || leagueFixture?.homeTeamId;
+                        const leagueAwayId = leagueFixture?.away?.id || leagueFixture?.awayTeamId;
+                        const roundSignature = leagueHomeId && leagueAwayId
+                            ? [leagueHomeId, leagueAwayId].map(String).sort().join('_')
+                            : null;
                         const roundFixture = Number.isInteger(requestedRound)
-                            ? competitionFixtures.find(m => getMatchRound(m) === requestedRound) || competitionFixtures[requestedRound - 1]
+                            ? roundSignature && competitionFixtures.find(m => getMatchSignature(m) === roundSignature)
                             : null;
                         if (roundFixture && !(roundFixture.status?.finished === true || roundFixture.status?.reason?.short === 'FT')) {
                             return { statusCode: 200, body: JSON.stringify({ error: 'Aún no ha jugado', totalFantasys: 0 }) };
@@ -229,9 +285,12 @@ exports.handler = async function(event, context) {
                     if (tTeam1 && tTeam2) {
                         validTeamMatchFound = true;
                         const teamMatchSignature = [tTeam1, tTeam2].sort().join('_');
+                        const teamMatchDate = getMatchDateKey(latestTeamFixture);
 
                         lastMatch = (playerData?.recentMatches || [])
-                            .filter(match => isAllowedCompetition(match) && getMatchSignature(match) === teamMatchSignature)
+                            .filter(match => isAllowedCompetition(match) &&
+                                getMatchSignature(match) === teamMatchSignature &&
+                                getMatchDateKey(match) === teamMatchDate)
                             .sort((a, b) => getMatchDate(b) - getMatchDate(a))[0];
 
                         if (!lastMatch) {
