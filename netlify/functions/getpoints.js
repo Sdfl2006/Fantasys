@@ -1,5 +1,5 @@
 exports.handler = async function(event, context) {
-    const { playerId, slug, isGoalkeeper, teamId, teamName, leagueId } = event.queryStringParameters;
+    const { playerId, playerName, slug, isGoalkeeper, teamId, teamName, leagueId, jornada } = event.queryStringParameters;
 
     if (!playerId || !slug) {
         return { statusCode: 400, body: JSON.stringify({ error: "Faltan parámetros" }) };
@@ -49,6 +49,11 @@ exports.handler = async function(event, context) {
         ).getTime();
     }
 
+    function getMatchRound(match) {
+        const value = match?.round ?? match?.roundName ?? match?.matchweek ?? match?.roundNumber;
+        return Number.parseInt(String(value || '').match(/\d+/)?.[0], 10);
+    }
+
     function getMatchSignature(match) {
         const homeId = match?.homeTeamId || match?.home?.id || (match?.isHomeTeam ? match?.teamId : match?.opponentTeamId);
         const awayId = match?.awayTeamId || match?.away?.id || (match?.isHomeTeam ? match?.opponentTeamId : match?.teamId);
@@ -80,7 +85,71 @@ exports.handler = async function(event, context) {
             .replace(/^-|-$/g, '');
     }
 
+    function normalizePlayerName(name) {
+        return String(name || '').toLowerCase().normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9 ]/g, ' ')
+            .split(/\s+/).filter(token => token.length > 2).sort().join(' ');
+    }
+
     try {
+        if (leagueId === 'calcio') {
+            const selectedRound = Number.parseInt(jornada, 10);
+            const votesUrl = Number.isInteger(selectedRound) && selectedRound > 0
+                ? `https://www.fantacalcio.it/voti-fantacalcio-serie-a/2026-27/${selectedRound}`
+                : 'https://www.fantacalcio.it/voti-fantacalcio-serie-a';
+            const votesResponse = await fetch(votesUrl, { headers });
+            if (!votesResponse.ok) throw new Error('Error al contactar a Fantacalcio');
+            const votesHtml = await votesResponse.text();
+            const teamSlug = createTeamSlug(teamName);
+            const playerSlug = createTeamSlug(slug);
+            const tables = [...votesHtml.matchAll(/<table class="grades-table">([\s\S]*?)<\/table>/g)];
+            const teamBlock = [...votesHtml.matchAll(/<li id="match-\d+"[\s\S]*?(?=<li id="match-\d+"|<\/ul>)/g)]
+                .map(match => match[0])
+                .find(block => [...block.matchAll(/href="[^\"]+\/squadre\/([^\"]+)"/g)].slice(0, 2).some(match => match[1] === teamSlug));
+            const teamMatch = teamBlock ? {
+                teams: [...teamBlock.matchAll(/href="[^\"]+\/squadre\/([^\"]+)"/g)].slice(0, 2).map(match => match[1]),
+                homeScore: teamBlock.match(/class="score-home">([^<]*)/)?.[1],
+                awayScore: teamBlock.match(/class="score-away">([^<]*)/)?.[1]
+            } : null;
+            if (teamBlock && (teamBlock.includes('disabled') || teamBlock.includes('match-status-0') || ['vs', ''].includes(String(teamMatch.homeScore).trim().toLowerCase()))) {
+                return { statusCode: 200, body: JSON.stringify({ error: 'Aún no ha jugado', totalFantasys: 0 }) };
+            }
+            let playerRow = null;
+            let teamMatchIndex = -1;
+            for (const table of tables) {
+                if (!new RegExp(`/squadre/${teamSlug}(["/])`).test(table[1])) continue;
+                for (const rowMatch of table[1].matchAll(/<tr>([\s\S]*?)<\/tr>/g)) {
+                    const row = rowMatch[1];
+                    const link = row.match(/class="player-name player-link"[\s\S]*?href="[^\"]+\/([^\/\"]+)\/(\d+)"[\s\S]*?<span>([^<]+)<\/span>/);
+                    const requestedName = normalizePlayerName(playerName);
+                    const candidateName = normalizePlayerName(link?.[3]);
+                    const sharesNameToken = requestedName && candidateName && requestedName.split(' ').some(token => candidateName.split(' ').includes(token));
+                    if (link && (link[2] === String(playerId) || link[1] === playerSlug || createTeamSlug(link[3]) === createTeamSlug(playerName) || sharesNameToken)) {
+                        playerRow = row;
+                        break;
+                    }
+                }
+                if (playerRow) break;
+            }
+            if (!playerRow) return { statusCode: 200, body: JSON.stringify({ error: 'No convocado', totalFantasys: 0 }) };
+            const grade = playerRow.match(/class="player-grade[^"]*" data-value="([^"]+)"/);
+            if (!grade) return { statusCode: 200, body: JSON.stringify({ error: 'No ingresó', totalFantasys: 0 }) };
+            const bonus = title => Number(playerRow.match(new RegExp(`data-value="([^\"]+)"[^>]*title="${title}"`))?.[1] || 0);
+            const parsedGrade = Number.parseFloat(grade[1].replace(',', '.')) || 0;
+            const notaFantacalcio = parsedGrade === 55 ? 3 : parsedGrade;
+            const bonoGoles = bonus('Gol segnati') * 3;
+            const homeScore = Number(teamMatch?.homeScore);
+            const awayScore = Number(teamMatch?.awayScore);
+            const teamIsHome = teamMatch?.teams[0] === teamSlug;
+            const opponentScore = teamIsHome ? awayScore : homeScore;
+            const rowIsGoalkeeper = /class="role" data-value="p"/.test(playerRow);
+            const bonoValla = rowIsGoalkeeper && Number.isFinite(opponentScore) && opponentScore === 0 ? 2 : 0;
+            return {
+                statusCode: 200,
+                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+                body: JSON.stringify({ nombre: playerName || teamName, notaFantacalcio, notaFotmob: notaFantacalcio, bonoGoles, bonoValla, competicion: 'Serie A', totalFantasys: Number((notaFantacalcio + bonoGoles + bonoValla).toFixed(2)) })
+            };
+        }
         const url = `https://www.fotmob.com/es/players/${playerId}/${slug}`;
         const response = await fetch(url, { headers });
 
@@ -103,7 +172,7 @@ exports.handler = async function(event, context) {
 
         const playerData = buscarNodoJugador(nextData, playerId);
 
-        if (!playerData || !playerData.recentMatches || playerData.recentMatches.length === 0) {
+        if ((!playerData || !playerData.recentMatches || playerData.recentMatches.length === 0) && !teamId) {
             return { statusCode: 200, body: JSON.stringify({ error: "Sin historial", totalFantasys: 0 }) };
         }
 
@@ -111,13 +180,13 @@ exports.handler = async function(event, context) {
         // tener un partido más reciente con otra selección o competición.
         let lastMatch = null;
         // --- FIRMA DEL ÚLTIMO PARTIDO DEL EQUIPO ---
-        let currentTeamId = (teamId && teamId !== '0' && teamId !== 'undefined') ? teamId : (playerData.primaryTeam?.teamId);
+        let currentTeamId = (teamId && teamId !== '0' && teamId !== 'undefined') ? teamId : (playerData?.primaryTeam?.teamId);
         let validTeamMatchFound = false;
         let latestTeamFixture = null;
 
         if (currentTeamId && currentTeamId !== '0') {
             try {
-                const currentTeamName = teamName || playerData.primaryTeam?.teamName;
+                const currentTeamName = teamName || playerData?.primaryTeam?.teamName;
                 const teamSlug = createTeamSlug(currentTeamName);
                 const teamRes = await fetch(`https://www.fotmob.com/es/teams/${currentTeamId}/fixtures/${teamSlug}`, { headers });
                 if (teamRes.ok) {
@@ -131,10 +200,22 @@ exports.handler = async function(event, context) {
 
                     const fixtures = teamData?.fixtures?.allFixtures?.fixtures || [];
                     if (fixtures.length > 0) {
-                        const finished = fixtures.filter(m =>
+                        const competitionFixtures = fixtures.filter(isAllowedCompetition);
+                        const requestedRound = Number.parseInt(jornada, 10);
+                        competitionFixtures.sort((a, b) => getMatchDate(a) - getMatchDate(b));
+                        const roundFixture = Number.isInteger(requestedRound)
+                            ? competitionFixtures.find(m => getMatchRound(m) === requestedRound) || competitionFixtures[requestedRound - 1]
+                            : null;
+                        if (roundFixture && !(roundFixture.status?.finished === true || roundFixture.status?.reason?.short === 'FT')) {
+                            return { statusCode: 200, body: JSON.stringify({ error: 'Aún no ha jugado', totalFantasys: 0 }) };
+                        }
+                        const finished = competitionFixtures.filter(m =>
                             (m.status?.finished === true || m.status?.reason?.short === 'FT') &&
-                            isAllowedCompetition(m)
+                            (!roundFixture || m === roundFixture)
                         );
+                        if (Number.isInteger(requestedRound) && !roundFixture) {
+                            return { statusCode: 200, body: JSON.stringify({ error: 'Aún no ha jugado', totalFantasys: 0 }) };
+                        }
                         if (finished.length > 0) {
                             finished.sort((a, b) => getMatchDate(a) - getMatchDate(b));
                             const lastFixture = finished[finished.length - 1];
@@ -149,7 +230,7 @@ exports.handler = async function(event, context) {
                         validTeamMatchFound = true;
                         const teamMatchSignature = [tTeam1, tTeam2].sort().join('_');
 
-                        lastMatch = playerData.recentMatches
+                        lastMatch = (playerData?.recentMatches || [])
                             .filter(match => isAllowedCompetition(match) && getMatchSignature(match) === teamMatchSignature)
                             .sort((a, b) => getMatchDate(b) - getMatchDate(a))[0];
 

@@ -3,6 +3,9 @@
 // ==========================================
 
 const currentLeagueId = localStorage.getItem('selectedLeague') || 'premier';
+const storedRoundValue = localStorage.getItem(`selectedRound_${currentLeagueId}`);
+const storedRound = storedRoundValue ? Number(storedRoundValue) : null;
+let selectedRound = Number.isInteger(storedRound) && storedRound > 0 ? storedRound : 1;
 let dbJugadores = [];
 
 // Estado de alineaciones (11 posiciones por equipo)
@@ -55,6 +58,15 @@ function loadMatchupState() {
 // 1. Inicialización
 async function initMatchup() {
     loadMatchupState();
+    if (!Number.isInteger(storedRound)) {
+        try {
+            const roundResponse = await fetch(`./.netlify/functions/getmatches?leagueId=${encodeURIComponent(currentLeagueId)}`);
+            const roundData = await roundResponse.json();
+            if (roundData.currentRound) selectedRound = roundData.currentRound;
+        } catch (error) {
+            console.warn('No se pudo detectar la jornada actual de Calcio.');
+        }
+    }
     try {
         const res = await fetch(`./data/jugadores_${currentLeagueId}.json`);
         if (res.ok) {
@@ -67,6 +79,15 @@ async function initMatchup() {
     
     renderLineups();
     setupSearchEvents();
+    const roundSelect = document.getElementById('matchup-round-select');
+    if (roundSelect) {
+        roundSelect.innerHTML = Array.from({ length: 38 }, (_, index) => `<option value="${index + 1}">Jornada ${index + 1}</option>`).join('');
+        roundSelect.value = String(selectedRound);
+        roundSelect.addEventListener('change', () => {
+            selectedRound = Number(roundSelect.value);
+            localStorage.setItem(`selectedRound_${currentLeagueId}`, selectedRound);
+        });
+    }
     
     const simBtn = document.getElementById('btn-simulate');
     if (simBtn) {
@@ -383,6 +404,10 @@ function replaceWithBench(teamType, lineupIndex) {
 
 // 4. Reglas de Puntuación
 function calcularGoles(puntos) {
+    if (currentLeagueId === 'calcio') {
+        if (puntos < 63.6) return 0;
+        return Math.min(14, Math.floor((puntos - 63.6) / 3) + 1);
+    }
     if (puntos < 75.9) return 0;
     if (puntos <= 79.0) return 1;
     if (puntos <= 82.2) return 2;
@@ -432,10 +457,12 @@ async function obtenerPuntosJugador(player, isGk) {
 
     const params = new URLSearchParams({
         playerId: extractedId,
+        playerName: player.name || '',
         slug: player.slug || '-',
         isGoalkeeper: String(isGk),
         teamId: String(player.teamId || ''),
         teamName: player.team || '',
+        jornada: String(selectedRound),
         leagueId: currentLeagueId
     });
 
@@ -449,7 +476,9 @@ function mostrarPuntos(pointUI, data) {
     if (!pointUI) return;
     if (pts === 0) {
         const status = getStatusLabel(data.error);
-            pointUI.innerHTML = `<span class="points-zero">0.0 pts</span><span class="points-status">${status}</span>${renderMatchDetails(data)}`;
+            pointUI.innerHTML = data.error === 'Aún no ha jugado'
+                ? `<span class="points-status">${status}</span>`
+                : `<span class="points-zero">0.0 pts</span><span class="points-status">${status}</span>${renderMatchDetails(data)}`;
             const card = pointUI.closest('.matchup-slot');
             if (card) {
                 card.classList.add('has-status');
@@ -472,6 +501,7 @@ function mostrarPuntos(pointUI, data) {
 }
 
 function renderMatchDetails(data) {
+    if (currentLeagueId === 'calcio') return '';
     if (!data.rival && !data.competicion) return '';
     const rival = data.rival || 'Rival ND';
     const competition = data.competicion || 'Comp. ND';
@@ -481,6 +511,7 @@ function renderMatchDetails(data) {
 }
 
 function getStatusLabel(error) {
+    if (error === 'Aún no ha jugado') return 'AÚN NO HA JUGADO';
     if (error === 'No convocado') return 'NO CONVOCADO';
     if (error === 'No ingresó') return 'NO INGRESÓ';
     if (error === 'API caída') return 'API';
@@ -522,7 +553,9 @@ async function procesarEquipo(teamType, lineup, bench) {
             const data = await obtenerPuntosJugador(substitute, substitute.position === 'porterias');
             if (benchUI) {
                 const hasPoints = data.totalFantasys > 0;
-                benchUI.innerHTML = hasPoints
+                benchUI.innerHTML = data.error === 'Aún no ha jugado'
+                    ? `<span class="points-status">${getStatusLabel(data.error)}</span>`
+                    : hasPoints
                     ? `<span>${data.totalFantasys.toFixed(1)} pts</span>${renderMatchDetails(data)}`
                     : `<span class="points-status">${getStatusLabel(data.error)}</span>${renderMatchDetails(data)}`;
                 const benchCard = benchUI.closest('.matchup-slot');
