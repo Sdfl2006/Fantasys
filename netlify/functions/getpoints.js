@@ -132,8 +132,20 @@ exports.handler = async function(event, context) {
             .replace(/^-|-$/g, '');
     }
 
+    function decodeHtml(value) {
+    return String(value || '')
+        .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+        .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)))
+        .replace(/&#x27;|&#39;|&#039;/gi, "'")
+        .replace(/&quot;/gi, '"')
+        .replace(/&amp;/gi, '&')
+        .replace(/&#xB0;/gi, '°')
+        .replace(/<[^>]+>/g, '')
+        .trim();
+    }
+
     function normalizePlayerName(name) {
-        return String(name || '').toLowerCase().normalize('NFD')
+        return decodeHtml(name).toLowerCase().normalize('NFD')
             .replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9 ]/g, ' ')
             .split(/\s+/).filter(token => token.length > 2).sort().join(' ');
     }
@@ -165,21 +177,51 @@ exports.handler = async function(event, context) {
                 return { statusCode: 200, body: JSON.stringify({ error: 'Aún no ha jugado', totalFantasys: 0 }) };
             }
             let playerRow = null;
-            let teamMatchIndex = -1;
+            let bestMatch = null; // { row, priority }
+
             for (const table of tables) {
                 if (!new RegExp(`/squadre/${teamSlug}(["/])`).test(table[1])) continue;
                 for (const rowMatch of table[1].matchAll(/<tr>([\s\S]*?)<\/tr>/g)) {
                     const row = rowMatch[1];
                     const link = row.match(/class="player-name player-link"[\s\S]*?href="[^\"]+\/([^\/\"]+)\/(\d+)"[\s\S]*?<span>([^<]+)<\/span>/);
-                    const requestedName = normalizePlayerName(playerName);
-                    const candidateName = normalizePlayerName(link?.[3]);
-                    const sharesNameToken = requestedName && candidateName && requestedName.split(' ').some(token => candidateName.split(' ').includes(token));
-                    if (link && (link[2] === String(playerId) || link[1] === playerSlug || createTeamSlug(link[3]) === createTeamSlug(playerName) || sharesNameToken)) {
-                        playerRow = row;
-                        break;
+                    if (!link) continue;
+
+                    const rowId = link[2];
+                    const rowSlug = link[1];
+                    const rowName = link[3];
+                    const normalizedRow = normalizePlayerName(rowName);
+                    const normalizedReq = normalizePlayerName(playerName);
+
+                    // 1. Calcular prioridad (mayor número = mejor coincidencia)
+                    let priority = 0;
+                    if (createTeamSlug(rowName) === playerSlug) priority = 4;          // slug exacto
+                    else if (normalizedRow === normalizedReq) priority = 3;            // nombre normalizado igual
+                    else if (normalizedReq.split(' ').some(t => normalizedRow.split(' ').includes(t))) priority = 2; // comparten token
+                    else if (rowId === String(playerId)) priority = 1;                 // ID (menor prioridad)
+
+                    // 2. Si hay prioridad, verificar el rol
+                    if (priority > 0) {
+                        const rowIsGk = /class="role" data-value="p"/.test(row);
+                        const esperadoArquero = (isGoalkeeper === 'true');
+                        // Si el rol no coincide, descartar (prioridad = 0)
+                        if (rowIsGk !== esperadoArquero) {
+                            priority = 0;
+                        }
+                    }
+
+                    // 3. Guardar la mejor coincidencia
+                    if (priority > 0) {
+                        if (!bestMatch || priority > bestMatch.priority) {
+                            bestMatch = { row, priority, name: rowName };
+                        }
+                        // Si misma prioridad y es por nombre exacto, la dejamos (la primera encontrada)
                     }
                 }
-                if (playerRow) break;
+            }
+
+            // Al salir de los bucles, asignar playerRow
+            if (bestMatch) {
+                playerRow = bestMatch.row;
             }
             if (!playerRow) return { statusCode: 200, body: JSON.stringify({ error: 'No convocado', totalFantasys: 0 }) };
             const grade = playerRow.match(/class="player-grade[^"]*" data-value="([^"]+)"/);

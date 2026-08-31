@@ -2388,6 +2388,18 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1695976.png"
   },
   {
+    "id": "fotmob_749488",
+    "name": "Romano Schmid",
+    "position": "mediocampistas",
+    "team": "Frosinone",
+    "teamId": 9891,
+    "fotmob": 6.63,
+    "vallas": 0,
+    "goles": 1,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/749488.png"
+  },
+  {
     "id": "fotmob_908328",
     "name": "Benjamin Lhassine Kone",
     "position": "mediocampistas",
@@ -6370,6 +6382,18 @@
     "goles": 3,
     "asistencias": 0,
     "imagen": "https://images.fotmob.com/image_resources/playerimages/787242.png"
+  },
+  {
+    "id": "fotmob_1320176",
+    "name": "Wesley",
+    "position": "defensas",
+    "team": "Roma",
+    "teamId": 8686,
+    "fotmob": 7.16,
+    "vallas": 0,
+    "goles": 5,
+    "asistencias": 0,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/1320176.png"
   },
   {
     "id": "fotmob_671203",

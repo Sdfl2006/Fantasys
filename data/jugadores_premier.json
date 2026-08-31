@@ -3052,6 +3052,20 @@
     "imagen": "https://images.fotmob.com/image_resources/playerimages/1187506.png"
   },
   {
+    "id": "fotmob_859282",
+    "fotmobId": 859282,
+    "slug": "daniel-munoz",
+    "name": "Daniel Muñoz",
+    "position": "defensas",
+    "team": "Crystal Palace",
+    "teamId": 9826,
+    "fotmob": 7.15,
+    "vallas": 0,
+    "goles": 4,
+    "asistencias": 3,
+    "imagen": "https://images.fotmob.com/image_resources/playerimages/859282.png"
+  },
+  {
     "id": "fotmob_1664722",
     "fotmobId": 1664722,
     "slug": "jaydee-canvot",
