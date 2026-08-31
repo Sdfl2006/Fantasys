@@ -409,19 +409,19 @@ function calcularGoles(puntos) {
         return Math.min(14, Math.floor((puntos - 63.6) / 3) + 1);
     }
     if (puntos < 75.9) return 0;
-    if (puntos <= 79.0) return 1;
-    if (puntos <= 82.2) return 2;
-    if (puntos <= 85.4) return 3;
-    if (puntos <= 88.7) return 4;
-    if (puntos <= 92.0) return 5;
-    if (puntos <= 95.4) return 6;
-    if (puntos <= 98.9) return 7;
-    if (puntos <= 102.5) return 8;
-    if (puntos <= 106.2) return 9;
-    if (puntos <= 110.0) return 10;
-    if (puntos <= 113.9) return 11;
-    if (puntos <= 117.9) return 12;
-    if (puntos <= 122.0) return 13;
+    if (puntos <= 78.4) return 1;
+    if (puntos <= 81.1) return 2;
+    if (puntos <= 84) return 3;
+    if (puntos <= 86.9) return 4;
+    if (puntos <= 89.9) return 5;
+    if (puntos <= 93) return 6;
+    if (puntos <= 95.4) return 7;
+    if (puntos <= 98.9) return 8;
+    if (puntos <= 102.5) return 9;
+    if (puntos <= 106.2) return 10;
+    if (puntos <= 110) return 11;
+    if (puntos <= 113.9) return 12;
+    if (puntos <= 117.9) return 13;
     return 14;
 }
 
